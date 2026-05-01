@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>THUNA - District Nodes Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;700;800&amp;family=Public+Sans:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "error": "#ba1a1a",
+                        "on-tertiary-fixed-variant": "#5f4100",
+                        "surface": "#fcf9f8",
+                        "primary-fixed": "#d8e2ff",
+                        "tertiary-fixed-dim": "#f3be61",
+                        "on-tertiary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "error-container": "#ffdad6",
+                        "background": "#fcf9f8",
+                        "surface-dim": "#dcd9d9",
+                        "surface-container-high": "#ebe7e7",
+                        "secondary-container": "#a1befd",
+                        "on-surface-variant": "#44474e",
+                        "on-tertiary-fixed": "#281900",
+                        "on-primary-container": "#7a8bb3",
+                        "surface-bright": "#fcf9f8",
+                        "on-primary": "#ffffff",
+                        "surface-container-highest": "#e5e2e1",
+                        "on-surface": "#1c1b1b",
+                        "on-secondary-container": "#2e4c84",
+                        "tertiary-fixed": "#ffdeac",
+                        "tertiary": "#160c00",
+                        "inverse-on-surface": "#f3f0ef",
+                        "tertiary-container": "#322000",
+                        "on-primary-fixed-variant": "#35466a",
+                        "secondary": "#415e96",
+                        "surface-tint": "#4d5e83",
+                        "on-secondary": "#ffffff",
+                        "on-background": "#1c1b1b",
+                        "surface-container-low": "#f6f3f2",
+                        "primary-fixed-dim": "#b5c6f1",
+                        "primary": "#000d29",
+                        "on-tertiary-container": "#b1822c",
+                        "secondary-fixed": "#d8e2ff",
+                        "inverse-surface": "#313030",
+                        "secondary-fixed-dim": "#adc6ff",
+                        "outline": "#75777f",
+                        "primary-container": "#102345",
+                        "on-secondary-fixed": "#001a42",
+                        "surface-container": "#f0edec",
+                        "outline-variant": "#c5c6cf",
+                        "on-primary-fixed": "#061a3c",
+                        "on-error": "#ffffff",
+                        "on-secondary-fixed-variant": "#27467d",
+                        "surface-variant": "#e5e2e1",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-primary": "#b5c6f1"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "4px",
+                        "panel-padding": "32px",
+                        "stack-gap": "12px",
+                        "gutter": "24px",
+                        "margin": "40px"
+                    },
+                    "fontFamily": {
+                        "display-hero": ["Epilogue"],
+                        "headline-md": ["Epilogue"],
+                        "body-lg": ["Public Sans"],
+                        "body-md": ["Public Sans"],
+                        "label-caps": ["Public Sans"],
+                        "headline-lg": ["Epilogue"]
+                    },
+                    "fontSize": {
+                        "display-hero": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "headline-md": ["24px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "label-caps": ["12px", { "lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-surface text-on-surface min-h-screen overflow-x-hidden">
+<!-- TopAppBar -->
+<nav class="flex justify-between items-center w-full px-6 h-16 z-50 fixed full-width top-0 border-b-2 border-blue-900 dark:border-blue-700 shadow-[4px_4px_0px_0px_rgba(184,134,11,1)] bg-slate-50 dark:bg-slate-950 font-serif uppercase tracking-tight text-sm text-blue-900 dark:text-blue-400">
+<div class="text-2xl font-black text-blue-950 dark:text-white flex items-center gap-2">
+            THUNA | തുണ
+        </div>
+<div class="flex items-center gap-4">
+<div class="border-2 border-blue-900 dark:border-blue-700 px-3 py-1 flex items-center bg-white dark:bg-slate-900">
+<span class="material-symbols-outlined mr-2">search</span>
+<input class="bg-transparent border-none outline-none text-xs w-48 font-label-caps text-label-caps" placeholder="SEARCH ARCHIVE" type="text"/>
+</div>
+<div class="flex items-center gap-1">
+<button class="p-2 hover:bg-blue-900/10 dark:hover:bg-blue-400/10 transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="p-2 hover:bg-blue-900/10 dark:hover:bg-blue-400/10 transition-colors">
+<span class="material-symbols-outlined">gavel</span>
+</button>
+<button class="p-2 hover:bg-blue-900/10 dark:hover:bg-blue-400/10 transition-colors">
+<span class="material-symbols-outlined">account_balance</span>
+</button>
+</div>
+<button class="px-4 py-2 border-2 border-primary bg-primary text-on-primary font-label-caps text-label-caps hover:bg-blue-900/10 transition-colors">
+                Emergency Dispatch
+            </button>
+</div>
+</nav>
+<!-- SideNavBar -->
+<aside class="fixed h-full w-64 left-0 top-0 border-r-4 border-blue-900 dark:border-blue-800 z-40 flex flex-col pt-20 h-screen bg-blue-950 dark:bg-neutral-950 font-mono text-[10px] leading-tight font-bold uppercase">
+<div class="px-6 py-4 border-b-4 border-amber-500/50 mb-4">
+<div class="text-amber-500 font-black tracking-widest text-lg">KERALA POLICE</div>
+<div class="text-amber-500/70 mt-1">THUNA CORE PORTAL</div>
+</div>
+<div class="flex-1 flex flex-col w-full">
+<a class="flex items-center gap-3 text-blue-200 dark:text-slate-400 py-4 px-4 opacity-70 hover:opacity-100 hover:bg-blue-800/50 dark:hover:bg-neutral-900 transition-all" href="#">
+<span class="material-symbols-outlined" data-weight="fill">dashboard</span>
+<span>ഡാഷ്ബോർഡ് DASHBOARD</span>
+</a>
+<!-- Active State -->
+<a class="flex items-center gap-3 bg-blue-900 dark:bg-blue-900/40 text-amber-500 border-l-4 border-amber-500 py-4 px-4 scale-[0.98] transition-all" href="#">
+<span class="material-symbols-outlined" data-weight="fill">lan</span>
+<span>ഡിസ്ട്രിക്റ്റ് നോഡുകൾ NODES</span>
+</a>
+<a class="flex items-center gap-3 text-blue-200 dark:text-slate-400 py-4 px-4 opacity-70 hover:opacity-100 hover:bg-blue-800/50 dark:hover:bg-neutral-900 transition-all" href="#">
+<span class="material-symbols-outlined" data-weight="fill">badge</span>
+<span>സേനാ അംഗങ്ങൾ PERSONNEL</span>
+</a>
+<a class="flex items-center gap-3 text-blue-200 dark:text-slate-400 py-4 px-4 opacity-70 hover:opacity-100 hover:bg-blue-800/50 dark:hover:bg-neutral-900 transition-all" href="#">
+<span class="material-symbols-outlined" data-weight="fill">warning</span>
+<span>സംഭവങ്ങൾ INCIDENTS</span>
+</a>
+<a class="flex items-center gap-3 text-blue-200 dark:text-slate-400 py-4 px-4 opacity-70 hover:opacity-100 hover:bg-blue-800/50 dark:hover:bg-neutral-900 transition-all" href="#">
+<span class="material-symbols-outlined" data-weight="fill">analytics</span>
+<span>റിപ്പോർട്ടുകൾ REPORTS</span>
+</a>
+<a class="flex items-center gap-3 text-blue-200 dark:text-slate-400 py-4 px-4 opacity-70 hover:opacity-100 hover:bg-blue-800/50 dark:hover:bg-neutral-900 transition-all" href="#">
+<span class="material-symbols-outlined" data-weight="fill">inventory_2</span>
+<span>ആർക്കൈവ് ARCHIVE</span>
+</a>
+</div>
+<div class="p-6 mt-auto border-t-4 border-amber-500/50">
+<button class="w-full bg-amber-500 text-primary font-bold py-3 uppercase tracking-widest border-2 border-transparent hover:border-white transition-all text-xs">
+                DEPLOY RAPID RESPONSE
+            </button>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="ml-64 pt-16 min-h-screen p-panel-padding bg-surface-container-low">
+<!-- Page Header -->
+<header class="mb-gutter border-b-2 border-primary pb-4 flex justify-between items-end">
+<div>
+<h1 class="font-display-hero text-display-hero text-primary uppercase leading-none">
+                    ഡിസ്ട്രിക്റ്റ് നോഡുകൾ<br/>District Nodes
+                </h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2 border-l-4 border-tertiary-fixed-dim pl-3">
+                    Active Command Topology &amp; Real-time Synchronization Status
+                </p>
+</div>
+<div class="flex gap-4">
+<div class="bg-primary text-on-primary p-3 border-2 border-primary flex items-center gap-3 shadow-[4px_4px_0px_0px_#f3be61]">
+<span class="material-symbols-outlined text-3xl">verified_user</span>
+<div>
+<div class="font-label-caps text-label-caps text-tertiary-fixed-dim">SYSTEM INTEGRITY</div>
+<div class="font-headline-md text-headline-md">100% SECURE</div>
+</div>
+</div>
+</div>
+</header>
+<!-- 12-Column Grid Layout -->
+<div class="grid grid-cols-12 gap-gutter">
+<!-- Left Panel: Node Topology Map (8 Cols) -->
+<section class="col-span-8 relative border-2 border-primary bg-surface shadow-[6px_6px_0px_0px_#102345]">
+<div class="absolute -top-3 left-6 bg-tertiary-fixed-dim text-on-tertiary-fixed-variant px-3 py-1 font-label-caps text-label-caps border-2 border-primary z-10 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">map</span>
+                    TOPOLOGY MAP
+                </div>
+<div class="border border-outline m-1 h-[500px] relative overflow-hidden bg-primary-container">
+<!-- Procedural Grid Overlay -->
+<div class="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:40px_40px] z-0"></div>
+<img alt="Map" class="w-full h-full object-cover mix-blend-luminosity opacity-80 z-10 relative" data-alt="A highly complex, glowing digital map interface of a geographic region resembling Kerala, displayed on a massive dark blue command center screen. The map features interconnected bright cyan and copper-gold nodes connected by thin laser-like lines, representing an active intelligence network. The aesthetic is maximalist, dense with data points, alphanumeric overlays, and grid lines, lit with a high-contrast institutional glow." data-location="Kerala" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDz9PCaBHBb15pwuVWCXcE_fBICqzQUJEVqWh3z-rvLPX142U0uyxePXH-uZIKCWszyCAbU3uT75BZEwLJGiHmmKcaReb6I-yZDoW8kwG_H3OsZ7nD2jokOaGR3U53N0J0OSN6K1Xc7I9RAPKUA8iThHaG0ZDfrcftTNE9ehhOS87Wj-o8SiSJgA_AwaIyydv0CoZabNMkhN22CxWyPeK71eCpmKNc4frh2L1wMbqwMaTX_jJzl_KtN8GOFloiWaHYAiGud8IMeQfY"/>
+<!-- Map Overlays -->
+<div class="absolute bottom-4 left-4 z-20 bg-surface/90 border-2 border-primary p-3 backdrop-blur-sm">
+<div class="font-label-caps text-label-caps text-primary mb-1">ACTIVE REGIONS</div>
+<div class="flex gap-2">
+<span class="w-3 h-3 bg-tertiary-fixed-dim rounded-none border border-primary"></span>
+<span class="w-3 h-3 bg-tertiary-fixed-dim rounded-none border border-primary"></span>
+<span class="w-3 h-3 bg-tertiary-fixed-dim rounded-none border border-primary"></span>
+<span class="w-3 h-3 bg-surface-dim rounded-none border border-primary"></span>
+</div>
+</div>
+</div>
+</section>
+<!-- Right Panel: Central Command Intelligence (4 Cols) -->
+<section class="col-span-4 relative border-2 border-primary bg-surface shadow-[6px_6px_0px_0px_#102345] flex flex-col">
+<div class="absolute -top-3 left-6 bg-primary text-on-primary px-3 py-1 font-label-caps text-label-caps border-2 border-primary z-10 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">terminal</span>
+                    INTELLIGENCE LOG
+                </div>
+<div class="border border-outline m-1 flex-1 flex flex-col p-4 bg-surface-container">
+<div class="border-b-2 border-primary pb-2 mb-4 flex justify-between items-center">
+<span class="font-label-caps text-label-caps text-primary">LIVE SYNC FEED</span>
+<span class="w-2 h-2 bg-error rounded-full animate-pulse"></span>
+</div>
+<div class="flex-1 overflow-hidden font-mono text-xs flex flex-col gap-2">
+<div class="p-2 border-l-2 border-tertiary-fixed-dim bg-surface">
+<span class="text-outline">[14:32:01]</span> <span class="text-primary font-bold">NODE_TVM</span> Handshake verified. Data stream active.
+                        </div>
+<div class="p-2 border-l-2 border-tertiary-fixed-dim bg-surface">
+<span class="text-outline">[14:32:15]</span> <span class="text-primary font-bold">NODE_EKM</span> Processing batch #8892. Encrypted.
+                        </div>
+<div class="p-2 border-l-2 border-error bg-error-container text-on-error-container">
+<span class="text-outline">[14:33:42]</span> <span class="font-bold">NODE_KZD</span> Latency spike detected. Rerouting packets.
+                        </div>
+<div class="p-2 border-l-2 border-tertiary-fixed-dim bg-surface">
+<span class="text-outline">[14:34:10]</span> <span class="text-primary font-bold">SYS_CORE</span> Sync cycle complete. Checksum valid.
+                        </div>
+<div class="p-2 border-l-2 border-tertiary-fixed-dim bg-surface opacity-50">
+<span class="text-outline">[14:35:00]</span> Awaiting next pulse...
+                        </div>
+</div>
+<div class="mt-4 pt-4 border-t border-outline flex justify-between items-center">
+<div class="font-label-caps text-label-caps text-outline">ENCRYPTION: AES-256</div>
+<span class="material-symbols-outlined text-primary">lock</span>
+</div>
+</div>
+</section>
+<!-- Bottom Panel: District Performance Matrix (12 Cols) -->
+<section class="col-span-12 relative border-2 border-primary bg-surface shadow-[6px_6px_0px_0px_#102345] mt-8">
+<div class="absolute -top-3 left-6 bg-tertiary-fixed-dim text-on-tertiary-fixed-variant px-3 py-1 font-label-caps text-label-caps border-2 border-primary z-10 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">table_chart</span>
+                    PERFORMANCE MATRIX
+                </div>
+<div class="border border-outline m-1 p-1">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-primary text-on-primary font-label-caps text-label-caps uppercase border-b-2 border-primary">
+<th class="p-4 border-r border-outline/30">Node ID</th>
+<th class="p-4 border-r border-outline/30">District / ജില്ല</th>
+<th class="p-4 border-r border-outline/30">Status</th>
+<th class="p-4 border-r border-outline/30">Personnel</th>
+<th class="p-4 border-r border-outline/30">Resolution Rate</th>
+<th class="p-4">Active Incidents</th>
+</tr>
+</thead>
+<tbody class="font-body-md text-body-md text-on-surface">
+<!-- Row 1 -->
+<tr class="border-b border-outline hover:bg-surface-container-high transition-colors">
+<td class="p-4 border-r border-outline font-bold text-primary">ND-01</td>
+<td class="p-4 border-r border-outline">
+<div class="font-bold">Thiruvananthapuram</div>
+<div class="text-xs text-outline font-label-caps">തിരുവനന്തപുരം</div>
+</td>
+<td class="p-4 border-r border-outline">
+<span class="inline-block px-2 py-1 border-2 border-primary bg-primary-fixed text-on-primary-container font-label-caps text-[10px]">ACTIVE</span>
+</td>
+<td class="p-4 border-r border-outline font-mono">1,452</td>
+<td class="p-4 border-r border-outline">
+<div class="flex items-center gap-2">
+<div class="w-full bg-surface-dim h-2 border border-outline">
+<div class="bg-tertiary-fixed-dim h-full" style="width: 98.2%"></div>
+</div>
+<span class="font-bold">98.2%</span>
+</div>
+</td>
+<td class="p-4 font-bold text-error">14</td>
+</tr>
+<!-- Row 2 -->
+<tr class="border-b border-outline hover:bg-surface-container-high transition-colors bg-surface-container-low">
+<td class="p-4 border-r border-outline font-bold text-primary">ND-07</td>
+<td class="p-4 border-r border-outline">
+<div class="font-bold">Ernakulam</div>
+<div class="text-xs text-outline font-label-caps">എറണാകുളം</div>
+</td>
+<td class="p-4 border-r border-outline">
+<span class="inline-block px-2 py-1 border-2 border-primary bg-primary-fixed text-on-primary-container font-label-caps text-[10px]">ACTIVE</span>
+</td>
+<td class="p-4 border-r border-outline font-mono">2,104</td>
+<td class="p-4 border-r border-outline">
+<div class="flex items-center gap-2">
+<div class="w-full bg-surface-dim h-2 border border-outline">
+<div class="bg-tertiary-fixed-dim h-full" style="width: 95.5%"></div>
+</div>
+<span class="font-bold">95.5%</span>
+</div>
+</td>
+<td class="p-4 font-bold text-error">32</td>
+</tr>
+<!-- Row 3 -->
+<tr class="border-b border-outline hover:bg-surface-container-high transition-colors">
+<td class="p-4 border-r border-outline font-bold text-primary">ND-11</td>
+<td class="p-4 border-r border-outline">
+<div class="font-bold">Kozhikode</div>
+<div class="text-xs text-outline font-label-caps">കോഴിക്കോട്</div>
+</td>
+<td class="p-4 border-r border-outline">
+<span class="inline-block px-2 py-1 border-2 border-error text-error bg-error-container font-label-caps text-[10px]">MAINTENANCE</span>
+</td>
+<td class="p-4 border-r border-outline font-mono">1,120</td>
+<td class="p-4 border-r border-outline">
+<div class="flex items-center gap-2">
+<div class="w-full bg-surface-dim h-2 border border-outline">
+<div class="bg-tertiary-fixed-dim h-full" style="width: 89.0%"></div>
+</div>
+<span class="font-bold">89.0%</span>
+</div>
+</td>
+<td class="p-4 font-bold text-error">08</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</div>
+</main>
+</body></html>

@@ -1,0 +1,64 @@
+/* ═══════════════════════════════════════════════════════════
+   THUNA Portal — Design Tokens (Retro Warmth Theme)
+   ═══════════════════════════════════════════════════════════ */
+
+@import url("https://fonts.googleapis.com/css2?family=Rokkitt:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800;900&family=Manjari:wght@400;700&family=JetBrains+Mono:wght@400;500;700&display=swap");
+
+:root {
+  /* ── Primary Retro Palette ── */
+  --retro-red:          #D9381E;
+  --retro-red-light:    #FFDDD6;
+  --retro-red-dark:     #8B1A0E;
+
+  --retro-yellow:       #E8B923;
+  --retro-yellow-light: #FFF4D1;
+  --retro-yellow-dark:  #7A5C00;
+
+  --retro-green:        #4B8B3B;
+  --retro-green-light:  #DFF0D8;
+  --retro-green-dark:   #2A5422;
+
+  /* ── Neutrals ── */
+  --bg-cream:           #FDF5E6;
+  --bg-charcoal:        #1A1A1A;
+  --bg-card:            #FCFAF5;
+  --ink-primary:        #2C2C2C;
+  --ink-secondary:      #666666;
+  --border-heavy:       #2C2C2C;
+  --border-light:       #D2D0CB;
+
+  /* ── Semantic ── */
+  --color-danger:       var(--retro-red);
+  --color-warning:      var(--retro-yellow);
+  --color-success:      var(--retro-green);
+  --color-info:         #3B6EB5;
+
+  /* ── Shadows (Neo-Brutalist) ── */
+  --shadow-hard:        4px 4px 0 var(--ink-primary);
+  --shadow-soft:        2px 2px 0 rgba(44, 44, 44, 0.3);
+  --shadow-inset:       inset 0 2px 4px rgba(0, 0, 0, 0.15);
+
+  /* ── Typography ── */
+  --font-heading:       'Rokkitt', 'Cooper Black', serif;
+  --font-body:          'Inter', 'Space Grotesk', system-ui, sans-serif;
+  --font-mono:          'JetBrains Mono', 'Fira Code', monospace;
+
+  /* ── Spacing Scale ── */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+
+  /* ── Border Radii ── */
+  --radius-none: 0;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-pill: 999px;
+
+  /* ── Transitions ── */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --duration-fast: 150ms;
+  --duration-normal: 250ms;
+}

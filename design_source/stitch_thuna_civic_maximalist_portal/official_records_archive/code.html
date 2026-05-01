@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Official Records - THUNA Portal</title>
+<!-- Google Fonts: Epilogue & Public Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;700;800;900&amp;family=Public+Sans:wght@400;700&amp;family=Inter:wght@400;700;900&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary": "#ffffff",
+                        "surface": "#fcf9f8",
+                        "tertiary-fixed-dim": "#f3be61",
+                        "on-secondary-container": "#2e4c84",
+                        "error-container": "#ffdad6",
+                        "surface-dim": "#dcd9d9",
+                        "inverse-primary": "#b5c6f1",
+                        "surface-container": "#f0edec",
+                        "background": "#fcf9f8",
+                        "secondary-container": "#a1befd",
+                        "on-secondary-fixed-variant": "#27467d",
+                        "on-primary-container": "#7a8bb3",
+                        "error": "#ba1a1a",
+                        "primary-fixed": "#d8e2ff",
+                        "secondary-fixed-dim": "#adc6ff",
+                        "on-tertiary-fixed": "#281900",
+                        "on-tertiary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "primary-fixed-dim": "#b5c6f1",
+                        "surface-container-lowest": "#ffffff",
+                        "on-background": "#1c1b1b",
+                        "inverse-on-surface": "#f3f0ef",
+                        "primary": "#000d29",
+                        "on-error-container": "#93000a",
+                        "outline": "#75777f",
+                        "on-error": "#ffffff",
+                        "surface-container-low": "#f6f3f2",
+                        "surface-bright": "#fcf9f8",
+                        "inverse-surface": "#313030",
+                        "secondary-fixed": "#d8e2ff",
+                        "on-tertiary-container": "#b1822c",
+                        "outline-variant": "#c5c6cf",
+                        "on-surface-variant": "#44474e",
+                        "on-primary-fixed": "#061a3c",
+                        "tertiary-fixed": "#ffdeac",
+                        "on-primary-fixed-variant": "#35466a",
+                        "on-secondary-fixed": "#001a42",
+                        "surface-tint": "#4d5e83",
+                        "tertiary": "#160c00",
+                        "tertiary-container": "#322000",
+                        "surface-variant": "#e5e2e1",
+                        "surface-container-highest": "#e5e2e1",
+                        "on-surface": "#1c1b1b",
+                        "secondary": "#415e96",
+                        "surface-container-high": "#ebe7e7",
+                        "on-tertiary-fixed-variant": "#5f4100",
+                        "primary-container": "#102345"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "panel-padding": "32px",
+                        "margin": "40px",
+                        "unit": "4px",
+                        "stack-gap": "12px"
+                    },
+                    "fontFamily": {
+                        "display-hero": ["Epilogue"],
+                        "body-md": ["Public Sans"],
+                        "headline-lg": ["Epilogue"],
+                        "headline-md": ["Epilogue"],
+                        "body-lg": ["Public Sans"],
+                        "label-caps": ["Public Sans"]
+                    },
+                    "fontSize": {
+                        "display-hero": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "headline-md": ["24px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "label-caps": ["12px", { "lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        /* Subtle architectural grid background */
+        body {
+            background-color: theme('colors.background');
+            background-image: 
+                linear-gradient(theme('colors.surface-dim') 1px, transparent 1px),
+                linear-gradient(90deg, theme('colors.surface-dim') 1px, transparent 1px);
+            background-size: 40px 40px;
+            background-position: -1px -1px;
+        }
+        
+        /* Literal execution of separation logic from JSON */
+        .double-border-external {
+            border: 2px solid theme('colors.primary-container');
+        }
+        .double-border-internal {
+            border: 1px solid theme('colors.primary-container');
+            margin: 1px;
+        }
+        
+        /* Maximalist inset inputs */
+        .brutal-inset {
+            box-shadow: inset 2px 2px 0px 0px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body class="font-body-md text-body-md text-on-background min-h-screen flex flex-col antialiased selection:bg-on-tertiary-container selection:text-surface">
+<!-- TopAppBar (From JSON) -->
+<header class="bg-[#FDFCF0] dark:bg-slate-950 text-[#102345] dark:text-blue-200 font-['Epilogue'] font-black uppercase tracking-widest shadow-[4px_4px_0px_0px_rgba(16,35,69,1)] docked full-width top-0 border-b-2 border-[#102345] flex justify-between items-center px-6 py-4 w-full z-50 relative sticky top-0 bg-opacity-95 backdrop-blur-sm double-border-external">
+<div class="flex items-center gap-4">
+<span class="text-2xl font-black text-[#102345] dark:text-white border-b-4 border-[#B8860B]">KERALA POLICE INTELLIGENCE PORTAL</span>
+</div>
+<div class="flex items-center gap-6">
+<!-- Search Right -->
+<div class="relative hidden md:block">
+<input class="border-2 border-[#102345] bg-[#FDFCF0] px-4 py-2 font-['Inter'] text-xs font-bold w-64 focus:outline-none focus:ring-0 brutal-inset" placeholder="QUERY DATABASE..." type="text"/>
+<span class="material-symbols-outlined absolute right-3 top-2 text-[#102345]">search</span>
+</div>
+<!-- Trailing Icons -->
+<div class="flex gap-4">
+<button class="hover:bg-[#102345] hover:text-white dark:hover:bg-blue-900 scale-95 duration-75 active:shadow-none p-2 border-2 border-transparent">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">notifications</span>
+</button>
+<button class="hover:bg-[#102345] hover:text-white dark:hover:bg-blue-900 scale-95 duration-75 active:shadow-none p-2 border-2 border-transparent">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">account_balance</span>
+</button>
+<button class="hover:bg-[#102345] hover:text-white dark:hover:bg-blue-900 scale-95 duration-75 active:shadow-none p-2 border-2 border-transparent">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">settings</span>
+</button>
+</div>
+<!-- Primary Action -->
+<button class="bg-error text-on-error px-6 py-2 border-2 border-primary-container shadow-[2px_2px_0px_0px_#102345] font-['Inter'] text-xs font-bold uppercase tracking-widest hover:translate-y-[2px] hover:translate-x-[2px] hover:shadow-none transition-all">
+                Emergency Alert
+            </button>
+</div>
+</header>
+<div class="flex flex-1 relative w-full max-w-[1920px] mx-auto">
+<!-- SideNavBar (From JSON) -->
+<aside class="bg-[#FDFCF0] dark:bg-slate-900 text-[#102345] dark:text-blue-200 font-['Inter'] font-bold text-xs uppercase tracking-tight h-[calc(100vh-80px)] w-64 border-r-2 border-[#102345] flex flex-col shadow-[4px_0px_0px_0px_rgba(24,45,85,1)] fixed left-0 top-[80px] z-40 sticky top-[80px]">
+<!-- Header -->
+<div class="p-6 border-b-2 border-[#102345] bg-[#FDFCF0]">
+<div class="flex items-center gap-3 mb-4">
+<div class="w-10 h-10 border-2 border-[#102345] bg-surface-container flex items-center justify-center overflow-hidden" data-alt="A graphic illustration of a brutalist, official state emblem resembling a highly stylized lion capital or geometric shield, rendered in stark police blue and pale gold on a textured ivory background, evoking high-level institutional authority and security.">
+<span class="material-symbols-outlined text-[#102345]">local_police</span>
+</div>
+<div>
+<h2 class="text-lg font-black text-[#102345]">STATE INTELLIGENCE</h2>
+<span class="text-[10px] text-on-primary-container block tracking-widest">Official Repository</span>
+</div>
+</div>
+<button class="w-full border-2 border-[#102345] bg-[#FDFCF0] text-[#102345] py-3 text-center shadow-[2px_2px_0px_0px_#102345] hover:bg-[#102345] hover:text-[#FDFCF0] transition-colors">
+                    NEW DOSSIER
+                </button>
+</div>
+<!-- Navigation Tabs -->
+<nav class="flex-1 overflow-y-auto py-4">
+<a class="text-[#102345] dark:text-slate-300 py-4 px-6 flex items-center gap-3 border-b border-slate-200 dark:border-slate-800 hover:bg-blue-50 dark:hover:bg-slate-800 transition-all translate-x-1 duration-150" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+                    Dashboard
+                </a>
+<a class="text-[#102345] dark:text-slate-300 py-4 px-6 flex items-center gap-3 border-b border-slate-200 dark:border-slate-800 hover:bg-blue-50 dark:hover:bg-slate-800 transition-all translate-x-1 duration-150" href="#">
+<span class="material-symbols-outlined">visibility</span>
+                    Intelligence Feed
+                </a>
+<!-- ACTIVE TAB -->
+<a class="bg-[#102345] text-[#B8860B] border-l-8 border-[#B8860B] py-4 px-6 flex items-center gap-3 translate-x-1 duration-150 shadow-inner" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">folder_managed</span>
+                    Official Records
+                </a>
+<a class="text-[#102345] dark:text-slate-300 py-4 px-6 flex items-center gap-3 border-b border-slate-200 dark:border-slate-800 hover:bg-blue-50 dark:hover:bg-slate-800 transition-all translate-x-1 duration-150" href="#">
+<span class="material-symbols-outlined">badge</span>
+                    Personnel
+                </a>
+<a class="text-[#102345] dark:text-slate-300 py-4 px-6 flex items-center gap-3 border-b border-slate-200 dark:border-slate-800 hover:bg-blue-50 dark:hover:bg-slate-800 transition-all translate-x-1 duration-150" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+                    Archives
+                </a>
+<a class="text-[#102345] dark:text-slate-300 py-4 px-6 flex items-center gap-3 border-b border-slate-200 dark:border-slate-800 hover:bg-blue-50 dark:hover:bg-slate-800 transition-all translate-x-1 duration-150" href="#">
+<span class="material-symbols-outlined">terminal</span>
+                    Systems
+                </a>
+</nav>
+<!-- Footer Tabs -->
+<div class="border-t-2 border-[#102345] bg-[#FDFCF0]">
+<a class="text-[#102345] dark:text-slate-300 py-4 px-6 flex items-center gap-3 hover:bg-blue-50 dark:hover:bg-slate-800 transition-all" href="#">
+<span class="material-symbols-outlined">verified_user</span>
+                    Security Settings
+                </a>
+<a class="text-[#102345] dark:text-slate-300 py-4 px-6 flex items-center gap-3 hover:bg-blue-50 dark:hover:bg-slate-800 transition-all" href="#">
+<span class="material-symbols-outlined">logout</span>
+                    Logout
+                </a>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 p-margin grid grid-cols-12 gap-gutter relative w-full h-[calc(100vh-80px)] overflow-y-auto">
+<!-- Left Filter/Search Sidebar (col-span-3) -->
+<section class="col-span-12 lg:col-span-3 h-fit sticky top-margin">
+<div class="double-border-external bg-surface relative shadow-[4px_4px_0px_0px_theme(colors.primary-container)]">
+<div class="double-border-internal p-6 flex flex-col gap-6">
+<!-- Header Band -->
+<div class="bg-primary-container text-surface p-2 -mx-6 -mt-6 mb-2 border-b-2 border-primary-container flex justify-between items-center px-6">
+<h3 class="font-label-caps text-label-caps">INDEX FILTERS</h3>
+<span class="material-symbols-outlined text-[16px]">filter_list</span>
+</div>
+<!-- Taxonomy Search -->
+<div class="relative mt-4">
+<label class="absolute -top-3 left-3 bg-surface px-2 font-label-caps text-[10px] text-primary-container border-2 border-primary-container z-10 font-bold uppercase">Record Locator</label>
+<input class="w-full border-2 border-primary-container bg-surface-container-low p-3 pt-4 focus:outline-none focus:bg-surface brutal-inset font-body-md text-primary-container placeholder:text-on-primary-container" placeholder="Enter ID or Keyword..." type="text"/>
+</div>
+<hr class="border-t-2 border-primary-container border-dashed opacity-30"/>
+<!-- Year Selection Dropdown (Simulated with brutalist select) -->
+<div class="flex flex-col gap-2">
+<label class="font-label-caps text-[10px] text-on-primary-container">FISCAL YEAR</label>
+<div class="relative border-2 border-primary-container bg-surface">
+<select class="w-full appearance-none bg-transparent p-3 font-body-md text-primary-container font-bold focus:outline-none rounded-none cursor-pointer">
+<option>2024 - CURRENT</option>
+<option>2023 - ARCHIVED</option>
+<option>2022 - ARCHIVED</option>
+<option>LEGACY SYSTEM</option>
+</select>
+<div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-primary-container border-l-2 border-primary-container bg-surface-container">
+<span class="material-symbols-outlined">expand_more</span>
+</div>
+</div>
+</div>
+<!-- Category Checkboxes -->
+<div class="flex flex-col gap-4">
+<label class="font-label-caps text-[10px] text-on-primary-container">CLASSIFICATION TYPE</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<div class="w-5 h-5 border-2 border-primary-container bg-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[14px] text-surface font-bold">check</span>
+</div>
+<span class="font-body-md font-bold text-primary-container group-hover:underline decoration-2 underline-offset-4">Official Gazettes</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<div class="w-5 h-5 border-2 border-primary-container bg-surface flex items-center justify-center hover:bg-surface-container"></div>
+<span class="font-body-md font-bold text-primary-container group-hover:underline decoration-2 underline-offset-4">Departmental Memos</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<div class="w-5 h-5 border-2 border-primary-container bg-surface flex items-center justify-center hover:bg-surface-container"></div>
+<span class="font-body-md font-bold text-primary-container group-hover:underline decoration-2 underline-offset-4">Training Directives</span>
+</label>
+</div>
+<button class="mt-4 w-full border-2 border-primary-container bg-surface text-primary-container font-label-caps text-label-caps py-4 shadow-[2px_2px_0px_0px_theme(colors.primary-container)] hover:bg-surface-container transition-colors uppercase">
+                            Apply Parameters
+                        </button>
+</div>
+</div>
+</section>
+<!-- Large Archival Document Feed (col-span-9) -->
+<section class="col-span-12 lg:col-span-9 flex flex-col gap-margin pb-margin">
+<!-- Section Header -->
+<div class="border-b-4 border-primary-container pb-4 mb-2 flex justify-between items-end">
+<div>
+<h1 class="font-display-hero text-display-hero text-primary-container uppercase">Record Repository</h1>
+<p class="font-body-md text-on-primary-container mt-2 max-w-2xl">Access authenticated structural documents, policy updates, and state-sanctioned gazettes. Restricted to verified personnel.</p>
+</div>
+<div class="text-right hidden md:block">
+<span class="font-label-caps text-label-caps text-primary-container block mb-1">TOTAL INDEXED</span>
+<span class="font-headline-lg text-headline-lg text-on-tertiary-container">14,208</span>
+</div>
+</div>
+<!-- Document Card 1: Gazette -->
+<article class="relative double-border-external bg-surface p-unit shadow-[6px_6px_0px_0px_theme(colors.primary-container)] group hover:shadow-[2px_2px_0px_0px_theme(colors.primary-container)] hover:translate-x-[4px] hover:translate-y-[4px] transition-all duration-200">
+<div class="double-border-internal p-8 relative flex flex-col gap-6">
+<!-- Archival Tab -->
+<div class="absolute -top-4 left-6 bg-surface double-border-external px-4 py-1 flex items-center gap-2 z-10 shadow-[2px_2px_0px_0px_theme(colors.primary-container)]">
+<span class="w-2 h-2 bg-error rounded-full block border border-primary-container"></span>
+<span class="font-label-caps text-label-caps text-primary-container">GAZETTE #2024-08</span>
+</div>
+<!-- Status Stamp -->
+<div class="absolute top-6 right-8 border-[3px] border-on-tertiary-container text-on-tertiary-container px-3 py-1 font-headline-md text-[18px] uppercase tracking-widest transform rotate-[-3deg] opacity-90 mix-blend-multiply flex items-center gap-2 pointer-events-none">
+<span class="material-symbols-outlined">verified</span>
+                            AUTHENTICATED
+                        </div>
+<!-- Title Area (Bilingual Stack) -->
+<header class="mt-4 max-w-3xl pr-40">
+<h2 class="font-headline-lg text-headline-lg text-primary-container flex flex-col">
+<span class="font-body-lg text-[22px] opacity-70 mb-2 font-bold tracking-tight">സംസ്ഥാന പോലീസ് നിയമ ഭേദഗതി വിജ്ഞാപനം</span>
+<span class="border-t-4 border-primary-container pt-2 mt-1 block">STATE POLICE ACT AMENDMENT NOTIFICATION</span>
+</h2>
+</header>
+<!-- Metadata Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-0 border-y-2 border-primary-container bg-surface-container-low divide-y-2 md:divide-y-0 md:divide-x-2 divide-primary-container">
+<div class="p-4 flex flex-col gap-1">
+<span class="font-label-caps text-[10px] text-on-primary-container">ISSUE DATE</span>
+<span class="font-body-md font-bold text-primary-container">12 AUG 2024</span>
+</div>
+<div class="p-4 flex flex-col gap-1">
+<span class="font-label-caps text-[10px] text-on-primary-container">DEPARTMENT ORIGIN</span>
+<span class="font-body-md font-bold text-primary-container">Home Department, Kerala</span>
+</div>
+<div class="p-4 flex flex-col gap-1 bg-surface-container-highest">
+<span class="font-label-caps text-[10px] text-on-primary-container">CLASSIFICATION LEVEL</span>
+<div class="flex items-center gap-2 mt-1">
+<span class="material-symbols-outlined text-[16px] text-primary-container">public</span>
+<span class="font-body-md font-black text-primary-container uppercase tracking-wide">PUBLIC</span>
+</div>
+</div>
+</div>
+<!-- Action Bar -->
+<div class="flex justify-between items-center pt-2">
+<p class="font-body-md text-on-primary-container text-sm max-w-xl line-clamp-2">
+                                Official gazette publication detailing the recent structural amendments to the Kerala State Police Act, effective immediately across all jurisdictions.
+                            </p>
+<button class="bg-primary-container text-surface px-6 py-3 border-2 border-primary-container flex items-center gap-3 font-label-caps text-label-caps uppercase hover:bg-surface hover:text-primary-container transition-colors shadow-[2px_2px_0px_0px_theme(colors.on-primary-container)]">
+<span class="material-symbols-outlined text-[18px]">download</span>
+                                Download Official Copy
+                            </button>
+</div>
+</div>
+</article>
+<!-- Document Card 2: Internal Memo -->
+<article class="relative double-border-external bg-surface p-unit shadow-[6px_6px_0px_0px_theme(colors.primary-container)] group hover:shadow-[2px_2px_0px_0px_theme(colors.primary-container)] hover:translate-x-[4px] hover:translate-y-[4px] transition-all duration-200">
+<div class="double-border-internal p-8 relative flex flex-col gap-6">
+<div class="absolute -top-4 left-6 bg-surface double-border-external px-4 py-1 flex items-center gap-2 z-10 shadow-[2px_2px_0px_0px_theme(colors.primary-container)]">
+<span class="w-2 h-2 bg-on-secondary-container rounded-full block border border-primary-container"></span>
+<span class="font-label-caps text-label-caps text-primary-container">MEMO #HQ-992</span>
+</div>
+<!-- Red 'Restricted' Stamp -->
+<div class="absolute top-6 right-8 border-[3px] border-error text-error px-3 py-1 font-headline-md text-[18px] uppercase tracking-widest transform rotate-[2deg] opacity-90 flex items-center gap-2 pointer-events-none">
+<span class="material-symbols-outlined">warning</span>
+                            RESTRICTED
+                        </div>
+<header class="mt-4 max-w-3xl pr-40">
+<h2 class="font-headline-lg text-headline-lg text-primary-container flex flex-col">
+<span class="font-body-lg text-[22px] opacity-70 mb-2 font-bold tracking-tight">തീരദേശ സുരക്ഷാ പ്രോട്ടോക്കോൾ നവീകരണം</span>
+<span class="border-t-4 border-primary-container pt-2 mt-1 block">COASTAL SECURITY PROTOCOL UPGRADE</span>
+</h2>
+</header>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-0 border-y-2 border-primary-container bg-surface-container-low divide-y-2 md:divide-y-0 md:divide-x-2 divide-primary-container">
+<div class="p-4 flex flex-col gap-1">
+<span class="font-label-caps text-[10px] text-on-primary-container">ISSUE DATE</span>
+<span class="font-body-md font-bold text-primary-container">05 AUG 2024</span>
+</div>
+<div class="p-4 flex flex-col gap-1">
+<span class="font-label-caps text-[10px] text-on-primary-container">DEPARTMENT ORIGIN</span>
+<span class="font-body-md font-bold text-primary-container">Coastal Police HQ</span>
+</div>
+<div class="p-4 flex flex-col gap-1 bg-surface-container-highest">
+<span class="font-label-caps text-[10px] text-on-primary-container">CLASSIFICATION LEVEL</span>
+<div class="flex items-center gap-2 mt-1">
+<span class="material-symbols-outlined text-[16px] text-error">lock</span>
+<span class="font-body-md font-black text-error uppercase tracking-wide">INTERNAL</span>
+</div>
+</div>
+</div>
+<div class="flex justify-between items-center pt-2">
+<p class="font-body-md text-on-primary-container text-sm max-w-xl line-clamp-2">
+                                Mandatory internal directive outlining new patrol schedules and radar monitoring protocols for coastal districts following intelligence reports.
+                            </p>
+<button class="bg-surface text-primary-container px-6 py-3 border-2 border-primary-container flex items-center gap-3 font-label-caps text-label-caps uppercase hover:bg-primary-container hover:text-surface transition-colors shadow-[2px_2px_0px_0px_theme(colors.primary-container)]">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+                                View Secure Memo
+                            </button>
+</div>
+</div>
+</article>
+<!-- Document Card 3: Training Directive -->
+<article class="relative double-border-external bg-surface p-unit shadow-[6px_6px_0px_0px_theme(colors.primary-container)] group hover:shadow-[2px_2px_0px_0px_theme(colors.primary-container)] hover:translate-x-[4px] hover:translate-y-[4px] transition-all duration-200">
+<div class="double-border-internal p-8 relative flex flex-col gap-6">
+<div class="absolute -top-4 left-6 bg-surface double-border-external px-4 py-1 flex items-center gap-2 z-10 shadow-[2px_2px_0px_0px_theme(colors.primary-container)]">
+<span class="w-2 h-2 bg-on-tertiary-container rounded-full block border border-primary-container"></span>
+<span class="font-label-caps text-label-caps text-primary-container">DIR #TR-401</span>
+</div>
+<header class="mt-4 max-w-3xl pr-40">
+<h2 class="font-headline-lg text-headline-lg text-primary-container flex flex-col">
+<span class="font-body-lg text-[22px] opacity-70 mb-2 font-bold tracking-tight">സൈബർ ഫോറൻസിക്സ് അടിസ്ഥാന പരിശീലനം</span>
+<span class="border-t-4 border-primary-container pt-2 mt-1 block">CYBER FORENSICS FOUNDATION TRAINING</span>
+</h2>
+</header>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-0 border-y-2 border-primary-container bg-surface-container-low divide-y-2 md:divide-y-0 md:divide-x-2 divide-primary-container">
+<div class="p-4 flex flex-col gap-1">
+<span class="font-label-caps text-[10px] text-on-primary-container">ISSUE DATE</span>
+<span class="font-body-md font-bold text-primary-container">28 JUL 2024</span>
+</div>
+<div class="p-4 flex flex-col gap-1">
+<span class="font-label-caps text-[10px] text-on-primary-container">DEPARTMENT ORIGIN</span>
+<span class="font-body-md font-bold text-primary-container">Police Training Academy</span>
+</div>
+<div class="p-4 flex flex-col gap-1 bg-surface-container-highest">
+<span class="font-label-caps text-[10px] text-on-primary-container">CLASSIFICATION LEVEL</span>
+<div class="flex items-center gap-2 mt-1">
+<span class="material-symbols-outlined text-[16px] text-primary-container">group</span>
+<span class="font-body-md font-black text-primary-container uppercase tracking-wide">RESTRICTED - PERSONNEL</span>
+</div>
+</div>
+</div>
+<div class="flex justify-between items-center pt-2">
+<p class="font-body-md text-on-primary-container text-sm max-w-xl line-clamp-2">
+                                Syllabus and registration mandate for the upcoming mandatory cyber forensics modules required for all district crime branch officers.
+                            </p>
+<button class="bg-primary-container text-surface px-6 py-3 border-2 border-primary-container flex items-center gap-3 font-label-caps text-label-caps uppercase hover:bg-surface hover:text-primary-container transition-colors shadow-[2px_2px_0px_0px_theme(colors.on-primary-container)]">
+<span class="material-symbols-outlined text-[18px]">download</span>
+                                Download Syllabus
+                            </button>
+</div>
+</div>
+</article>
+</section>
+</main>
+</div>
+</body></html>

@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>THUNA COMMAND - Live Feed</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;700&amp;family=Epilogue:wght@700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "tertiary-container": "#322000",
+                        "surface-bright": "#fcf9f8",
+                        "inverse-on-surface": "#f3f0ef",
+                        "surface": "#fcf9f8",
+                        "surface-container": "#f0edec",
+                        "surface-container-highest": "#e5e2e1",
+                        "surface-tint": "#4d5e83",
+                        "surface-dim": "#dcd9d9",
+                        "primary": "#000d29",
+                        "on-tertiary-fixed": "#281900",
+                        "tertiary-fixed": "#ffdeac",
+                        "on-secondary-fixed-variant": "#27467d",
+                        "on-error-container": "#93000a",
+                        "surface-container-high": "#ebe7e7",
+                        "primary-fixed": "#d8e2ff",
+                        "tertiary-fixed-dim": "#f3be61",
+                        "surface-variant": "#e5e2e1",
+                        "surface-container-lowest": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "secondary-fixed-dim": "#adc6ff",
+                        "on-tertiary-container": "#b1822c",
+                        "on-tertiary-fixed-variant": "#5f4100",
+                        "surface-container-low": "#f6f3f2",
+                        "primary-container": "#102345",
+                        "inverse-primary": "#b5c6f1",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-fixed": "#001a42",
+                        "on-error": "#ffffff",
+                        "on-primary-fixed": "#061a3c",
+                        "on-primary": "#ffffff",
+                        "background": "#fcf9f8",
+                        "tertiary": "#160c00",
+                        "outline-variant": "#c5c6cf",
+                        "inverse-surface": "#313030",
+                        "error": "#ba1a1a",
+                        "primary-fixed-dim": "#b5c6f1",
+                        "on-primary-container": "#7a8bb3",
+                        "on-surface": "#1c1b1b",
+                        "on-secondary-container": "#2e4c84",
+                        "outline": "#75777f",
+                        "on-surface-variant": "#44474e",
+                        "on-background": "#1c1b1b",
+                        "secondary-container": "#a1befd",
+                        "secondary": "#415e96",
+                        "on-secondary": "#ffffff",
+                        "on-primary-fixed-variant": "#35466a",
+                        "secondary-fixed": "#d8e2ff"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "stack-gap": "12px",
+                        "unit": "4px",
+                        "panel-padding": "32px",
+                        "margin": "40px",
+                        "gutter": "24px"
+                    },
+                    fontFamily: {
+                        "body-lg": ["Public Sans"],
+                        "headline-lg": ["Epilogue"],
+                        "headline-md": ["Epilogue"],
+                        "display-hero": ["Epilogue"],
+                        "body-md": ["Public Sans"],
+                        "label-caps": ["Public Sans"]
+                    },
+                    fontSize: {
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "headline-md": ["24px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "display-hero": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "label-caps": ["12px", { "lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .thuna-double-border {
+            border: 2px solid theme('colors.primary-container');
+            outline: 1px solid theme('colors.primary-container');
+            outline-offset: -4px;
+        }
+        .thuna-drop-shadow {
+            box-shadow: 4px 4px 0px 0px theme('colors.secondary');
+        }
+        .thuna-grid-bg {
+            background-image: linear-gradient(theme('colors.surface-variant') 1px, transparent 1px),
+                              linear-gradient(90deg, theme('colors.surface-variant') 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased overflow-hidden flex h-screen">
+<!-- SideNavBar -->
+<nav class="fixed h-screen left-0 w-64 border-r-2 border-[#102345] bg-slate-50 dark:bg-slate-900 flex flex-col border-r-4 border-slate-200 z-50">
+<!-- Header -->
+<div class="p-6 border-b-2 border-[#102345] flex flex-col items-center gap-4 bg-surface-container-lowest text-center">
+<img alt="Kerala Police Crest" class="w-16 h-16 object-contain" data-alt="A highly detailed vector style emblem representing an official police crest. The emblem is rendered in deep police blue and copper gold, featuring a central star motif surrounded by laurels. The background is pure white to isolate the crest clearly. The overall aesthetic is authoritative, official, and crisp, suitable for a high-end institutional dashboard." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXoWKmVBGI_Gwz6lA1JyNWWll899NxLeMh4lU0xh0WaJme7NGGGqlGs5yRw8nqLT5bEknkle_7b1jjb77nJ8ljviUQDTI8oWiYp1IytqbO6jms4jpAhu1uy3p2mjlKjAwLuhlUT_xqhATBulLIf1KtGNqnVohznIv9_FG2koryvhujDByCh9wAc73Zn6HRHyTjXVaN5h1xIAsNidOuUqH8eysodeOAbwqCvmo2hJis6MAMHo3gzMUuqe4BlWJv67-s6E0Wbez3jRw"/>
+<div>
+<h1 class="text-xl font-black text-[#102345] font-headline-md tracking-tight">THUNA</h1>
+<p class="font-label-caps text-label-caps text-on-surface-variant uppercase mt-1">Emergency Command Center</p>
+</div>
+</div>
+<!-- Navigation Links -->
+<div class="flex-1 overflow-y-auto py-4">
+<ul class="flex flex-col">
+<!-- Active Item -->
+<li>
+<a class="flex items-center gap-3 px-6 py-4 bg-[#102345] text-white border-l-4 border-[#b8860b] hover:bg-[#1a2e5a] transition-colors scale-95 duration-75" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">emergency</span>
+<span class="text-[11px] font-bold leading-tight uppercase font-label-caps">തത്സമയ ഫീഡ് / LIVE FEED</span>
+</a>
+</li>
+<!-- Inactive Items -->
+<li>
+<a class="flex items-center gap-3 px-6 py-4 text-[#102345] dark:text-slate-400 border-b border-slate-200 hover:bg-[#f0f4f8] dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined">map</span>
+<span class="text-[11px] font-bold leading-tight uppercase font-label-caps">മാപ്പ് വ്യൂ / MAP VIEW</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-6 py-4 text-[#102345] dark:text-slate-400 border-b border-slate-200 hover:bg-[#f0f4f8] dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined">hub</span>
+<span class="text-[11px] font-bold leading-tight uppercase font-label-caps">വിന്യാസം / DEPLOYMENT</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-6 py-4 text-[#102345] dark:text-slate-400 border-b border-slate-200 hover:bg-[#f0f4f8] dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="text-[11px] font-bold leading-tight uppercase font-label-caps">രേഖകൾ / ARCHIVES</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-6 py-4 text-[#102345] dark:text-slate-400 border-b border-slate-200 hover:bg-[#f0f4f8] dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="text-[11px] font-bold leading-tight uppercase font-label-caps">റിപ്പോർട്ടുകൾ / REPORTS</span>
+</a>
+</li>
+</ul>
+</div>
+<!-- Footer CTA & Links -->
+<div class="p-4 border-t-2 border-[#102345] bg-surface-container-lowest">
+<button class="w-full bg-tertiary-container text-on-tertiary-fixed font-label-caps text-label-caps py-3 thuna-double-border mb-4 uppercase hover:bg-tertiary hover:text-white transition-colors thuna-drop-shadow flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">campaign</span>
+                BROADCAST DIRECTIVE
+            </button>
+<ul class="flex flex-col">
+<li>
+<a class="flex items-center gap-3 px-2 py-2 text-[#102345] dark:text-slate-400 hover:bg-[#f0f4f8] dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined">help_center</span>
+<span class="text-[11px] font-bold leading-tight uppercase font-label-caps">സഹായം / HELP</span>
+</a>
+</li>
+</ul>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="ml-64 flex-1 flex flex-col h-screen overflow-hidden thuna-grid-bg relative">
+<!-- TopAppBar (Simulated as part of the canvas for this layout structure) -->
+<header class="bg-[#102345] dark:bg-slate-950 flex justify-between items-center w-full px-6 py-2 border-b-2 border-[#b8860b] shadow-[0_4px_0_0_rgba(184,134,11,1)] z-40 sticky top-0">
+<div class="flex items-center gap-4">
+<span class="text-2xl font-black text-white dark:text-slate-100 border-r-4 border-[#b8860b] pr-4 font-headline-md tracking-tighter uppercase leading-none">THUNA COMMAND</span>
+<span class="text-[#b8860b] dark:text-[#ffd700] font-label-caps text-label-caps uppercase">System Active | സിസ്റ്റം സജീവമാണ്</span>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-slate-300 hover:text-[#b8860b] hover:bg-[#1a2e5a] transition-colors p-2 rounded">
+<span class="material-symbols-outlined">notifications_active</span>
+</button>
+<button class="text-slate-300 hover:text-[#b8860b] hover:bg-[#1a2e5a] transition-colors p-2 rounded">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<button class="text-slate-300 hover:text-[#b8860b] hover:bg-[#1a2e5a] transition-colors p-2 rounded">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+</div>
+</header>
+<!-- Content Canvas -->
+<div class="flex-1 overflow-y-auto p-gutter flex gap-gutter">
+<!-- Center Column: LIVE FEED -->
+<div class="flex-1 flex flex-col gap-margin min-w-[600px]">
+<!-- Monumental Metrics -->
+<div class="grid grid-cols-2 gap-gutter">
+<div class="bg-surface-container-lowest thuna-double-border thuna-drop-shadow p-6 relative">
+<div class="absolute top-0 left-0 bg-primary-container text-white px-3 py-1 font-label-caps text-label-caps text-[10px] uppercase border-r-2 border-b-2 border-primary-container">
+                            സ്ഥിതിവിവരക്കണക്കുകൾ / STATS
+                        </div>
+<div class="mt-4 flex flex-col">
+<span class="font-display-hero text-display-hero text-primary-container leading-none">142</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase mt-2 border-t border-surface-dim pt-2">ACTIVE INCIDENTS / സജീവ സംഭവങ്ങൾ</span>
+</div>
+</div>
+<div class="bg-tertiary-fixed text-on-tertiary-fixed thuna-double-border thuna-drop-shadow p-6 relative">
+<div class="absolute top-0 left-0 bg-tertiary-container text-white px-3 py-1 font-label-caps text-label-caps text-[10px] uppercase border-r-2 border-b-2 border-tertiary-container">
+                            വിന്യാസം / DEPLOYMENT
+                        </div>
+<div class="mt-4 flex flex-col">
+<span class="font-display-hero text-display-hero text-tertiary-container leading-none">847</span>
+<span class="font-label-caps text-label-caps text-on-tertiary-fixed-variant uppercase mt-2 border-t border-tertiary-fixed-dim pt-2">RESPONDERS DEPLOYED / പ്രതികരിക്കുന്നവർ</span>
+</div>
+</div>
+</div>
+<!-- Feed Header -->
+<div class="flex justify-between items-end border-b-4 border-primary-container pb-2">
+<h2 class="font-headline-lg text-headline-lg text-primary-container uppercase tracking-tight">തത്സമയ ഫീഡ് / LIVE FEED</h2>
+<div class="flex gap-2">
+<span class="bg-error text-on-error font-label-caps text-label-caps px-2 py-1 rounded-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">radio_button_checked</span>
+                            LIVE
+                        </span>
+</div>
+</div>
+<!-- Incident Cards (Bento/Archival Style) -->
+<div class="flex flex-col gap-gutter pb-margin">
+<!-- Critical Incident Card -->
+<article class="bg-surface-container-lowest thuna-double-border thuna-drop-shadow relative overflow-hidden flex flex-col">
+<!-- Alert Ribbon -->
+<div class="bg-error text-on-error font-label-caps text-label-caps px-4 py-2 uppercase flex justify-between items-center border-b-2 border-error-container">
+<span class="flex items-center gap-2">
+<span class="material-symbols-outlined">warning</span>
+                                CRITICAL P1 / ഗുരുതരം P1
+                            </span>
+<span class="font-mono tracking-widest text-[10px]">T-00:14:32</span>
+</div>
+<div class="p-6 flex flex-col gap-4">
+<!-- Header -->
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline-md text-headline-md text-primary-container">സായുധ മോഷണം / Armed Robbery</h3>
+<p class="font-body-md text-body-md text-on-surface-variant flex items-center gap-2 mt-1">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+                                        MG Road Financial District, Ernakulam
+                                    </p>
+</div>
+<div class="text-right">
+<span class="font-label-caps text-label-caps text-primary-container bg-primary-fixed px-2 py-1 uppercase thuna-double-border">INC-4920-KOC</span>
+</div>
+</div>
+<!-- Metadata Grid -->
+<div class="grid grid-cols-3 gap-4 border-t-2 border-b-2 border-surface-dim py-4 bg-surface-bright">
+<div>
+<span class="block font-label-caps text-label-caps text-outline uppercase mb-1">Status / അവസ്ഥ</span>
+<span class="font-body-md text-body-md text-primary-container font-bold">ACTIVE DISPATCH / തത്സമയ വിന്യാസം</span>
+</div>
+<div class="border-l border-surface-dim pl-4">
+<span class="block font-label-caps text-label-caps text-outline uppercase mb-1">Units / യൂണിറ്റുകൾ</span>
+<span class="font-body-md text-body-md text-primary-container font-bold">4 Patrols, 1 TRT</span>
+</div>
+<div class="border-l border-surface-dim pl-4">
+<span class="block font-label-caps text-label-caps text-outline uppercase mb-1">Time / സമയം</span>
+<span class="font-body-md text-body-md text-primary-container font-bold">14:32 IST (Live)</span>
+</div>
+</div>
+</div>
+</article>
+<!-- Standard Incident Card -->
+<article class="bg-surface-container-lowest thuna-double-border relative overflow-hidden flex flex-col">
+<div class="bg-secondary-fixed text-on-secondary-fixed font-label-caps text-label-caps px-4 py-2 uppercase flex justify-between items-center border-b-2 border-secondary-fixed-dim">
+<span class="flex items-center gap-2">
+<span class="material-symbols-outlined">info</span>
+                                PRIORITY 3 / മുൻഗണന 3
+                            </span>
+<span class="font-mono tracking-widest text-[10px]">T-01:45:10</span>
+</div>
+<div class="p-6 flex flex-col gap-4">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline-md text-headline-md text-primary-container text-[20px]">ഗതാഗത തടസ്സം / Traffic Blockade</h3>
+<p class="font-body-md text-body-md text-on-surface-variant flex items-center gap-2 mt-1">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+                                        NH66 Bypass Intersection, Trivandrum
+                                    </p>
+</div>
+<div class="text-right">
+<span class="font-label-caps text-label-caps text-primary-container bg-surface-container px-2 py-1 uppercase border border-outline-variant">INC-4919-TRV</span>
+</div>
+</div>
+</div>
+</article>
+</div>
+</div>
+<!-- Right Sidebar: RESOURCES & DIRECTIVES -->
+<aside class="w-[400px] flex flex-col gap-margin h-full">
+<!-- Map Widget -->
+<div class="bg-surface-container-lowest thuna-double-border flex flex-col h-[50%]">
+<div class="bg-primary-container text-white px-4 py-2 font-label-caps text-label-caps uppercase flex justify-between items-center">
+<span>ലൊക്കേഷൻ / LIVE MAP</span>
+<span class="material-symbols-outlined text-[16px]">map</span>
+</div>
+<div class="flex-1 bg-surface-container-highest relative overflow-hidden">
+<img alt="Map View" class="w-full h-full object-cover opacity-80 mix-blend-multiply" data-alt="A highly detailed, stylized tactical map view of a city grid. The map is rendered in deep police blues, muted greys, and stark whites, fitting a high-tech command center aesthetic. Small glowing red and gold blips indicate active units or incidents. The street grid is sharply defined, communicating a sense of structural surveillance and data-dense analysis." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNQrUEA1GLYpF-FnWCNzEtim2tKu5JoBWMYU1ERa0pQDRd-i_9LIJ_nxPZCMJJJQ8ffhrOu2oirrNRAgvD7hfyCF0RDJ3EoTW8YOmJxJt5ggEi-38N9dS3mIj9LOORWTa1bq3Y0DWMkKn-R2nJg4YVg3EafkV6syCDMG7jaZXdy1aXfdhez8E8SQw1YBFEitMotxeUx8dklv7iSRyTD6OtP52teznir6FqvjGnIXsuZ280se7WiMmQsbKNKnIRrTkkMDlvIRKZWb8"/>
+<!-- Map Overlay elements -->
+<div class="absolute inset-0 border-[8px] border-primary-container opacity-20 pointer-events-none"></div>
+<div class="absolute bottom-4 left-4 right-4 bg-surface-container-lowest p-3 border border-outline-variant text-center shadow-md">
+<span class="font-label-caps text-label-caps text-primary-container uppercase">KERALA SECTOR ALPHA | സജീവ ട്രാക്കിംഗ്</span>
+</div>
+</div>
+</div>
+<!-- Directives Panel -->
+<div class="bg-surface-container-lowest thuna-double-border flex-1 flex flex-col">
+<div class="bg-surface-container text-on-surface px-4 py-2 font-label-caps text-label-caps uppercase border-b-2 border-primary-container flex justify-between items-center">
+<span>വിഭവങ്ങൾ / RESOURCES</span>
+<span class="material-symbols-outlined text-[16px]">dataset</span>
+</div>
+<div class="p-6 flex-1 flex flex-col gap-4 overflow-y-auto">
+<div class="border-l-4 border-tertiary-fixed-dim pl-4 py-2">
+<span class="block font-label-caps text-label-caps text-outline uppercase">AVAILABLE TRT UNITS</span>
+<span class="font-headline-md text-headline-md text-primary-container">12</span>
+</div>
+<div class="border-l-4 border-secondary pl-4 py-2">
+<span class="block font-label-caps text-label-caps text-outline uppercase">PATROLS IN SECTOR</span>
+<span class="font-headline-md text-headline-md text-primary-container">45</span>
+</div>
+<div class="border-l-4 border-error pl-4 py-2">
+<span class="block font-label-caps text-label-caps text-outline uppercase">CRITICAL ALERTS</span>
+<span class="font-headline-md text-headline-md text-error">3</span>
+</div>
+</div>
+</div>
+</aside>
+</div>
+</main>
+</body></html>

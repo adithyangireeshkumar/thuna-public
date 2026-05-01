@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Personnel Directory - THUNA PORTAL</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@700;800&amp;family=Public+Sans:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .icon-fill {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-dim": "#dcd9d9",
+                        "tertiary-container": "#322000",
+                        "tertiary-fixed-dim": "#f3be61",
+                        "outline-variant": "#c5c6cf",
+                        "inverse-primary": "#b5c6f1",
+                        "surface-container-high": "#ebe7e7",
+                        "surface-variant": "#e5e2e1",
+                        "on-tertiary-fixed-variant": "#5f4100",
+                        "surface-container-low": "#f6f3f2",
+                        "primary-fixed-dim": "#b5c6f1",
+                        "on-tertiary-container": "#b1822c",
+                        "secondary-fixed": "#d8e2ff",
+                        "on-surface-variant": "#44474e",
+                        "on-primary": "#ffffff",
+                        "background": "#fcf9f8",
+                        "tertiary-fixed": "#ffdeac",
+                        "tertiary": "#160c00",
+                        "surface-container-highest": "#e5e2e1",
+                        "on-secondary-fixed-variant": "#27467d",
+                        "inverse-surface": "#313030",
+                        "primary-container": "#102345",
+                        "on-secondary": "#ffffff",
+                        "surface-bright": "#fcf9f8",
+                        "on-primary-fixed-variant": "#35466a",
+                        "on-error": "#ffffff",
+                        "inverse-on-surface": "#f3f0ef",
+                        "secondary-container": "#a1befd",
+                        "on-secondary-container": "#2e4c84",
+                        "on-primary-fixed": "#061a3c",
+                        "on-error-container": "#93000a",
+                        "surface": "#fcf9f8",
+                        "surface-container": "#f0edec",
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-fixed": "#281900",
+                        "on-surface": "#1c1b1b",
+                        "on-primary-container": "#7a8bb3",
+                        "surface-tint": "#4d5e83",
+                        "surface-container-lowest": "#ffffff",
+                        "outline": "#75777f",
+                        "secondary-fixed-dim": "#adc6ff",
+                        "secondary": "#415e96",
+                        "on-background": "#1c1b1b",
+                        "primary-fixed": "#d8e2ff",
+                        "error-container": "#ffdad6",
+                        "error": "#ba1a1a",
+                        "primary": "#000d29",
+                        "on-secondary-fixed": "#001a42"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "margin": "40px",
+                        "stack-gap": "12px",
+                        "panel-padding": "32px",
+                        "unit": "4px",
+                        "gutter": "24px"
+                    },
+                    fontFamily: {
+                        "headline-md": ["Epilogue", "sans-serif"],
+                        "body-lg": ["Public Sans", "sans-serif"],
+                        "display-hero": ["Epilogue", "sans-serif"],
+                        "headline-lg": ["Epilogue", "sans-serif"],
+                        "body-md": ["Public Sans", "sans-serif"],
+                        "label-caps": ["Public Sans", "sans-serif"]
+                    },
+                    fontSize: {
+                        "headline-md": ["24px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "display-hero": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "label-caps": ["12px", { "lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background min-h-screen">
+<!-- TopAppBar -->
+<header class="bg-[#102345] dark:bg-slate-950 font-bold tracking-tighter uppercase fixed full-width top-0 z-50 border-b-4 border-double border-[#B8860B] shadow-[0_4px_0_0_rgba(16,35,69,1)] flex justify-between items-center w-full px-6 py-4 max-w-full">
+<div class="flex items-center">
+<div class="text-xl font-black text-[#B8860B] border-r-2 border-[#B8860B]/30 pr-4 mr-4">
+                കേരള പോലീസ് | KERALA POLICE
+            </div>
+</div>
+<div class="flex items-center gap-6">
+<div class="relative hidden md:block">
+<input class="bg-primary-container text-white border-b-2 border-[#B8860B] focus:outline-none focus:border-white transition-colors py-1 px-2 font-label-caps text-label-caps placeholder:text-slate-400 w-64" placeholder="SEARCH DIRECTORY..." type="text"/>
+<span class="material-symbols-outlined absolute right-2 top-1 text-slate-300">search</span>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-slate-300 hover:text-white transition-colors cursor-pointer active:scale-95 transition-transform hover:bg-white/10 p-1 rounded-DEFAULT">notifications</span>
+<span class="material-symbols-outlined text-slate-300 hover:text-white transition-colors cursor-pointer active:scale-95 transition-transform hover:bg-white/10 p-1 rounded-DEFAULT">history_edu</span>
+<span class="material-symbols-outlined text-slate-300 hover:text-white transition-colors cursor-pointer active:scale-95 transition-transform hover:bg-white/10 p-1 rounded-DEFAULT">account_circle</span>
+</div>
+<button class="bg-[#B8860B] text-[#102345] font-label-caps text-label-caps px-4 py-2 hover:bg-white active:scale-95 transition-all shadow-[2px_2px_0_0_#102345]">
+                Emergency 112
+            </button>
+</div>
+</header>
+<!-- SideNavBar -->
+<nav class="bg-[#F5F5F0] dark:bg-slate-900 text-[#102345] dark:text-blue-400 font-bold text-xs uppercase tracking-widest h-screen w-72 border-r-4 border-double border-[#102345] divide-y divide-[#102345]/10 shadow-[4px_0_0_0_rgba(184,134,11,0.2)] fixed left-0 top-0 flex flex-col pt-20 z-40">
+<div class="p-6">
+<div class="w-16 h-16 bg-[#102345] rounded-full mb-4 flex items-center justify-center border-2 border-[#B8860B]">
+<img alt="Kerala Police Official Insignia" class="w-12 h-12 object-cover rounded-full grayscale contrast-125" data-alt="A highly stylized, stark, high-contrast close-up of a metallic official state police insignia. The lighting is harsh and dramatic, creating sharp shadows that emphasize the brutalist, institutional aesthetic. The colors are muted, relying on deep blacks, bright silvers, and tarnished copper tones to convey established authority and weight." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6y4MqVg9DCs95i3sGnQujGlt-CJioufcE7AV6PZn56OgrmYyB-k0jKE5Tr6sZf9AsKQAKOKdI4DSM4gtLT4skvGJIwJbFx9vfx_a8E7HNaPZp8SgmQXbWsEkeKZ-x8TC3rKFHgpHuS0-BsNZgY92TE4VqKI39_p6RaF3ozw-w1xs9qvj-f-u-FBH7QbkkqyXPY_xQyk5jxa42awa752SP7JWuV2O4XundnbS1L45qz_OESwrL3cyklGhCaqkaO8EP4T54H9onj8E"/>
+</div>
+<h1 class="text-lg font-black text-[#102345] dark:text-white mb-2">THUNA PORTAL</h1>
+<p class="text-xs text-slate-500 font-label-caps">Archival Command Center</p>
+</div>
+<div class="flex-1 overflow-y-auto">
+<a class="flex items-center gap-3 p-4 text-[#102345] hover:bg-[#102345]/5 hover:translate-x-1 transition-all duration-200" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center gap-3 p-4 text-[#102345] hover:bg-[#102345]/5 hover:translate-x-1 transition-all duration-200" href="#">
+<span class="material-symbols-outlined">map</span>
+<span>Crime Map</span>
+</a>
+<a class="flex items-center gap-3 p-4 text-[#102345] hover:bg-[#102345]/5 hover:translate-x-1 transition-all duration-200" href="#">
+<span class="material-symbols-outlined">database</span>
+<span>Data Portal</span>
+</a>
+<a class="flex items-center gap-3 p-4 text-[#102345] hover:bg-[#102345]/5 hover:translate-x-1 transition-all duration-200" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+<span>Archives</span>
+</a>
+<a class="bg-[#102345] text-white flex items-center gap-3 p-4 border-l-8 border-[#B8860B] Active: ring-inset ring-2 ring-[#B8860B]" href="#">
+<span class="material-symbols-outlined icon-fill">groups</span>
+<span>Personnel</span>
+</a>
+<a class="flex items-center gap-3 p-4 text-[#102345] hover:bg-[#102345]/5 hover:translate-x-1 transition-all duration-200" href="#">
+<span class="material-symbols-outlined">newspaper</span>
+<span>News</span>
+</a>
+<a class="flex items-center gap-3 p-4 text-[#102345] hover:bg-[#102345]/5 hover:translate-x-1 transition-all duration-200" href="#">
+<span class="material-symbols-outlined">visibility</span>
+<span>Transparency</span>
+</a>
+<a class="flex items-center gap-3 p-4 text-[#102345] hover:bg-[#102345]/5 hover:translate-x-1 transition-all duration-200" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span>Settings</span>
+</a>
+</div>
+<div class="p-6">
+<button class="w-full bg-[#102345] text-white font-label-caps text-label-caps py-3 border-2 border-[#102345] shadow-[4px_4px_0_0_#B8860B] hover:translate-y-[2px] hover:translate-x-[2px] hover:shadow-[2px_2px_0_0_#B8860B] transition-all">
+                Initiate Filing
+            </button>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="ml-72 mt-20 p-panel-padding max-w-[1600px]">
+<!-- Page Header -->
+<div class="mb-margin border-b-2 border-primary pb-unit flex justify-between items-end">
+<div>
+<div class="inline-block bg-primary text-on-primary font-label-caps text-label-caps px-2 py-1 mb-2">DIRECTORY.01</div>
+<h2 class="font-display-hero text-display-hero text-primary">OFFICIAL PERSONNEL</h2>
+</div>
+<div class="text-right">
+<p class="font-label-caps text-label-caps text-on-surface-variant">LAST UPDATED</p>
+<p class="font-body-lg text-body-lg text-primary font-bold">2023.10.24 08:00 HRS</p>
+</div>
+</div>
+<!-- 12-Column Grid Layout -->
+<div class="grid grid-cols-12 gap-gutter">
+<!-- Left Column: Primary Content (Span 8) -->
+<div class="col-span-12 lg:col-span-8 flex flex-col gap-margin">
+<!-- Director General Profile Card -->
+<div class="relative bg-surface border-2 border-primary shadow-[4px_4px_0_0_#000d29]">
+<!-- Archival Tab -->
+<div class="absolute -top-3 left-4 bg-tertiary-fixed-dim text-on-tertiary-fixed border border-primary px-3 py-1 font-label-caps text-label-caps z-10">
+                        EXECUTIVE COMMAND
+                    </div>
+<div class="p-1 border border-outline-variant h-full">
+<div class="flex flex-col md:flex-row h-full">
+<!-- DG Image -->
+<div class="md:w-2/5 border-r-2 border-primary bg-surface-container-high relative min-h-[300px]">
+<img alt="Director General Portrait" class="absolute inset-0 w-full h-full object-cover grayscale contrast-125 mix-blend-multiply" data-alt="A formal, striking profile portrait of a senior Director General. The lighting is harsh and directional, emphasizing deep shadows and institutional authority. The subject is framed against a stark, concrete-textured background. The overall tone is serious, relying on deep monochrome tones with slight warm, archival undertones to fit a maximalist civic command interface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3yemcoG5J3qEnkfls3vPdlYY36exfsNvMHZ5_Kv2RUquux-6KjvozkUkZx1g46PCmr6pDpeICNOMSKFVQMLN5JdK56pcToZ7WbAJdN5lYLpeI_9cKlZPTJ1ot9dG_GSHehZoVq0RO9BGemyseq7TVOwJTZV_200YIr1XAkw_oNErRWoyqFzTb3BuRHKzuV-Ds3Lp9p_Fd88BL26AB4nI5OR835Oun0BH0icJK61i_jDS_CzhuycxJkiMO1KaM4Hdg_MLggJKe4Z0"/>
+<div class="absolute bottom-0 left-0 w-full bg-primary/90 text-on-primary p-2 flex justify-between items-center backdrop-blur-sm">
+<span class="font-label-caps text-label-caps">STATUS: ACTIVE</span>
+<span class="material-symbols-outlined icon-fill text-tertiary-fixed-dim">verified_user</span>
+</div>
+</div>
+<!-- DG Details -->
+<div class="md:w-3/5 p-6 flex flex-col justify-between bg-surface">
+<div>
+<div class="flex items-center gap-2 mb-2">
+<span class="font-label-caps text-label-caps text-on-surface-variant">DIRECTOR GENERAL OF POLICE</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg text-primary uppercase mb-1">R. K. Vishwanath</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 border-l-2 border-tertiary-fixed-dim pl-3">Appointed operational commander of the state security apparatus. Overseeing all district nodes and specialized directive units.</p>
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-surface-container-low p-3 border border-outline border-dashed">
+<p class="font-label-caps text-label-caps text-on-surface-variant mb-1">BADGE NUMBER</p>
+<p class="font-headline-md text-headline-md text-primary">KP-001</p>
+</div>
+<div class="bg-surface-container-low p-3 border border-outline border-dashed">
+<p class="font-label-caps text-label-caps text-on-surface-variant mb-1">CLEARANCE LEVEL</p>
+<p class="font-headline-md text-headline-md text-error flex items-center gap-1">
+<span class="material-symbols-outlined text-[20px]">warning</span>
+                                                OMEGA
+                                            </p>
+</div>
+</div>
+</div>
+<div class="mt-6 pt-4 border-t-2 border-primary flex justify-between items-center">
+<div class="font-label-caps text-label-caps text-on-surface-variant flex flex-col">
+<span>കമാൻഡിംഗ് ഓഫീസർ</span>
+<span class="text-[10px] tracking-tighter opacity-50 border-t border-outline mt-1 pt-1">COMMANDING OFFICER</span>
+</div>
+<button class="bg-primary text-on-primary font-label-caps text-label-caps px-4 py-2 border border-primary hover:bg-surface hover:text-primary transition-colors flex items-center gap-2">
+                                        VIEW DOSSIER <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Section Header: District Node Commanders -->
+<div class="mt-margin border-b-2 border-primary pb-2 flex justify-between items-end">
+<h3 class="font-headline-md text-headline-md text-primary">DISTRICT NODE COMMANDERS</h3>
+<span class="font-label-caps text-label-caps bg-surface-container-high px-2 py-1 border border-outline text-on-surface-variant">GRID VIEW</span>
+</div>
+<!-- Commanders Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-stack-gap">
+<!-- Card 1 -->
+<div class="bg-surface border-2 border-primary relative flex flex-col">
+<div class="bg-primary text-on-primary p-2 flex justify-between items-center border-b-2 border-primary font-label-caps text-label-caps">
+<span>NODE: TRIVANDRUM</span>
+<span>SOUTH ZONE</span>
+</div>
+<div class="p-1 border border-outline-variant flex-1 flex">
+<img alt="Commander Portrait" class="w-24 h-32 object-cover border-r border-outline-variant grayscale" data-alt="A formal ID photo style portrait of a male police commander. Harsh, flat lighting typical of institutional archives. Serious expression, wearing a dark uniform. The image is processed with a brutalist black and white filter to match the dense, official command center aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8Do7_h4ZhFXtQGUMgvqH2RCQcd6hzNO4ZulblX9j46A7SKsO5SgXRGZOUT_Zd6zfw1h-Cf0fgZIVRPVy8c_rgpO7hJ8jQ1ctZKVowJCcTseliHjTImRjR1fCc3UFYpoQYr6wc0grDYKZFDNEdCCFUDQwoEGgjJ9GsfLCptEhDcrpFpByOkimxuqHnCJX310GMtLCcCaIsB0yg7_ZJXiT5m2g3ooMwW4zPRqxp8rDkH9C-128rmGw765VosW0KN-Ud_gW9CjMfSPA"/>
+<div class="p-3 flex flex-col justify-center flex-1 bg-surface-container-low">
+<h4 class="font-headline-md text-headline-md text-primary text-[20px] uppercase">S. Menon</h4>
+<p class="font-label-caps text-label-caps text-on-surface-variant mt-1">IGP, TRIVANDRUM RANGE</p>
+<div class="mt-3 flex items-center gap-2 text-primary font-label-caps text-label-caps">
+<span class="material-symbols-outlined text-[16px]">call</span> EXT 401
+                                </div>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface border-2 border-primary relative flex flex-col">
+<div class="bg-primary text-on-primary p-2 flex justify-between items-center border-b-2 border-primary font-label-caps text-label-caps">
+<span>NODE: KOCHI</span>
+<span>CENTRAL ZONE</span>
+</div>
+<div class="p-1 border border-outline-variant flex-1 flex">
+<img alt="Commander Portrait" class="w-24 h-32 object-cover border-r border-outline-variant grayscale" data-alt="A formal ID photo style portrait of a female police commander. Harsh, flat lighting typical of institutional archives. Professional, authoritative expression. The image is strictly black and white, reflecting the brutalist taxonomy and official state directive theme of the user interface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZRs7e1LM4jdvKmwkxxOSXKp2QbTJW8zC7U0QRTo1dsjvJRtYDHEBVqk5AiQYv1wL1FYA-m44qsq3HDDXoHiHPOoizKjh6s4oPzsAc9SDg13rK4R6NE_6YbFA1EG8H5IfD3OK9nWkuhJ9YXD7B-udVM2IpSm2ypWALzihh3lGMJeqsInaLg2Q9wpj6-2l3YgzRc_rAw39Xenw0SyojEn1pV5Y0Q2jiXZP27Y3nPrjEG6w5yOEq--nc6myqFMGVgwpYZX7zVcPxE1U"/>
+<div class="p-3 flex flex-col justify-center flex-1 bg-surface-container-low">
+<h4 class="font-headline-md text-headline-md text-primary text-[20px] uppercase">A. Thomas</h4>
+<p class="font-label-caps text-label-caps text-on-surface-variant mt-1">DIG, ERNAKULAM RANGE</p>
+<div class="mt-3 flex items-center gap-2 text-primary font-label-caps text-label-caps">
+<span class="material-symbols-outlined text-[16px]">call</span> EXT 402
+                                </div>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface border-2 border-primary relative flex flex-col">
+<div class="bg-primary text-on-primary p-2 flex justify-between items-center border-b-2 border-primary font-label-caps text-label-caps">
+<span>NODE: KOZHIKODE</span>
+<span>NORTH ZONE</span>
+</div>
+<div class="p-1 border border-outline-variant flex-1 flex">
+<img alt="Commander Portrait" class="w-24 h-32 object-cover border-r border-outline-variant grayscale" data-alt="A formal ID photo style portrait of a male police commander. Harsh, flat lighting typical of institutional archives. Serious expression. The image is processed with a stark, high-contrast black and white filter to integrate seamlessly with the maximalist civic authority layout." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnSa5wzQA9INY_gKar9hdtreps9E2uCHWvUIqwuKcKdQ06ZyKjyDnlvTBNjxlcdDvQUFLWEu_tv5fH8qkYpnqZbZf3dTlwhGKDOm4C_5Dz9xYHqgDGZX0SQe6TRIgBKxEneXJoEl9iAiAtV1IgbqGlLszbwmFl4HSnqvLuI6bV776Fj948U3vdqLvG1EyFNARhNr8j4UmKXcqUYhg61uTrgPL1sYvAAc2TW345MXHFgiFHUY0C2VfQGXbRnz1jU33TYk2XLkpJ20c"/>
+<div class="p-3 flex flex-col justify-center flex-1 bg-surface-container-low">
+<h4 class="font-headline-md text-headline-md text-primary text-[20px] uppercase">P. Nair</h4>
+<p class="font-label-caps text-label-caps text-on-surface-variant mt-1">IGP, KANNUR RANGE</p>
+<div class="mt-3 flex items-center gap-2 text-primary font-label-caps text-label-caps">
+<span class="material-symbols-outlined text-[16px]">call</span> EXT 403
+                                </div>
+</div>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="bg-surface border-2 border-primary relative flex flex-col opacity-70 filter grayscale">
+<div class="bg-surface-variant text-on-surface p-2 flex justify-between items-center border-b-2 border-primary font-label-caps text-label-caps">
+<span>NODE: IDUKKI</span>
+<span>HIGH RANGE</span>
+</div>
+<div class="p-1 border border-outline-variant flex-1 flex">
+<div class="w-24 h-32 bg-surface-dim border-r border-outline-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-[32px] text-outline">person_off</span>
+</div>
+<div class="p-3 flex flex-col justify-center flex-1 bg-surface-container-lowest">
+<h4 class="font-headline-md text-headline-md text-on-surface-variant text-[20px] uppercase">POSITION VACANT</h4>
+<p class="font-label-caps text-label-caps text-error mt-1">AWAITING DEPUTATION</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Sidebar (Span 4) -->
+<div class="col-span-12 lg:col-span-4 flex flex-col gap-margin">
+<div class="bg-surface border-2 border-primary shadow-[4px_4px_0_0_#c5c6cf] h-full flex flex-col">
+<div class="bg-primary text-on-primary p-4 border-b-2 border-primary">
+<h3 class="font-headline-md text-headline-md uppercase">Specialized Units</h3>
+<p class="font-label-caps text-label-caps opacity-70 mt-1">DIRECTIVE DEPLOYMENT ASSETS</p>
+</div>
+<div class="p-4 flex flex-col gap-4 flex-1 bg-surface-container-low">
+<!-- Unit Item -->
+<div class="border-l-4 border-primary bg-surface p-3 border-y border-r border-outline-variant hover:bg-secondary-fixed transition-colors cursor-pointer group">
+<div class="flex justify-between items-start mb-2">
+<h4 class="font-body-lg text-body-lg text-primary font-bold uppercase">Crime Branch (CB)</h4>
+<span class="bg-surface-dim text-on-surface font-label-caps text-label-caps px-1 py-0.5 border border-outline">HQ</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm line-clamp-2">Specialized investigation unit handling complex, high-profile, or inter-state criminal cases requiring advanced forensic resources.</p>
+<div class="mt-2 text-right">
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors text-[18px]">arrow_forward</span>
+</div>
+</div>
+<!-- Unit Item -->
+<div class="border-l-4 border-error bg-surface p-3 border-y border-r border-outline-variant hover:bg-error-container transition-colors cursor-pointer group">
+<div class="flex justify-between items-start mb-2">
+<h4 class="font-body-lg text-body-lg text-primary font-bold uppercase">Anti-Terrorist Squad</h4>
+<span class="bg-error text-on-error font-label-caps text-label-caps px-1 py-0.5 border border-error">ACTIVE</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm line-clamp-2">Elite tactical deployment unit focused on counter-insurgency, hostage rescue, and neutralization of high-threat targets.</p>
+<div class="mt-2 text-right">
+<span class="material-symbols-outlined text-outline group-hover:text-error transition-colors text-[18px]">arrow_forward</span>
+</div>
+</div>
+<!-- Unit Item -->
+<div class="border-l-4 border-tertiary-fixed-dim bg-surface p-3 border-y border-r border-outline-variant hover:bg-tertiary-fixed transition-colors cursor-pointer group">
+<div class="flex justify-between items-start mb-2">
+<h4 class="font-body-lg text-body-lg text-primary font-bold uppercase">Cyberdome</h4>
+<span class="bg-surface-dim text-on-surface font-label-caps text-label-caps px-1 py-0.5 border border-outline">TECH</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm line-clamp-2">Technological research and development center focusing on cybersecurity, digital forensics, and threat intelligence gathering.</p>
+<div class="mt-2 text-right">
+<span class="material-symbols-outlined text-outline group-hover:text-tertiary-container transition-colors text-[18px]">arrow_forward</span>
+</div>
+</div>
+<!-- Unit Item -->
+<div class="border-l-4 border-primary bg-surface p-3 border-y border-r border-outline-variant hover:bg-secondary-fixed transition-colors cursor-pointer group">
+<div class="flex justify-between items-start mb-2">
+<h4 class="font-body-lg text-body-lg text-primary font-bold uppercase">Special Armed Police</h4>
+<span class="bg-surface-dim text-on-surface font-label-caps text-label-caps px-1 py-0.5 border border-outline">RESERVE</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm line-clamp-2">Reserve battalions deployed for riot control, critical infrastructure protection, and large-scale public order management.</p>
+<div class="mt-2 text-right">
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors text-[18px]">arrow_forward</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

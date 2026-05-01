@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Verified News | Kerala Police Control Room</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@700;800&amp;family=Public+Sans:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container-highest": "#e5e2e1",
+                      "inverse-surface": "#313030",
+                      "primary-fixed-dim": "#b5c6f1",
+                      "tertiary-fixed-dim": "#f3be61",
+                      "tertiary-container": "#322000",
+                      "surface-container-lowest": "#ffffff",
+                      "on-secondary-fixed-variant": "#27467d",
+                      "on-secondary-fixed": "#001a42",
+                      "primary-fixed": "#d8e2ff",
+                      "on-tertiary": "#ffffff",
+                      "surface-container-low": "#f6f3f2",
+                      "outline": "#75777f",
+                      "surface-tint": "#4d5e83",
+                      "background": "#fcf9f8",
+                      "on-primary-fixed-variant": "#35466a",
+                      "outline-variant": "#c5c6cf",
+                      "tertiary": "#160c00",
+                      "surface-container-high": "#ebe7e7",
+                      "surface-bright": "#fcf9f8",
+                      "on-tertiary-fixed-variant": "#5f4100",
+                      "on-primary-container": "#7a8bb3",
+                      "secondary-fixed-dim": "#adc6ff",
+                      "secondary": "#415e96",
+                      "primary-container": "#102345",
+                      "on-secondary": "#ffffff",
+                      "on-error": "#ffffff",
+                      "tertiary-fixed": "#ffdeac",
+                      "on-background": "#1c1b1b",
+                      "primary": "#000d29",
+                      "error": "#ba1a1a",
+                      "inverse-primary": "#b5c6f1",
+                      "inverse-on-surface": "#f3f0ef",
+                      "on-primary-fixed": "#061a3c",
+                      "surface-variant": "#e5e2e1",
+                      "secondary-fixed": "#d8e2ff",
+                      "error-container": "#ffdad6",
+                      "on-tertiary-fixed": "#281900",
+                      "surface-container": "#f0edec",
+                      "on-tertiary-container": "#b1822c",
+                      "on-surface": "#1c1b1b",
+                      "on-error-container": "#93000a",
+                      "surface": "#fcf9f8",
+                      "secondary-container": "#a1befd",
+                      "on-primary": "#ffffff",
+                      "on-surface-variant": "#44474e",
+                      "surface-dim": "#dcd9d9",
+                      "on-secondary-container": "#2e4c84",
+                      
+                      // Explicitly mapping requested colors to theme tokens where possible, 
+                      // or adding them as semantic extensions if they don't map perfectly.
+                      "police-blue": "#102345", // Matches primary-container mostly
+                      "copper-gold": "#B5862F", // Close to on-tertiary-container
+                      "warm-ivory": "#F6F1E7"   // Close to surface-container-low
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "stack-gap": "12px",
+                      "panel-padding": "32px",
+                      "gutter": "24px",
+                      "unit": "4px",
+                      "margin": "40px"
+              },
+              "fontFamily": {
+                      "label-caps": [
+                              "Public Sans"
+                      ],
+                      "body-md": [
+                              "Public Sans"
+                      ],
+                      "body-lg": [
+                              "Public Sans"
+                      ],
+                      "headline-md": [
+                              "Epilogue"
+                      ],
+                      "headline-lg": [
+                              "Epilogue"
+                      ],
+                      "display-hero": [
+                              "Epilogue"
+                      ]
+              },
+              "fontSize": {
+                      "label-caps": [
+                              "12px",
+                              {
+                                      "lineHeight": "1",
+                                      "letterSpacing": "0.1em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "display-hero": [
+                              "48px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "800"
+                              }
+                      ]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 1;
+        }
+        
+        /* Maximalist Civic Authority Styles */
+        .double-border {
+            border: 2px solid theme('colors.police-blue');
+            box-shadow: inset 0 0 0 1px theme('colors.surface-container-lowest'), inset 0 0 0 2px theme('colors.police-blue');
+        }
+        
+        .archival-tab {
+            position: absolute;
+            top: -14px;
+            left: -2px;
+            background-color: theme('colors.police-blue');
+            color: theme('colors.surface-container-lowest');
+            padding: 2px 8px;
+            border: 2px solid theme('colors.police-blue');
+            z-index: 10;
+        }
+        
+        .header-band {
+            background-color: theme('colors.police-blue');
+            color: theme('colors.surface-container-lowest');
+            border-bottom: 2px solid theme('colors.police-blue');
+        }
+        
+        .drop-block-shadow {
+            box-shadow: 4px 4px 0px 0px theme('colors.secondary');
+        }
+        
+        .inset-box {
+            box-shadow: inset 0 0 0 1px theme('colors.outline');
+            background-color: theme('colors.surface-container-lowest');
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<header class="bg-slate-50 dark:bg-slate-900 docked full-width top-0 border-b-4 border-blue-900 border-b-2 border-blue-800 dark:border-blue-700 shadow-[4px_4px_0px_0px_rgba(16,35,69,1)] z-50">
+<div class="flex justify-between items-center w-full px-6 h-20 max-w-full">
+<div class="text-2xl font-black text-blue-900 dark:text-white uppercase tracking-widest flex items-center gap-2">
+<span class="material-symbols-outlined text-3xl">local_police</span>
+                THUNA | തുണ
+            </div>
+<nav class="hidden md:flex gap-8 items-center h-full">
+<a class="text-slate-600 dark:text-slate-400 font-medium flex flex-col items-center leading-none py-2 hover:text-blue-800 hover:bg-blue-50 dark:hover:bg-blue-800/30 transition-colors active:translate-y-0.5 duration-75 h-full justify-center px-4" href="#">
+<span class="font-bold">Home | ഹോം</span>
+</a>
+<a class="border-b-4 border-amber-600 text-blue-900 dark:text-amber-500 font-extrabold flex flex-col items-center leading-none py-2 hover:bg-blue-50 dark:hover:bg-blue-800/30 transition-colors active:translate-y-0.5 duration-75 h-full justify-center px-4" href="#">
+<span class="font-bold">Bulletins | വാർത്തകൾ</span>
+</a>
+<a class="text-slate-600 dark:text-slate-400 font-medium flex flex-col items-center leading-none py-2 hover:text-blue-800 hover:bg-blue-50 dark:hover:bg-blue-800/30 transition-colors active:translate-y-0.5 duration-75 h-full justify-center px-4" href="#">
+<span class="font-bold">Services | സേവനങ്ങൾ</span>
+</a>
+<a class="text-slate-600 dark:text-slate-400 font-medium flex flex-col items-center leading-none py-2 hover:text-blue-800 hover:bg-blue-50 dark:hover:bg-blue-800/30 transition-colors active:translate-y-0.5 duration-75 h-full justify-center px-4" href="#">
+<span class="font-bold">Contact | ബന്ധപ്പെടുക</span>
+</a>
+</nav>
+<button class="bg-error text-on-error border-2 border-error font-label-caps text-label-caps px-4 py-2 hover:bg-error-container hover:text-on-error-container transition-colors drop-block-shadow flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">emergency</span>
+                Emergency | അടിയന്തരം
+            </button>
+</div>
+</header>
+<div class="flex flex-1 relative">
+<!-- SideNavBar -->
+<aside class="hidden lg:flex flex-col bg-slate-100 dark:bg-slate-950 h-full w-64 border-r-4 border-blue-900 divide-y-2 divide-blue-200 dark:divide-blue-800 fixed left-0 top-20 bottom-0 z-40 overflow-y-auto">
+<div class="p-6 border-b-2 border-blue-200">
+<div class="w-16 h-16 bg-police-blue rounded-full flex items-center justify-center mb-4 border-2 border-copper-gold drop-block-shadow">
+<span class="material-symbols-outlined text-surface-container-lowest text-3xl">account_balance</span>
+</div>
+<h2 class="font-sans uppercase font-bold text-xs text-blue-900 dark:text-blue-200">CONTROL ROOM</h2>
+<p class="text-xs text-slate-500 font-mono mt-1 uppercase tracking-widest">State Headquarters</p>
+</div>
+<nav class="flex-1 flex flex-col py-4">
+<a class="text-blue-800 dark:text-blue-300 flex items-center px-4 py-3 hover:bg-blue-50 dark:hover:bg-blue-900/50 hover:tracking-wider transition-all duration-200 active:bg-blue-200 cursor-pointer gap-3 font-label-caps text-label-caps" href="#">
+<span class="material-symbols-outlined">security</span>
+                    Command Center
+                </a>
+<a class="bg-blue-900 text-white dark:bg-blue-800 dark:text-white border-l-8 border-amber-500 flex items-center px-4 py-3 hover:tracking-wider transition-all duration-200 active:bg-blue-200 cursor-pointer gap-3 font-label-caps text-label-caps" href="#">
+<span class="material-symbols-outlined">campaign</span>
+                    Live Alerts
+                </a>
+<a class="text-blue-800 dark:text-blue-300 flex items-center px-4 py-3 hover:bg-blue-50 dark:hover:bg-blue-900/50 hover:tracking-wider transition-all duration-200 active:bg-blue-200 cursor-pointer gap-3 font-label-caps text-label-caps" href="#">
+<span class="material-symbols-outlined">history_edu</span>
+                    Official Records
+                </a>
+<a class="text-blue-800 dark:text-blue-300 flex items-center px-4 py-3 hover:bg-blue-50 dark:hover:bg-blue-900/50 hover:tracking-wider transition-all duration-200 active:bg-blue-200 cursor-pointer gap-3 font-label-caps text-label-caps" href="#">
+<span class="material-symbols-outlined">groups</span>
+                    Personnel
+                </a>
+<a class="text-blue-800 dark:text-blue-300 flex items-center px-4 py-3 hover:bg-blue-50 dark:hover:bg-blue-900/50 hover:tracking-wider transition-all duration-200 active:bg-blue-200 cursor-pointer gap-3 font-label-caps text-label-caps" href="#">
+<span class="material-symbols-outlined">lan</span>
+                    District Nodes
+                </a>
+<a class="text-blue-800 dark:text-blue-300 flex items-center px-4 py-3 hover:bg-blue-50 dark:hover:bg-blue-900/50 hover:tracking-wider transition-all duration-200 active:bg-blue-200 cursor-pointer gap-3 font-label-caps text-label-caps" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+                    Archives
+                </a>
+</nav>
+<div class="p-4 border-t-2 border-blue-200">
+<button class="w-full bg-police-blue text-copper-gold border-2 border-police-blue font-label-caps text-label-caps py-3 drop-block-shadow hover:bg-blue-800 transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">report</span>
+                    Log Complaint
+                </button>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 lg:ml-64 p-6 md:p-gutter flex flex-col gap-8 bg-warm-ivory relative border-l-2 border-police-blue">
+<!-- Page Header -->
+<div class="bg-warm-ivory border-y-4 border-police-blue py-8 px-6 relative overflow-hidden drop-block-shadow">
+<div class="absolute top-0 right-0 p-4 opacity-10">
+<span class="material-symbols-outlined text-[120px] text-police-blue">gavel</span>
+</div>
+<div class="relative z-10 flex flex-col border-l-4 border-copper-gold pl-6">
+<h1 class="font-display-hero text-display-hero text-police-blue mb-2">VERIFIED NEWS</h1>
+<h2 class="font-headline-lg text-headline-lg text-police-blue/80 opacity-90 border-t border-police-blue/20 pt-2 w-fit">ഔദ്യോഗിക വാർത്തകൾ</h2>
+<div class="mt-4 inline-flex items-center gap-2 bg-police-blue text-surface-container-lowest px-3 py-1 font-label-caps text-label-caps w-fit border border-copper-gold">
+<span class="material-symbols-outlined text-xs text-copper-gold">verified</span>
+                        OFFICIAL COMMUNICATION CHANNEL
+                    </div>
+</div>
+</div>
+<!-- 3-Column Grid Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-start">
+<!-- Left Column: Search & Filter (Col 1-3) -->
+<div class="lg:col-span-3 flex flex-col gap-6">
+<div class="bg-surface-container-lowest double-border p-4 relative drop-block-shadow">
+<div class="archival-tab font-label-caps text-[10px] tracking-widest uppercase">
+                            QUERY PARAMETERS
+                        </div>
+<div class="mt-4 flex flex-col gap-4">
+<!-- Search Input -->
+<div class="relative border-2 border-police-blue bg-warm-ivory">
+<label class="absolute -top-3 left-2 bg-warm-ivory px-1 font-label-caps text-[10px] text-police-blue uppercase z-10">
+                                    Keyword Search
+                                </label>
+<div class="flex items-center p-2">
+<span class="material-symbols-outlined text-police-blue/60 mr-2">search</span>
+<input class="w-full bg-transparent border-none focus:ring-0 p-0 text-sm font-mono text-police-blue placeholder-police-blue/40" placeholder="Enter Reference ID..." type="text"/>
+</div>
+</div>
+<!-- Category Filter -->
+<div class="flex flex-col gap-2 border-t-2 border-dashed border-police-blue/20 pt-4">
+<span class="font-label-caps text-label-caps text-police-blue">CLASSIFICATION</span>
+<label class="flex items-center gap-3 p-2 border border-police-blue/30 hover:bg-police-blue/5 cursor-pointer transition-colors bg-warm-ivory">
+<input checked="" class="w-4 h-4 text-police-blue border-2 border-police-blue focus:ring-police-blue rounded-none bg-surface-container-lowest" type="checkbox"/>
+<span class="font-body-md text-sm text-police-blue font-bold">Alerts | ജാഗ്രതാ നിർദേശം</span>
+</label>
+<label class="flex items-center gap-3 p-2 border border-police-blue/30 hover:bg-police-blue/5 cursor-pointer transition-colors bg-surface-container-lowest">
+<input class="w-4 h-4 text-police-blue border-2 border-police-blue focus:ring-police-blue rounded-none bg-surface-container-lowest" type="checkbox"/>
+<span class="font-body-md text-sm text-police-blue font-bold">Statements | പ്രസ്താവനകൾ</span>
+</label>
+<label class="flex items-center gap-3 p-2 border border-police-blue/30 hover:bg-police-blue/5 cursor-pointer transition-colors bg-surface-container-lowest">
+<input class="w-4 h-4 text-police-blue border-2 border-police-blue focus:ring-police-blue rounded-none bg-surface-container-lowest" type="checkbox"/>
+<span class="font-body-md text-sm text-police-blue font-bold">Media Releases | മാധ്യമ കുറിപ്പ്</span>
+</label>
+</div>
+<!-- Date Range -->
+<div class="flex flex-col gap-2 border-t-2 border-dashed border-police-blue/20 pt-4">
+<span class="font-label-caps text-label-caps text-police-blue">DATE RANGE</span>
+<div class="grid grid-cols-2 gap-2">
+<div class="border border-police-blue bg-surface-container-lowest p-2 text-center text-xs font-mono text-police-blue cursor-pointer hover:bg-police-blue/5">
+                                        START DATE
+                                    </div>
+<div class="border border-police-blue bg-surface-container-lowest p-2 text-center text-xs font-mono text-police-blue cursor-pointer hover:bg-police-blue/5">
+                                        END DATE
+                                    </div>
+</div>
+</div>
+<button class="mt-2 bg-police-blue text-copper-gold border-2 border-police-blue font-label-caps text-label-caps py-2 w-full hover:bg-blue-900 transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">filter_list</span>
+                                APPLY FILTERS
+                            </button>
+</div>
+</div>
+</div>
+<!-- Center Column: Main Content (Col 4-9) -->
+<div class="lg:col-span-6 flex flex-col gap-8">
+<!-- Featured Article -->
+<article class="bg-surface-container-lowest double-border relative drop-block-shadow flex flex-col">
+<div class="archival-tab font-label-caps text-[10px] tracking-widest uppercase bg-error border-error text-white">
+                            HIGH PRIORITY ALERT
+                        </div>
+<div class="header-band p-4 flex justify-between items-center bg-police-blue border-b-2 border-copper-gold">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-copper-gold">campaign</span>
+<span class="font-label-caps text-label-caps text-copper-gold">REF: KP-DIR-2023-11A</span>
+</div>
+<span class="font-mono text-xs text-surface-container-lowest/80 border border-surface-container-lowest/30 px-2 py-1">24 OCT 2023 | 14:30 HRS</span>
+</div>
+<div class="h-64 border-b-2 border-police-blue relative overflow-hidden bg-surface-dim">
+<img alt="Official police press briefing desk" class="w-full h-full object-cover grayscale mix-blend-multiply opacity-80" data-alt="A formal press briefing room setting with a sturdy wooden podium centrally positioned. The room features a dark, serious aesthetic with deep blue background panels and flags, illuminated by stark, high-contrast spotlighting typical of official government announcements. Several professional microphones are clustered on the podium. The atmosphere is tense, authoritative, and official, captured in a gritty, slightly desaturated journalistic photography style emphasizing civic duty and maximalist structural elements." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBaA62Jp-_ZkKHmsosLwZ5XWpswVAfbOk6hQpv4ESyyFElSI67LmtrHemuU0f700dpLcdd-S7poISc_4mdKvsFBPCbqIDVkb_qWjY3A1sWTPaw-pr5Io7Zz5uYU26slDFs0n_O_BwkBi8DvvdhSpjez9NPfshLMA8647ou1jYAZ-hRdK1scKtf4oRnYgynywq5LzT08LvwNwD2zBbz4IcN5P4y07hHEAOL_8ZWxi-ycjz2YspRbpsbvnCcPN5UzTXDlj01Q82DCKEo"/>
+<div class="absolute inset-0 bg-gradient-to-t from-police-blue/80 to-transparent"></div>
+<div class="absolute bottom-4 left-4 bg-error text-white px-3 py-1 font-label-caps text-[10px] border border-white/50 flex items-center gap-1 shadow-md">
+<span class="material-symbols-outlined text-[14px]">warning</span>
+                                PUBLIC SAFETY NOTICE
+                            </div>
+</div>
+<div class="p-6 flex flex-col gap-4 bg-warm-ivory">
+<div class="border-l-4 border-error pl-4">
+<h3 class="font-headline-lg text-headline-lg text-police-blue mb-2 leading-tight">Statewide Traffic Rerouting Protocol Initiated for Coastal Districts</h3>
+<h4 class="font-headline-md text-lg text-police-blue/80 border-t border-police-blue/20 pt-2">തീരദേശ ജില്ലകളിൽ ട്രാഫിക് വഴിതിരിച്ചുവിടൽ പ്രോട്ടോക്കോൾ ആരംഭിച്ചു</h4>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-3">
+                                Effective immediately, all heavy goods vehicles are prohibited from using coastal highway sectors B4 through B9 due to anticipated severe weather conditions. Local law enforcement units have established checkpoints at key junctions. Citizens are advised to seek alternate inland routes and comply with officers on the ground.
+                            </p>
+<div class="mt-2 flex justify-between items-center border-t-2 border-police-blue/10 pt-4">
+<div class="flex gap-2">
+<span class="bg-police-blue/10 text-police-blue px-2 py-1 font-mono text-[10px] border border-police-blue/20">TRAFFIC</span>
+<span class="bg-police-blue/10 text-police-blue px-2 py-1 font-mono text-[10px] border border-police-blue/20">WEATHER</span>
+</div>
+<a class="inline-flex items-center gap-2 text-police-blue font-label-caps text-label-caps hover:text-copper-gold transition-colors underline decoration-2 underline-offset-4" href="#">
+                                    Read Official Report
+                                    <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+</article>
+<!-- Standard List Item 1 -->
+<article class="bg-surface-container-lowest border-2 border-police-blue flex flex-col sm:flex-row drop-block-shadow relative mt-4">
+<div class="archival-tab font-label-caps text-[10px] tracking-widest uppercase bg-police-blue">
+                            MEDIA RELEASE
+                        </div>
+<div class="sm:w-48 bg-police-blue/5 border-b-2 sm:border-b-0 sm:border-r-2 border-police-blue p-4 flex flex-col justify-center items-center text-center gap-2">
+<span class="material-symbols-outlined text-4xl text-police-blue/50">description</span>
+<span class="font-mono text-xs text-police-blue font-bold">23 OCT 2023</span>
+<span class="font-mono text-[10px] text-police-blue/70">REF: MR-092</span>
+</div>
+<div class="p-5 flex-1 flex flex-col gap-3">
+<div class="flex items-start justify-between gap-4">
+<div>
+<h3 class="font-headline-md text-xl text-police-blue mb-1">Cyber Wing Dismantles Interstate Phishing Syndicate</h3>
+<h4 class="font-body-lg text-sm text-police-blue/80 font-bold border-t border-police-blue/10 pt-1">അന്തർസംസ്ഥാന ഫിഷിംഗ് സംഘത്തെ സൈബർ വിംഗ് തകർത്തു</h4>
+</div>
+</div>
+<p class="font-body-md text-sm text-on-surface-variant line-clamp-2">
+                                In a coordinated operation spanning three districts, the State Cyber Crime Cell has apprehended five individuals operating a sophisticated financial fraud network targeting elderly citizens.
+                            </p>
+<div class="mt-auto pt-3 flex justify-end">
+<a class="inline-flex items-center gap-2 text-police-blue font-label-caps text-[10px] hover:text-copper-gold transition-colors border border-police-blue px-3 py-1 bg-warm-ivory" href="#">
+                                    VIEW FULL DOCUMENT
+                                    <span class="material-symbols-outlined text-xs">open_in_new</span>
+</a>
+</div>
+</div>
+</article>
+<!-- Standard List Item 2 -->
+<article class="bg-surface-container-lowest border-2 border-police-blue flex flex-col sm:flex-row drop-block-shadow relative mt-4">
+<div class="archival-tab font-label-caps text-[10px] tracking-widest uppercase bg-police-blue">
+                            OFFICIAL STATEMENT
+                        </div>
+<div class="sm:w-48 bg-police-blue/5 border-b-2 sm:border-b-0 sm:border-r-2 border-police-blue p-4 flex flex-col justify-center items-center text-center gap-2">
+<span class="material-symbols-outlined text-4xl text-police-blue/50">gavel</span>
+<span class="font-mono text-xs text-police-blue font-bold">21 OCT 2023</span>
+<span class="font-mono text-[10px] text-police-blue/70">REF: OS-114</span>
+</div>
+<div class="p-5 flex-1 flex flex-col gap-3">
+<div class="flex items-start justify-between gap-4">
+<div>
+<h3 class="font-headline-md text-xl text-police-blue mb-1">Clarification Regarding Recruitment Drive Rumors</h3>
+<h4 class="font-body-lg text-sm text-police-blue/80 font-bold border-t border-police-blue/10 pt-1">റിക്രൂട്ട്‌മെൻ്റ് ഡ്രൈവ് അഭ്യൂഹങ്ങളെക്കുറിച്ചുള്ള വിശദീകരണം</h4>
+</div>
+</div>
+<p class="font-body-md text-sm text-on-surface-variant line-clamp-2">
+                                The department officially denies social media reports regarding an unscheduled constable recruitment drive. All official recruitment notices will only be published through the Public Service Commission portal.
+                            </p>
+<div class="mt-auto pt-3 flex justify-end">
+<a class="inline-flex items-center gap-2 text-police-blue font-label-caps text-[10px] hover:text-copper-gold transition-colors border border-police-blue px-3 py-1 bg-warm-ivory" href="#">
+                                    VIEW FULL DOCUMENT
+                                    <span class="material-symbols-outlined text-xs">open_in_new</span>
+</a>
+</div>
+</div>
+</article>
+<!-- Pagination -->
+<div class="flex justify-center mt-6 border-t-4 border-double border-police-blue/30 pt-6">
+<div class="flex border-2 border-police-blue bg-surface-container-lowest drop-block-shadow">
+<button class="px-3 py-2 border-r border-police-blue hover:bg-police-blue/10 text-police-blue flex items-center justify-center">
+<span class="material-symbols-outlined text-sm">chevron_left</span>
+</button>
+<button class="px-4 py-2 border-r border-police-blue bg-police-blue text-copper-gold font-mono text-sm font-bold">1</button>
+<button class="px-4 py-2 border-r border-police-blue hover:bg-police-blue/10 text-police-blue font-mono text-sm">2</button>
+<button class="px-4 py-2 border-r border-police-blue hover:bg-police-blue/10 text-police-blue font-mono text-sm">3</button>
+<span class="px-4 py-2 border-r border-police-blue text-police-blue/50 font-mono text-sm flex items-center justify-center">...</span>
+<button class="px-3 py-2 hover:bg-police-blue/10 text-police-blue flex items-center justify-center">
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Right Column: Urgent Notices (Col 10-12) -->
+<div class="lg:col-span-3 flex flex-col gap-6">
+<div class="bg-police-blue text-surface-container-lowest border-2 border-police-blue drop-block-shadow relative">
+<div class="bg-error border-b-2 border-police-blue p-3 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-white animate-pulse">crisis_alert</span>
+<h3 class="font-label-caps text-label-caps text-white">URGENT NOTICES</h3>
+</div>
+<div class="p-4 flex flex-col gap-4 divide-y divide-surface-container-lowest/20">
+<!-- Urgent Item 1 -->
+<div class="pt-2 first:pt-0 pb-2">
+<div class="flex items-center gap-2 mb-2">
+<span class="w-2 h-2 rounded-full bg-error"></span>
+<span class="font-mono text-[10px] text-copper-gold tracking-widest">ACTIVE NOW</span>
+</div>
+<h4 class="font-headline-md text-sm leading-tight text-white mb-1">Missing Person Alert: Ernakulam North</h4>
+<p class="text-xs text-white/70 font-sans mb-2">Male, 65 yrs, wearing white dhoti. Last seen near Railway Station at 0800 HRS.</p>
+<a class="text-copper-gold font-label-caps text-[10px] border-b border-copper-gold/50 pb-0.5 hover:text-white transition-colors" href="#">VIEW DETAILS</a>
+</div>
+<!-- Urgent Item 2 -->
+<div class="pt-4 pb-2">
+<div class="flex items-center gap-2 mb-2">
+<span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim"></span>
+<span class="font-mono text-[10px] text-copper-gold tracking-widest">UPDATE</span>
+</div>
+<h4 class="font-headline-md text-sm leading-tight text-white mb-1">Highway N6 Partial Closure</h4>
+<p class="text-xs text-white/70 font-sans mb-2">Bridge maintenance extending to 1800 HRS. Expect severe delays.</p>
+<a class="text-copper-gold font-label-caps text-[10px] border-b border-copper-gold/50 pb-0.5 hover:text-white transition-colors" href="#">VIEW ALTERNATES</a>
+</div>
+<!-- Urgent Item 3 -->
+<div class="pt-4 pb-2">
+<div class="flex items-center gap-2 mb-2">
+<span class="w-2 h-2 rounded-full bg-error"></span>
+<span class="font-mono text-[10px] text-copper-gold tracking-widest">WANTED</span>
+</div>
+<h4 class="font-headline-md text-sm leading-tight text-white mb-1">Suspect Identification Request</h4>
+<p class="text-xs text-white/70 font-sans mb-2">CCTV footage released regarding ATM fraud incident in South Zone.</p>
+<a class="text-copper-gold font-label-caps text-[10px] border-b border-copper-gold/50 pb-0.5 hover:text-white transition-colors" href="#">VIEW FOOTAGE</a>
+</div>
+</div>
+<div class="p-3 bg-police-blue border-t-2 border-surface-container-lowest/10">
+<button class="w-full text-center font-label-caps text-[10px] text-surface-container-lowest/50 hover:text-white transition-colors tracking-widest">
+                                ARCHIVE DIRECTORY →
+                            </button>
+</div>
+</div>
+<!-- Helpful Links Panel -->
+<div class="border-2 border-police-blue bg-surface-container-lowest drop-block-shadow p-4 mt-2">
+<h3 class="font-label-caps text-label-caps text-police-blue mb-4 border-b-2 border-police-blue pb-2">QUICK REFERENCE</h3>
+<ul class="flex flex-col gap-3">
+<li>
+<a class="flex items-center gap-2 text-sm font-bold text-police-blue hover:text-copper-gold hover:translate-x-1 transition-all" href="#">
+<span class="material-symbols-outlined text-sm">download</span>
+                                    Download FIR Formats
+                                </a>
+</li>
+<li>
+<a class="flex items-center gap-2 text-sm font-bold text-police-blue hover:text-copper-gold hover:translate-x-1 transition-all" href="#">
+<span class="material-symbols-outlined text-sm">policy</span>
+                                    Public Order Guidelines
+                                </a>
+</li>
+<li>
+<a class="flex items-center gap-2 text-sm font-bold text-police-blue hover:text-copper-gold hover:translate-x-1 transition-all" href="#">
+<span class="material-symbols-outlined text-sm">contact_phone</span>
+                                    District Commander Directory
+                                </a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</main>
+</div>
+<!-- Footer -->
+<footer class="bg-blue-950 dark:bg-black w-full border-t-8 border-amber-600 border-t border-white/10 none lg:ml-64 z-50">
+<div class="w-full py-8 px-12 flex flex-col md:flex-row justify-between items-center gap-4">
+<div class="text-white font-bold flex items-center gap-3">
+<span class="material-symbols-outlined text-amber-500">local_police</span>
+<span class="font-mono text-[10px] uppercase tracking-widest">© KERALA POLICE DEPARTMENT - GOVERNMENT OF KERALA</span>
+</div>
+<nav class="flex gap-6 flex-wrap justify-center">
+<a class="text-slate-300 hover:text-white font-mono text-[10px] uppercase tracking-widest hover:text-amber-400 transition-colors" href="#">Privacy Policy</a>
+<a class="text-slate-300 hover:text-white font-mono text-[10px] uppercase tracking-widest hover:text-amber-400 transition-colors" href="#">Terms of Service</a>
+<a class="text-slate-300 hover:text-white font-mono text-[10px] uppercase tracking-widest hover:text-amber-400 transition-colors" href="#">Cyber Safety</a>
+<a class="text-slate-300 hover:text-white font-mono text-[10px] uppercase tracking-widest hover:text-amber-400 transition-colors" href="#">Web Directory</a>
+</nav>
+</div>
+</footer>
+</body></html>

@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>THUNA | ക്രമീകരണങ്ങൾ / Settings</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@700;800&amp;family=Public+Sans:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-primary-fixed-variant": "#35466a",
+                      "surface": "#fcf9f8",
+                      "surface-container-lowest": "#ffffff",
+                      "secondary": "#415e96",
+                      "primary-fixed": "#d8e2ff",
+                      "on-error": "#ffffff",
+                      "on-primary-container": "#7a8bb3",
+                      "on-secondary-fixed": "#001a42",
+                      "surface-dim": "#dcd9d9",
+                      "secondary-container": "#a1befd",
+                      "error": "#ba1a1a",
+                      "surface-bright": "#fcf9f8",
+                      "secondary-fixed-dim": "#adc6ff",
+                      "on-tertiary": "#ffffff",
+                      "on-primary": "#ffffff",
+                      "secondary-fixed": "#d8e2ff",
+                      "inverse-surface": "#313030",
+                      "on-secondary-fixed-variant": "#27467d",
+                      "background": "#fcf9f8",
+                      "surface-container-low": "#f6f3f2",
+                      "outline-variant": "#c5c6cf",
+                      "on-surface-variant": "#44474e",
+                      "tertiary-container": "#322000",
+                      "on-primary-fixed": "#061a3c",
+                      "on-error-container": "#93000a",
+                      "on-background": "#1c1b1b",
+                      "on-tertiary-fixed-variant": "#5f4100",
+                      "tertiary-fixed": "#ffdeac",
+                      "tertiary": "#160c00",
+                      "surface-container-high": "#ebe7e7",
+                      "primary": "#000d29",
+                      "primary-container": "#102345",
+                      "outline": "#75777f",
+                      "on-surface": "#1c1b1b",
+                      "on-tertiary-fixed": "#281900",
+                      "surface-variant": "#e5e2e1",
+                      "on-secondary": "#ffffff",
+                      "error-container": "#ffdad6",
+                      "tertiary-fixed-dim": "#f3be61",
+                      "on-secondary-container": "#2e4c84",
+                      "surface-tint": "#4d5e83",
+                      "surface-container": "#f0edec",
+                      "primary-fixed-dim": "#b5c6f1",
+                      "on-tertiary-container": "#b1822c",
+                      "inverse-primary": "#b5c6f1",
+                      "surface-container-highest": "#e5e2e1",
+                      "inverse-on-surface": "#f3f0ef"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "panel-padding": "32px",
+                      "margin": "40px",
+                      "unit": "4px",
+                      "stack-gap": "12px",
+                      "gutter": "24px"
+              },
+              "fontFamily": {
+                      "headline-lg": [
+                              "Epilogue"
+                      ],
+                      "label-caps": [
+                              "Public Sans"
+                      ],
+                      "headline-md": [
+                              "Epilogue"
+                      ],
+                      "body-lg": [
+                              "Public Sans"
+                      ],
+                      "display-hero": [
+                              "Epilogue"
+                      ],
+                      "body-md": [
+                              "Public Sans"
+                      ]
+              },
+              "fontSize": {
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "label-caps": [
+                              "12px",
+                              {
+                                      "lineHeight": "1",
+                                      "letterSpacing": "0.1em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "display-hero": [
+                              "48px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "800"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      }
+              }
+            },
+          }
+    </script>
+<style>
+        .thuna-border {
+            border: 2px solid theme('colors.primary');
+        }
+        .thuna-double-border {
+            border: 2px solid theme('colors.primary');
+            box-shadow: inset 0 0 0 1px theme('colors.surface-container-highest');
+        }
+        .thuna-drop-block {
+            box-shadow: 4px 4px 0px 0px theme('colors.primary-container');
+        }
+        .archival-tab {
+            position: absolute;
+            top: -16px;
+            left: -2px;
+            background-color: theme('colors.primary');
+            color: theme('colors.surface');
+            padding: 2px 8px;
+            border: 2px solid theme('colors.primary');
+            z-index: 10;
+        }
+        .header-band {
+            background-color: theme('colors.primary-container');
+            color: theme('colors.on-primary');
+            border-bottom: 2px solid theme('colors.primary');
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md min-h-screen flex flex-col md:flex-row bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdHRlcm4gaWQ9InNtYWxsR3JpZCIgd2lkdGg9IjEwIiBoZWlnaHQ9IjEwIiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIj48cGF0aCBkPSJNMTAgMEwwIDBMMCAxMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJyZ2JhKDI4LCAyNywgMjcsIDAuMDMpIiBzdHJva2Utd2lkdGg9IjEiLz48L3BhdHRlcm4+PHJlY3Qgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiBmaWxsPSJ1cmwoI3NtYWxsR3JpZCkiLz48cGF0aCBkPSJNNDAgMEwwIDBMMCA0MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJyZ2JhKDI4LCAyNywgMjcsIDAuMDYpIiBzdHJva2Utd2lkdGg9IjEiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JpZCkiLz48L3N2Zz4=')]">
+<!-- SideNavBar (Desktop) -->
+<nav class="hidden md:flex flex-col h-screen w-64 border-r-4 border-primary dark:border-tertiary-fixed-dim bg-surface-container-low dark:bg-primary z-40 fixed left-0 top-0 shadow-[6px_0px_0px_0px_rgba(212,175,55,0.3)] pt-20 pb-4 overflow-y-auto">
+<div class="px-6 mb-8 flex flex-col items-center thuna-border mx-4 p-4 bg-surface thuna-drop-block">
+<img alt="System Admin" class="w-20 h-20 rounded-none thuna-border mb-3 grayscale" data-alt="A formal portrait of a male police officer in a sharp, official uniform, shot against a plain light gray background. He has a serious, professional expression, conveying civic authority. The lighting is bright and even, typical of an official ID badge photo, fitting within a maximalist government UI theme." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjQS_VRaMS88zs1YIiUzLU3snUuPZ7SqZYGgcKqXxfjDkkP5rbXLd7Nj5Z9xfSZQXzTUIU_Buyft6mNIdki6NkGPRkcK_BlRoF_BhaC1AwTICBd3SmRvM-4rcEK8EMNfwDcftaGsOL2GJzivEMS9KSPdeHS2_-tpIM6FcsmF0215dcSoozl4clQ9TiyKdvTbzp7y0nj_Ex_2-L-ZkfJZ2KaNmtYx4Nq-3Z7QiLaOo4HviKp-JXCQ0WVEhV8X1GLzflQx99el-VXBI"/>
+<h3 class="font-headline-md text-headline-md text-primary text-center leading-tight">System Admin</h3>
+<p class="font-label-caps text-label-caps text-primary-container text-center mt-1">Kerala State Portal</p>
+<div class="mt-2 text-xs text-outline italic text-center w-full border-t border-outline-variant pt-2">Official seal of Kerala Police</div>
+</div>
+<ul class="flex-1 px-4 space-y-2">
+<li>
+<a class="flex items-center gap-3 px-4 py-3 text-secondary dark:text-secondary-fixed hover:bg-secondary-fixed-dim dark:hover:bg-primary-container font-label-caps text-label-caps uppercase transition-colors thuna-border bg-surface" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">admin_panel_settings</span>
+<div class="flex flex-col">
+<span>പ്രൊഫൈൽ</span>
+<span class="text-[10px] opacity-70">Profile</span>
+</div>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 text-secondary dark:text-secondary-fixed hover:bg-secondary-fixed-dim dark:hover:bg-primary-container font-label-caps text-label-caps uppercase transition-colors thuna-border bg-surface mt-2" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">security</span>
+<div class="flex flex-col">
+<span>സുരക്ഷ</span>
+<span class="text-[10px] opacity-70">Security</span>
+</div>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 text-secondary dark:text-secondary-fixed hover:bg-secondary-fixed-dim dark:hover:bg-primary-container font-label-caps text-label-caps uppercase transition-colors thuna-border bg-surface mt-2" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">emergency_home</span>
+<div class="flex flex-col">
+<span>അറിയിപ്പുകൾ</span>
+<span class="text-[10px] opacity-70">Alerts</span>
+</div>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 text-secondary dark:text-secondary-fixed hover:bg-secondary-fixed-dim dark:hover:bg-primary-container font-label-caps text-label-caps uppercase transition-colors thuna-border bg-surface mt-2" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">contrast</span>
+<div class="flex flex-col">
+<span>ഡിസ്പ്ലേ</span>
+<span class="text-[10px] opacity-70">Display</span>
+</div>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 text-secondary dark:text-secondary-fixed hover:bg-secondary-fixed-dim dark:hover:bg-primary-container font-label-caps text-label-caps uppercase transition-colors thuna-border bg-surface mt-2" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">terminal</span>
+<div class="flex flex-col">
+<span>ലോഗുകൾ</span>
+<span class="text-[10px] opacity-70">Logs</span>
+</div>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 bg-tertiary-fixed-dim text-primary border-y-2 border-primary font-black thuna-border border-l-8 border-tertiary-fixed-dim mt-2 shadow-[2px_2px_0px_0px_rgba(0,13,41,1)]" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">settings</span>
+<div class="flex flex-col">
+<span>ക്രമീകരണങ്ങൾ</span>
+<span class="text-[10px] opacity-90">Settings</span>
+</div>
+</a>
+</li>
+</ul>
+<div class="px-4 mt-auto pt-4 border-t-2 border-outline-variant">
+<button class="w-full py-3 bg-surface thuna-border text-primary font-label-caps text-label-caps hover:bg-secondary-fixed-dim transition-colors flex justify-center items-center gap-2 thuna-drop-block">
+<span class="material-symbols-outlined">help</span>
+                സഹായം / Support
+            </button>
+</div>
+</nav>
+<!-- Main Content Area -->
+<div class="flex-1 md:ml-64 flex flex-col min-h-screen">
+<!-- TopAppBar -->
+<header class="bg-surface-container-lowest dark:bg-primary-container flex justify-between items-center h-16 px-6 w-full z-50 docked full-width top-0 border-b-4 border-primary dark:border-tertiary-fixed-dim shadow-[4px_4px_0px_0px_rgba(16,35,69,1)] sticky top-0">
+<div class="flex items-center gap-4">
+<h1 class="font-headline-lg text-headline-lg text-primary dark:text-tertiary-fixed-dim font-black tracking-tight uppercase border-r-4 border-tertiary-fixed-dim pr-4">
+                    THUNA | തുണ
+                </h1>
+<span class="font-label-caps text-label-caps text-secondary hidden sm:inline-block">SYSTEM ADMINISTRATION</span>
+</div>
+<div class="flex items-center gap-6">
+<!-- Search -->
+<div class="hidden lg:flex items-center bg-surface thuna-border px-3 py-1">
+<span class="material-symbols-outlined text-outline">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm w-48 text-primary placeholder-outline font-label-caps uppercase" placeholder="തിരയുക / Search..." type="text"/>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-primary hover:bg-primary hover:text-surface transition-colors duration-100 p-2 thuna-border flex items-center justify-center">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">notifications</span>
+</button>
+<button class="text-primary hover:bg-primary hover:text-surface transition-colors duration-100 p-2 thuna-border flex items-center justify-center bg-tertiary-fixed-dim">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">account_circle</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Canvas -->
+<main class="flex-1 p-gutter pb-32 max-w-7xl mx-auto w-full">
+<div class="mb-margin">
+<h2 class="font-display-hero text-display-hero text-primary border-b-4 border-primary pb-2 inline-block">SYSTEM CONFIGURATION</h2>
+<p class="font-body-lg text-body-lg text-secondary mt-2 max-w-2xl">Official settings and archival logs for system administrators. Authorized personnel only.</p>
+</div>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Profile Section (Col 1-4) -->
+<section class="lg:col-span-4 thuna-double-border bg-surface-container-lowest relative thuna-drop-block pt-8 pb-4 px-4 flex flex-col h-full">
+<div class="archival-tab font-label-caps text-label-caps uppercase">01 / IDENTIFICATION</div>
+<div class="header-band py-2 px-4 -mx-4 -mt-8 mb-6 flex justify-between items-center">
+<span class="font-headline-md text-headline-md text-sm">OFFICER DOSSIER</span>
+<span class="material-symbols-outlined text-sm">badge</span>
+</div>
+<div class="flex flex-col items-center mb-6">
+<div class="p-1 border-4 border-primary bg-tertiary-fixed-dim mb-4 relative">
+<img alt="Officer Profile" class="w-32 h-32 object-cover grayscale mix-blend-multiply" data-alt="A high-contrast, black and white portrait of a stern-looking male individual, framed tightly. The image has a grainy, archival quality, resembling a vintage police dossier photo. It is bordered by a thick dark frame, emphasizing a bureaucratic and maximalist civic design language." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBT8ytf8rNESKzGgMKMo9SSViYFepu34eitoOakXlM9bjmyMKlUa9tV4CSm19_g-gThlI6hIOke51WiJnHfVM6czjPlVkEHM5srUALXKXZ9JzKGqVbPjA-nbpbqMWbMYE6SplxCVZc5cBu4ZlcLUSgn28K0KUZ-5gljsqQW2BMsq4F9yjF9wNtCz4zyUTCxRzO0EyHR-8H8CfxBaoylPPyhlSSJlK-cNGVnz-ZPm216hjbm-ofsISkyivFaPCR-dbv2dQfn-nKczkg"/>
+<div class="absolute bottom-0 right-0 bg-primary text-surface font-label-caps text-[10px] px-1 border border-surface">ACTIVE</div>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary text-center">R. KRISHNAN</h3>
+<p class="font-label-caps text-label-caps text-secondary text-center mt-1">SUPERINTENDENT OF POLICE</p>
+</div>
+<div class="space-y-4 flex-1">
+<div class="border-b-2 border-surface-variant pb-2">
+<label class="font-label-caps text-label-caps text-outline text-[10px] uppercase block mb-1">Badge ID</label>
+<div class="font-headline-md text-primary text-lg font-bold">KP-9482-SYS</div>
+</div>
+<div class="border-b-2 border-surface-variant pb-2">
+<label class="font-label-caps text-label-caps text-outline text-[10px] uppercase block mb-1">Department</label>
+<div class="font-body-md text-on-surface">Cyber Intelligence Wing</div>
+<div class="font-body-md text-secondary text-sm">സൈബർ ഇന്റലിജൻസ് വിഭാഗം</div>
+</div>
+<div class="border-b-2 border-surface-variant pb-2">
+<label class="font-label-caps text-label-caps text-outline text-[10px] uppercase block mb-1">Clearance Level</label>
+<div class="inline-block bg-error text-on-error font-label-caps text-label-caps px-2 py-1 thuna-border">LEVEL 5 (MAXIMUM)</div>
+</div>
+</div>
+</section>
+<!-- Middle Column (Col 5-8) -->
+<div class="lg:col-span-4 flex flex-col gap-gutter h-full">
+<!-- Security Config -->
+<section class="thuna-double-border bg-surface-container-lowest relative thuna-drop-block pt-8 pb-4 px-4 flex-1">
+<div class="archival-tab font-label-caps text-label-caps uppercase bg-secondary">02 / SECURITY PROTOCOLS</div>
+<div class="header-band py-2 px-4 -mx-4 -mt-8 mb-4 bg-secondary flex justify-between items-center">
+<span class="font-headline-md text-headline-md text-sm">AUTHENTICATION</span>
+<span class="material-symbols-outlined text-sm">lock</span>
+</div>
+<div class="space-y-6">
+<div class="flex items-center justify-between p-3 border-2 border-surface-variant bg-surface">
+<div>
+<h4 class="font-label-caps text-label-caps text-primary uppercase">Two-Factor Auth</h4>
+<p class="text-xs text-secondary mt-1">ദ്വിമാന സ്ഥിരീകരണം</p>
+</div>
+<div class="relative inline-block w-12 mr-2 align-middle select-none transition duration-200 ease-in">
+<input checked="" class="toggle-checkbox absolute block w-6 h-6 rounded-none bg-surface border-4 border-primary appearance-none cursor-pointer checked:right-0 checked:bg-tertiary-fixed-dim transition-all duration-300" id="tfa_toggle" name="toggle" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-6 rounded-none bg-surface-variant border-2 border-primary cursor-pointer" for="tfa_toggle"></label>
+</div>
+</div>
+<div class="p-3 border-2 border-surface-variant bg-surface relative">
+<label class="font-label-caps text-label-caps text-primary uppercase absolute -top-3 left-2 bg-surface px-1">Session Timeout</label>
+<select class="w-full bg-transparent border-none focus:ring-0 text-sm font-body-md text-on-surface mt-2 cursor-pointer">
+<option>15 Minutes (Standard)</option>
+<option selected="">30 Minutes (Extended)</option>
+<option>1 Hour (Requires Approval)</option>
+</select>
+</div>
+<button class="w-full py-3 bg-error text-on-error font-label-caps text-label-caps uppercase thuna-border hover:bg-on-error-container transition-colors flex justify-center items-center gap-2 mt-auto">
+<span class="material-symbols-outlined text-sm">warning</span>
+                                RESET CREDENTIALS / ക്രെഡൻഷ്യലുകൾ റീസെറ്റ് ചെയ്യുക
+                            </button>
+</div>
+</section>
+<!-- Display & Language -->
+<section class="thuna-double-border bg-surface-container-lowest relative thuna-drop-block pt-8 pb-4 px-4">
+<div class="archival-tab font-label-caps text-label-caps uppercase bg-tertiary-container">03 / INTERFACE</div>
+<div class="header-band py-2 px-4 -mx-4 -mt-8 mb-4 bg-tertiary-container text-tertiary-fixed flex justify-between items-center">
+<span class="font-headline-md text-headline-md text-sm">DISPLAY SETTINGS</span>
+<span class="material-symbols-outlined text-sm">monitor</span>
+</div>
+<div class="space-y-4">
+<div>
+<label class="font-label-caps text-label-caps text-outline text-[10px] uppercase block mb-2">Theme Override</label>
+<div class="grid grid-cols-3 gap-2">
+<button class="py-2 px-1 border-2 border-primary bg-surface text-primary font-label-caps text-[10px] uppercase hover:bg-surface-variant">LIGHT</button>
+<button class="py-2 px-1 border-2 border-outline-variant bg-inverse-surface text-surface font-label-caps text-[10px] uppercase opacity-50 cursor-not-allowed">DARK</button>
+<button class="py-2 px-1 border-2 border-outline-variant bg-black text-tertiary-fixed font-label-caps text-[10px] uppercase opacity-50 cursor-not-allowed">HIGH CONTRAST</button>
+</div>
+</div>
+<div class="pt-2 border-t-2 border-surface-variant">
+<div class="flex justify-between items-center mb-2">
+<label class="font-label-caps text-label-caps text-outline text-[10px] uppercase">Malayalam Scaling</label>
+<span class="font-headline-md text-sm text-primary">100%</span>
+</div>
+<input class="w-full h-2 bg-surface-variant border border-primary rounded-none appearance-none cursor-pointer" max="150" min="80" type="range" value="100"/>
+</div>
+</div>
+</section>
+</div>
+<!-- Right Column (Col 9-12) -->
+<div class="lg:col-span-4 flex flex-col h-full">
+<!-- Notification Hub -->
+<section class="thuna-double-border bg-surface-container-lowest relative thuna-drop-block pt-8 pb-4 px-4 h-full flex flex-col">
+<div class="archival-tab font-label-caps text-label-caps uppercase bg-primary-container">04 / ALERTS</div>
+<div class="header-band py-2 px-4 -mx-4 -mt-8 mb-4 flex justify-between items-center">
+<span class="font-headline-md text-headline-md text-sm">NOTIFICATION ROUTING</span>
+<span class="material-symbols-outlined text-sm">campaign</span>
+</div>
+<div class="space-y-3 flex-1 overflow-y-auto pr-2">
+<!-- Checkbox Item -->
+<label class="flex items-start gap-3 p-3 border-2 border-surface-variant bg-surface cursor-pointer hover:border-primary transition-colors">
+<input checked="" class="mt-1 w-5 h-5 rounded-none border-2 border-primary text-primary focus:ring-primary focus:ring-offset-0 bg-surface" type="checkbox"/>
+<div>
+<div class="font-label-caps text-label-caps text-primary uppercase">Statewide Bulletins</div>
+<div class="text-xs text-secondary mt-1">സംസ്ഥാനതല ബുള്ളറ്റിനുകൾ</div>
+<div class="text-[10px] text-outline mt-2 bg-surface-variant inline-block px-1">IMMEDIATE DELIVERY</div>
+</div>
+</label>
+<label class="flex items-start gap-3 p-3 border-2 border-surface-variant bg-surface cursor-pointer hover:border-primary transition-colors">
+<input checked="" class="mt-1 w-5 h-5 rounded-none border-2 border-primary text-primary focus:ring-primary focus:ring-offset-0 bg-surface" type="checkbox"/>
+<div>
+<div class="font-label-caps text-label-caps text-primary uppercase">Cyber Threat Intel</div>
+<div class="text-xs text-secondary mt-1">സൈബർ ഭീഷണി വിവരങ്ങൾ</div>
+<div class="text-[10px] text-outline mt-2 bg-surface-variant inline-block px-1">HOURLY DIGEST</div>
+</div>
+</label>
+<label class="flex items-start gap-3 p-3 border-2 border-surface-variant bg-surface opacity-60 cursor-pointer hover:border-primary transition-colors">
+<input class="mt-1 w-5 h-5 rounded-none border-2 border-primary text-primary focus:ring-primary focus:ring-offset-0 bg-surface" type="checkbox"/>
+<div>
+<div class="font-label-caps text-label-caps text-primary uppercase">District Traffic Alerts</div>
+<div class="text-xs text-secondary mt-1">ജില്ലാ ട്രാഫിക് അലർട്ടുകൾ</div>
+</div>
+</label>
+<label class="flex items-start gap-3 p-3 border-2 border-surface-variant bg-surface opacity-60 cursor-pointer hover:border-primary transition-colors">
+<input class="mt-1 w-5 h-5 rounded-none border-2 border-primary text-primary focus:ring-primary focus:ring-offset-0 bg-surface" type="checkbox"/>
+<div>
+<div class="font-label-caps text-label-caps text-primary uppercase">Routine Admin Memos</div>
+<div class="text-xs text-secondary mt-1">സാധാരണ ഭരണ മെമ്മോകൾ</div>
+</div>
+</label>
+</div>
+<div class="mt-4 pt-4 border-t-2 border-primary">
+<button class="w-full py-2 bg-primary text-surface font-label-caps text-label-caps uppercase thuna-border hover:bg-primary-container transition-colors flex justify-center items-center gap-2">
+<span class="material-symbols-outlined text-sm">save</span>
+                                COMMIT CHANGES / സംരക്ഷിക്കുക
+                            </button>
+</div>
+</section>
+</div>
+</div>
+<!-- Full Width Bottom Section: Audit Logs -->
+<section class="mt-gutter thuna-double-border bg-surface-container-lowest relative thuna-drop-block pt-8 pb-0 px-0 overflow-hidden">
+<div class="archival-tab font-label-caps text-label-caps uppercase left-0 ml-4">05 / SYSTEM REGISTRY</div>
+<div class="header-band py-2 px-6 -mt-8 mb-0 flex justify-between items-center border-b-2 border-primary">
+<span class="font-headline-md text-headline-md text-sm">ACCESS AUDIT LOGS / ആക്സസ് ലോഗുകൾ</span>
+<button class="flex items-center gap-1 text-xs hover:text-tertiary-fixed-dim transition-colors">
+<span class="material-symbols-outlined text-sm">download</span> EXPORT CSV
+                    </button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-variant border-b-2 border-primary font-label-caps text-[10px] text-outline uppercase tracking-wider">
+<th class="p-3 border-r border-outline-variant">Timestamp</th>
+<th class="p-3 border-r border-outline-variant">Action / പ്രവൃത്തി</th>
+<th class="p-3 border-r border-outline-variant">IP / Location</th>
+<th class="p-3">Status</th>
+</tr>
+</thead>
+<tbody class="font-body-md text-sm">
+<tr class="border-b border-surface-variant hover:bg-surface transition-colors">
+<td class="p-3 border-r border-outline-variant font-mono text-xs">2023-10-27 14:32:01</td>
+<td class="p-3 border-r border-outline-variant">
+<div class="font-bold text-primary">Settings Modified</div>
+<div class="text-xs text-secondary">ക്രമീകരണങ്ങൾ പരിഷ്കരിച്ചു</div>
+</td>
+<td class="p-3 border-r border-outline-variant">
+<div class="font-mono text-xs">192.168.1.45</div>
+<div class="text-[10px] text-outline">TVM HQ Network</div>
+</td>
+<td class="p-3">
+<span class="inline-block bg-tertiary-fixed-dim text-primary font-label-caps text-[10px] px-2 py-1 thuna-border">SUCCESS</span>
+</td>
+</tr>
+<tr class="border-b border-surface-variant hover:bg-surface transition-colors">
+<td class="p-3 border-r border-outline-variant font-mono text-xs">2023-10-27 09:15:22</td>
+<td class="p-3 border-r border-outline-variant">
+<div class="font-bold text-primary">System Login</div>
+<div class="text-xs text-secondary">സിസ്റ്റം ലോഗിൻ</div>
+</td>
+<td class="p-3 border-r border-outline-variant">
+<div class="font-mono text-xs">117.204.15.8</div>
+<div class="text-[10px] text-outline">Ernakulam Secure Node</div>
+</td>
+<td class="p-3">
+<span class="inline-block bg-tertiary-fixed-dim text-primary font-label-caps text-[10px] px-2 py-1 thuna-border">SUCCESS</span>
+</td>
+</tr>
+<tr class="border-b border-surface-variant hover:bg-surface transition-colors bg-error-container bg-opacity-20">
+<td class="p-3 border-r border-outline-variant font-mono text-xs text-error">2023-10-26 23:45:10</td>
+<td class="p-3 border-r border-outline-variant">
+<div class="font-bold text-error">Failed Authentication</div>
+<div class="text-xs text-error opacity-80">പരാജയപ്പെട്ട സ്ഥിരീകരണം</div>
+</td>
+<td class="p-3 border-r border-outline-variant">
+<div class="font-mono text-xs text-error">Unknown Origin</div>
+<div class="text-[10px] text-error opacity-80">Outside Intranet</div>
+</td>
+<td class="p-3">
+<span class="inline-block bg-error text-on-error font-label-caps text-[10px] px-2 py-1 thuna-border border-error">DENIED</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="bg-surface-variant p-2 text-center text-[10px] font-label-caps text-outline uppercase border-t border-primary">
+                    Showing last 3 recorded events. <a class="text-primary underline" href="#">View Full Archive</a>
+</div>
+</section>
+</main>
+</div>
+</body></html>

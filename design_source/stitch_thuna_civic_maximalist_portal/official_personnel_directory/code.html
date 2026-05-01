@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>THUNA PORTAL - Personnel Directory</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@700;800&amp;family=Public+Sans:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-fixed-dim": "#f3be61",
+                    "primary-fixed": "#d8e2ff",
+                    "on-error-container": "#93000a",
+                    "on-tertiary-fixed": "#281900",
+                    "on-tertiary": "#ffffff",
+                    "surface-container-lowest": "#ffffff",
+                    "on-error": "#ffffff",
+                    "inverse-on-surface": "#f3f0ef",
+                    "on-tertiary-fixed-variant": "#5f4100",
+                    "on-tertiary-container": "#b1822c",
+                    "on-primary-container": "#7a8bb3",
+                    "background": "#fcf9f8",
+                    "surface-container": "#f0edec",
+                    "surface": "#fcf9f8",
+                    "secondary-fixed-dim": "#adc6ff",
+                    "secondary": "#415e96",
+                    "on-primary": "#ffffff",
+                    "tertiary-fixed": "#ffdeac",
+                    "on-background": "#1c1b1b",
+                    "outline": "#75777f",
+                    "on-secondary-fixed": "#001a42",
+                    "on-primary-fixed-variant": "#35466a",
+                    "secondary-fixed": "#d8e2ff",
+                    "surface-container-highest": "#e5e2e1",
+                    "on-secondary-fixed-variant": "#27467d",
+                    "on-secondary": "#ffffff",
+                    "on-secondary-container": "#2e4c84",
+                    "secondary-container": "#a1befd",
+                    "surface-tint": "#4d5e83",
+                    "primary": "#000d29",
+                    "error-container": "#ffdad6",
+                    "primary-container": "#102345",
+                    "on-surface-variant": "#44474e",
+                    "surface-container-high": "#ebe7e7",
+                    "on-primary-fixed": "#061a3c",
+                    "surface-container-low": "#f6f3f2",
+                    "surface-bright": "#fcf9f8",
+                    "on-surface": "#1c1b1b",
+                    "surface-variant": "#e5e2e1",
+                    "surface-dim": "#dcd9d9",
+                    "tertiary-container": "#322000",
+                    "inverse-surface": "#313030",
+                    "inverse-primary": "#b5c6f1",
+                    "error": "#ba1a1a",
+                    "tertiary": "#160c00",
+                    "outline-variant": "#c5c6cf",
+                    "primary-fixed-dim": "#b5c6f1"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "stack-gap": "12px",
+                    "panel-padding": "32px",
+                    "gutter": "24px",
+                    "unit": "4px",
+                    "margin": "40px"
+            },
+            "fontFamily": {
+                    "headline-lg": [
+                            "Epilogue"
+                    ],
+                    "label-caps": [
+                            "Public Sans"
+                    ],
+                    "headline-md": [
+                            "Epilogue"
+                    ],
+                    "display-hero": [
+                            "Epilogue"
+                    ],
+                    "body-md": [
+                            "Public Sans"
+                    ],
+                    "body-lg": [
+                            "Public Sans"
+                    ]
+            },
+            "fontSize": {
+                    "headline-lg": [
+                            "32px",
+                            {
+                                    "lineHeight": "1.2",
+                                    "letterSpacing": "-0.01em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "label-caps": [
+                            "12px",
+                            {
+                                    "lineHeight": "1",
+                                    "letterSpacing": "0.1em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "headline-md": [
+                            "24px",
+                            {
+                                    "lineHeight": "1.2",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "display-hero": [
+                            "48px",
+                            {
+                                    "lineHeight": "1.1",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "800"
+                            }
+                    ],
+                    "body-md": [
+                            "16px",
+                            {
+                                    "lineHeight": "1.6",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "body-lg": [
+                            "18px",
+                            {
+                                    "lineHeight": "1.6",
+                                    "fontWeight": "400"
+                            }
+                    ]
+            }
+        },
+        },
+      }
+    </script>
+<style>
+        /* Pattern Overlay for maximalist institutional feel */
+        .grid-bg {
+            background-image: linear-gradient(to right, rgba(16, 35, 69, 0.05) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(16, 35, 69, 0.05) 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+        .double-border {
+            border: 2px solid #000d29;
+            box-shadow: inset 0 0 0 1px #000d29;
+        }
+        .drop-block-shadow {
+            box-shadow: 4px 4px 0px 0px #415e96;
+        }
+        .bilingual-divider {
+            border-bottom: 1px solid rgba(0, 13, 41, 0.2);
+            padding-bottom: 2px;
+            margin-bottom: 2px;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col md:flex-row grid-bg">
+<!-- SideNavBar -->
+<aside class="hidden md:flex flex-col h-screen sticky top-0 w-64 border-r-2 border-primary bg-slate-50 dark:bg-slate-950 shadow-[4px_0px_0px_0px_rgba(16,35,69,1)] z-40">
+<div class="p-4 border-b border-primary/20 dark:border-primary/50 flex flex-col gap-2">
+<h1 class="font-black text-xl text-primary dark:text-blue-50 border-b-4 border-yellow-600 pb-2">THUNA PORTAL</h1>
+<p class="font-label-caps text-label-caps text-primary dark:text-blue-400">Personnel Directory</p>
+</div>
+<nav class="flex-1 overflow-y-auto py-4">
+<ul class="flex flex-col gap-1">
+<!-- State Headquarters -->
+<li>
+<a class="flex items-center gap-3 bg-primary text-tertiary-fixed-dim p-3 border-l-4 border-yellow-600 font-bold uppercase tracking-tighter text-xs md:text-sm active:translate-x-1 duration-150" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">account_balance</span>
+<span>State Headquarters</span>
+</a>
+</li>
+<!-- District Nodes -->
+<li>
+<a class="flex items-center gap-3 text-primary dark:text-blue-200 p-3 hover:bg-blue-100 dark:hover:bg-blue-900/30 transition-colors font-bold uppercase tracking-tighter text-xs md:text-sm hover:bg-blue-800 hover:text-white active:translate-x-1 duration-150" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">location_city</span>
+<span>District Nodes</span>
+</a>
+</li>
+<!-- Special Units -->
+<li>
+<a class="flex items-center gap-3 text-primary dark:text-blue-200 p-3 hover:bg-blue-100 dark:hover:bg-blue-900/30 transition-colors font-bold uppercase tracking-tighter text-xs md:text-sm hover:bg-blue-800 hover:text-white active:translate-x-1 duration-150" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">security</span>
+<span>Special Units</span>
+</a>
+</li>
+<!-- Hierarchy Map -->
+<li>
+<a class="flex items-center gap-3 text-primary dark:text-blue-200 p-3 hover:bg-blue-100 dark:hover:bg-blue-900/30 transition-colors font-bold uppercase tracking-tighter text-xs md:text-sm hover:bg-blue-800 hover:text-white active:translate-x-1 duration-150" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">account_tree</span>
+<span>Hierarchy Map</span>
+</a>
+</li>
+<!-- Archival Records -->
+<li>
+<a class="flex items-center gap-3 text-primary dark:text-blue-200 p-3 hover:bg-blue-100 dark:hover:bg-blue-900/30 transition-colors font-bold uppercase tracking-tighter text-xs md:text-sm hover:bg-blue-800 hover:text-white active:translate-x-1 duration-150" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">inventory_2</span>
+<span>Archival Records</span>
+</a>
+</li>
+</ul>
+</nav>
+<div class="p-4 border-t border-primary/20 dark:border-primary/50">
+<button class="w-full bg-error text-on-error font-label-caps text-label-caps py-3 px-4 border-2 border-error drop-block-shadow hover:bg-error-container hover:text-on-error-container transition-colors uppercase tracking-widest font-bold">
+                URGENT DISPATCH
+            </button>
+</div>
+</aside>
+<div class="flex-1 flex flex-col min-h-screen">
+<!-- TopAppBar -->
+<header class="flex justify-between items-center px-6 w-full sticky top-0 z-50 h-16 bg-primary dark:bg-black border-b-2 border-primary shadow-[0px_4px_0px_0px_rgba(184,134,11,1)]">
+<div class="flex items-center gap-4">
+<div class="text-lg font-black text-white bg-blue-800 px-4 py-1 border-2 border-yellow-600 uppercase tracking-widest">
+                    THUNA COMMAND
+                </div>
+</div>
+<div class="flex-1 flex justify-center max-w-md mx-4">
+<div class="relative w-full flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-outline">search</span>
+<input class="w-full bg-surface-container text-on-surface border-2 border-outline focus:border-tertiary-fixed-dim focus:ring-0 pl-10 py-1 font-body-md placeholder:text-outline-variant" placeholder="Search Directory..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex gap-4 text-white/80">
+<button class="hover:text-white transition-colors"><span class="material-symbols-outlined">notifications</span></button>
+<button class="hover:text-white transition-colors"><span class="material-symbols-outlined">account_circle</span></button>
+<button class="hover:text-white transition-colors"><span class="material-symbols-outlined">settings</span></button>
+</div>
+<button class="bg-error text-white font-label-caps text-label-caps px-4 py-2 border-2 border-white hover:bg-red-700 uppercase tracking-widest">
+                    Emergency
+                </button>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="flex-1 p-gutter overflow-y-auto">
+<!-- Hero Section: State Leadership -->
+<section class="mb-gutter relative">
+<!-- Archival Tab -->
+<div class="absolute -top-3 left-4 bg-tertiary-fixed-dim text-on-tertiary-fixed font-label-caps text-label-caps px-3 py-1 border-2 border-primary z-10 uppercase font-bold tracking-widest">
+                    STATE DIRECTIVE HQ
+                </div>
+<div class="bg-surface double-border drop-block-shadow flex flex-col md:flex-row mt-3">
+<div class="w-full md:w-1/3 bg-surface-container-high border-r-2 border-primary p-4 flex flex-col justify-between">
+<img alt="State Police Chief Portrait" class="w-full h-auto object-cover border-2 border-primary grayscale contrast-125 mb-4" data-alt="A formal, high-resolution portrait of a senior official in a dark, ceremonial uniform with ornate gold epaulets and badges. The subject stands in front of a slightly blurred, monumental institutional background with subtle warm lighting. The aesthetic is extremely authoritative, evoking a sense of official power and rich, deep archival history. Colors are dominated by deep navy blue, warm copper gold, and sharp whites." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMFF0FKC4AivKaHPPdQgqiq1u0W8hYrDpuIwn8Hw9a5l6TlZQa6izSdhcfnTA8nOsk9Oi6wEJSdjmyOQ2YOzJbz3Hop2_vjZWlafye6oPTkiHCW86LOs2JT6hmXVKJLtrgy3W_j1LXxmyiMCIvVyd99eB9MqHkGBoC-46iPbwafILiJbnngyrM1fWYGYMNtv6oa0RIDDpcUGds_3GiXhmveyTVoq_tttO3zbR4adeAox932U4gE_q2FvX9fwcCoWd5nPGUvMKKZwI"/>
+<div class="bg-primary text-tertiary-fixed-dim p-2 text-center font-headline-md text-headline-md uppercase tracking-tight border-2 border-tertiary-fixed-dim">
+                            DIRECTOR GENERAL
+                        </div>
+</div>
+<div class="w-full md:w-2/3 p-panel-padding flex flex-col gap-stack-gap">
+<div class="border-b-4 border-primary pb-4 mb-4 flex justify-between items-start">
+<div>
+<div class="font-body-md text-on-surface-variant bilingual-divider Malayalam">സംസ്ഥാന പോലീസ് മേധാവി</div>
+<h2 class="font-display-hero text-display-hero text-primary uppercase">Manoj Abraham, IPS</h2>
+</div>
+<div class="bg-tertiary-fixed-dim border-2 border-primary w-16 h-16 flex items-center justify-center rounded-full drop-block-shadow">
+<span class="material-symbols-outlined text-4xl text-primary" style="font-variation-settings: 'FILL' 1;">local_police</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-gutter">
+<div class="border-2 border-primary p-3 bg-surface-container-low relative">
+<span class="absolute -top-3 left-2 bg-primary text-white font-label-caps text-[10px] px-2 py-0.5 border border-primary uppercase">Badge No</span>
+<div class="font-headline-md text-headline-md text-primary mt-2">KL-HQ-001</div>
+</div>
+<div class="border-2 border-primary p-3 bg-surface-container-low relative">
+<span class="absolute -top-3 left-2 bg-primary text-white font-label-caps text-[10px] px-2 py-0.5 border border-primary uppercase">Clearance Level</span>
+<div class="font-headline-md text-headline-md text-error mt-2">OMEGA-1</div>
+</div>
+</div>
+<div class="mt-auto border-t-2 border-primary pt-4 flex gap-4">
+<button class="flex-1 bg-primary text-tertiary-fixed-dim font-label-caps text-label-caps py-3 border-2 border-primary uppercase tracking-widest hover:bg-primary-container transition-colors">
+                                VIEW DOSSIER
+                            </button>
+<button class="flex-1 bg-surface text-primary font-label-caps text-label-caps py-3 border-2 border-primary uppercase tracking-widest hover:bg-surface-container transition-colors">
+                                INITIATE COMM
+                            </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Grid & Sidebar Area -->
+<div class="flex flex-col lg:flex-row gap-gutter">
+<!-- Main Grid: District Commanders -->
+<div class="flex-1 flex flex-col gap-stack-gap">
+<!-- Section Header -->
+<div class="bg-primary text-white p-2 border-2 border-primary uppercase tracking-widest font-headline-md text-headline-md flex justify-between items-center">
+<span>District Nodes [COMMANDERS]</span>
+<span class="bg-tertiary-fixed-dim text-primary px-2 py-1 text-sm font-bold border border-primary">14 ACTIVE</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<!-- Card 1 -->
+<div class="bg-surface double-border drop-block-shadow flex flex-col relative pt-4">
+<div class="absolute top-0 left-0 w-full h-2 bg-secondary"></div>
+<div class="p-4 flex gap-4 items-start">
+<img alt="Commander Portrait" class="w-20 h-24 object-cover border-2 border-primary grayscale" data-alt="A stern, formal black and white portrait of a middle-aged male officer in a dark uniform. The background is a flat, off-white institutional wall. High contrast, sharp focus, maximalist civic authority aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBy1cOUjhCS4ktkh2zQmrmtYJg6VssLr2_stu0ZA9qsvymovMUvCsGRJlJNZzzq47MFnjy8CtkD__KUfJmQ0kCtdI9Nd0Lkgkz2YNocEDAXnxhvdLaT6LbbJ90YQXrGJUyz8lOQrWM-oMcPOchJl3_CcsfbUyNGyHYy-5pnLFLnaKoHejnE4Q8IGuwEGn1SBqyPApkJZ0Z4WNcsGvo-3SN9IfLXeRbBdf1PtI7QiXIqqWd6Q8HoEjO0f9kaOpKsrHVsDn2iJKCnY4w"/>
+<div class="flex-1">
+<div class="font-label-caps text-label-caps text-primary uppercase border-b border-primary/20 pb-1 mb-1 bilingual-divider Malayalam">തിരുവനന്തപുരം സിറ്റി</div>
+<div class="font-label-caps text-label-caps text-primary uppercase border-b border-primary/20 pb-1 mb-1">Thiruvananthapuram City</div>
+<h3 class="font-headline-md text-headline-md text-primary leading-tight mt-1">C.H. Nagaraju, IPS</h3>
+<p class="font-body-md text-sm text-on-surface-variant">Inspector General / Commissioner</p>
+</div>
+</div>
+<div class="bg-surface-container border-t-2 border-primary p-2 flex justify-between items-center text-sm font-label-caps text-label-caps">
+<span class="text-primary font-bold">ID: TVM-C-01</span>
+<span class="bg-primary text-white px-2 py-0.5 uppercase">Deployed</span>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface double-border drop-block-shadow flex flex-col relative pt-4">
+<div class="absolute top-0 left-0 w-full h-2 bg-secondary"></div>
+<div class="p-4 flex gap-4 items-start">
+<img alt="Commander Portrait" class="w-20 h-24 object-cover border-2 border-primary grayscale" data-alt="A stern, formal black and white portrait of a middle-aged female officer in a dark uniform. The background is a flat, off-white institutional wall. High contrast, sharp focus, maximalist civic authority aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9ocYToll85Eq1_5l4DzKU0fEIvaDam93UDALiE-t4Z3jov8j0x45d8_28LIYp89opjuBs1XJPMoQK7JnLLRyJBlH1y-jjwtVk6pCvud28qSRbYKMcnIv347dMXNdDE1Fh-m4oOGw0qQ-1OyGIy4s7flFLDh7aYQswW3ug9f3ZuAQCJ2Vju3BAofVZRrv9t7CPbXbzmqCZUGqhULSBrfQSmka6xpb6OKYYuwyDSpeNnDj43uiHLpipCh58YYBE5Tpd_1YICGt-ZPw"/>
+<div class="flex-1">
+<div class="font-label-caps text-label-caps text-primary uppercase border-b border-primary/20 pb-1 mb-1 bilingual-divider Malayalam">കൊച്ചി സിറ്റി</div>
+<div class="font-label-caps text-label-caps text-primary uppercase border-b border-primary/20 pb-1 mb-1">Kochi City</div>
+<h3 class="font-headline-md text-headline-md text-primary leading-tight mt-1">S. Syamsundar, IPS</h3>
+<p class="font-body-md text-sm text-on-surface-variant">Inspector General / Commissioner</p>
+</div>
+</div>
+<div class="bg-surface-container border-t-2 border-primary p-2 flex justify-between items-center text-sm font-label-caps text-label-caps">
+<span class="text-primary font-bold">ID: KOC-C-01</span>
+<span class="bg-primary text-white px-2 py-0.5 uppercase">Deployed</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Sidebar: Specialized Units -->
+<aside class="w-full lg:w-80 flex flex-col gap-stack-gap">
+<div class="bg-tertiary-fixed-dim text-on-tertiary-fixed p-3 border-2 border-primary uppercase tracking-widest font-headline-md text-headline-md border-b-4 flex items-center gap-2">
+<span class="material-symbols-outlined">shield</span>
+                        Specialized Units
+                    </div>
+<div class="bg-surface double-border p-4 flex flex-col gap-4">
+<!-- Unit Item -->
+<div class="border-2 border-primary bg-surface-container-low p-3 relative">
+<div class="absolute -top-3 right-2 bg-error text-white font-label-caps text-[10px] px-2 py-0.5 border border-primary uppercase">High Alert</div>
+<div class="flex justify-between items-start mb-2">
+<h4 class="font-headline-md text-lg text-primary uppercase">Anti-Terrorism Squad (ATS)</h4>
+<span class="material-symbols-outlined text-error">warning</span>
+</div>
+<div class="flex items-end justify-between mt-4">
+<div class="text-sm font-body-md text-on-surface-variant">Active Operations</div>
+<div class="font-display-hero text-2xl text-primary font-black">12</div>
+</div>
+</div>
+<!-- Unit Item -->
+<div class="border-2 border-primary bg-surface-container-low p-3 relative">
+<div class="absolute -top-3 right-2 bg-secondary text-white font-label-caps text-[10px] px-2 py-0.5 border border-primary uppercase">Monitoring</div>
+<div class="flex justify-between items-start mb-2">
+<h4 class="font-headline-md text-lg text-primary uppercase">Cyber Dome</h4>
+<span class="material-symbols-outlined text-secondary">computer</span>
+</div>
+<div class="flex items-end justify-between mt-4">
+<div class="text-sm font-body-md text-on-surface-variant">Threats Neutralized</div>
+<div class="font-display-hero text-2xl text-primary font-black">8,402</div>
+</div>
+</div>
+</div>
+</aside>
+</div>
+</main>
+</div>
+</body></html>

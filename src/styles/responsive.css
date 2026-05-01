@@ -1,0 +1,22 @@
+/* ══ THUNA Portal — Responsive Breakpoints ══ */
+
+@media (max-width: 1280px) {
+  .hero-panel__grid,
+  .data-layout,
+  .case-layout,
+  .map-view,
+  .news-layout,
+  .shell-body {
+    grid-template-columns: 1fr;
+  }
+  .sidebar { min-height: auto; }
+  .map-selection { position: static; width: auto; margin: 0 1.4rem 1.4rem; }
+  .topbar { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 900px) {
+  .ops-grid, .archive-grid, .transparency-grid, .settings-grid,
+  .personnel-grid, .transparency-metrics { grid-template-columns: 1fr; }
+  .hero-panel__stats, .case-meta { grid-template-columns: 1fr; }
+  .page-header { align-items: start; flex-direction: column; }
+}
