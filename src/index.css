@@ -147,6 +147,10 @@ button {
   align-items: start;
 }
 
+.shell-body--auth {
+  grid-template-columns: 1fr;
+}
+
 .sidebar {
   min-height: calc(100vh - 86px);
   border-right: 3px double rgba(16, 37, 84, 0.7);
@@ -216,6 +220,8 @@ button {
 
 .main-view--auth {
   padding: 0;
+  grid-column: 1 / -1;
+  min-height: calc(100vh - 86px);
 }
 
 .status-banner {

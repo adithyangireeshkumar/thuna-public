@@ -13,6 +13,10 @@
   align-items: start;
 }
 
+.shell-body--auth {
+  grid-template-columns: 1fr;
+}
+
 /* ── Main View ── */
 .main-view {
   min-width: 0;

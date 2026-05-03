@@ -111,7 +111,7 @@ function App() {
   return (
     <div className="app-shell">
       <TopBar query={query} setQuery={setQuery} onOpenAuth={() => setAuthOpen(true)} />
-      <div className="shell-body">
+      <div className={`shell-body ${authOpen ? "shell-body--auth" : ""}`}>
         {!authOpen && <Sidebar activeView={activeView} onChange={setActiveView} onOpenAuth={() => setAuthOpen(true)} />}
         <main className={`main-view ${authOpen ? "main-view--auth" : ""}`} id="main-content">
           {loading && <StatusBanner tone="info" text="Synchronizing public archive feed..." />}
