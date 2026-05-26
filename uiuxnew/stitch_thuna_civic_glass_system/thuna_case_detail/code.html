@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>THUNA Portal | Case Detail View</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "accent-gold-glow": "rgba(245, 158, 11, 0.12)",
+                    "bg-surface": "#111827",
+                    "secondary-fixed": "#ffddb8",
+                    "bg-deep": "#0a0e1a",
+                    "on-primary-container": "#00285d",
+                    "text-inverse": "#0a0e1a",
+                    "bg-elevated": "#1e2940",
+                    "primary-fixed": "#d8e2ff",
+                    "surface-container-lowest": "#0b0e15",
+                    "on-tertiary-fixed-variant": "#723600",
+                    "tertiary-container": "#df7412",
+                    "inverse-surface": "#e1e2ec",
+                    "accent-primary-glow": "rgba(59, 130, 246, 0.15)",
+                    "on-error": "#690005",
+                    "secondary-fixed-dim": "#ffb95f",
+                    "on-surface": "#e1e2ec",
+                    "outline-variant": "#424754",
+                    "on-secondary-container": "#5b3800",
+                    "inverse-primary": "#005ac2",
+                    "text-primary": "#f0f4fc",
+                    "surface-tint": "#adc6ff",
+                    "on-secondary": "#472a00",
+                    "surface-dim": "#10131a",
+                    "text-muted": "#64748b",
+                    "primary": "#adc6ff",
+                    "surface-variant": "#32353c",
+                    "surface-bright": "#363941",
+                    "on-tertiary-fixed": "#311400",
+                    "secondary": "#ffb95f",
+                    "on-primary": "#002e6a",
+                    "on-error-container": "#ffdad6",
+                    "border-glass": "rgba(255, 255, 255, 0.08)",
+                    "surface-container-high": "#272a31",
+                    "error-container": "#93000a",
+                    "status-review": "#a78bfa",
+                    "on-secondary-fixed": "#2a1700",
+                    "outline": "#8c909f",
+                    "tertiary-fixed": "#ffdcc6",
+                    "on-tertiary-container": "#461f00",
+                    "on-primary-fixed-variant": "#004395",
+                    "border-glass-bright": "rgba(255, 255, 255, 0.14)",
+                    "on-surface-variant": "#c2c6d6",
+                    "primary-container": "#4d8eff",
+                    "tertiary": "#ffb786",
+                    "on-primary-fixed": "#001a42",
+                    "text-secondary": "#94a3b8",
+                    "bg-glass-hover": "rgba(255, 255, 255, 0.08)",
+                    "background": "#10131a",
+                    "on-tertiary": "#502400",
+                    "surface-container-highest": "#32353c",
+                    "status-critical": "#ef4444",
+                    "surface-container-low": "#191b23",
+                    "secondary-container": "#ee9800",
+                    "inverse-on-surface": "#2e3038",
+                    "primary-fixed-dim": "#adc6ff",
+                    "surface": "#10131a",
+                    "status-active": "#22c55e",
+                    "surface-container": "#1d2027",
+                    "on-background": "#e1e2ec",
+                    "bg-glass": "rgba(255, 255, 255, 0.04)",
+                    "error": "#ffb4ab",
+                    "tertiary-fixed-dim": "#ffb786",
+                    "on-secondary-fixed-variant": "#653e00"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "sidebar": "260px",
+                    "xxl": "48px",
+                    "xl": "32px",
+                    "max-width": "1280px",
+                    "md": "16px",
+                    "sm": "8px",
+                    "xs": "4px",
+                    "xxxl": "64px",
+                    "lg": "24px"
+            },
+            "fontFamily": {
+                    "h1": ["Inter"],
+                    "h1-mobile": ["Inter"],
+                    "display": ["Inter"],
+                    "h3": ["Inter"],
+                    "h2": ["Inter"],
+                    "mono": ["JetBrains Mono"],
+                    "body": ["Inter"],
+                    "small": ["Inter"]
+            },
+            "fontSize": {
+                    "h1": ["30px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "h1-mobile": ["24px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "display": ["40px", {"lineHeight": "1.1", "letterSpacing": "-0.025em", "fontWeight": "700"}],
+                    "h3": ["18px", {"lineHeight": "1.4", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "h2": ["22px", {"lineHeight": "1.3", "letterSpacing": "-0.015em", "fontWeight": "600"}],
+                    "mono": ["13px", {"lineHeight": "1.5", "letterSpacing": "0.04em", "fontWeight": "400"}],
+                    "body": ["15px", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400"}],
+                    "small": ["13px", {"lineHeight": "1.5", "letterSpacing": "0.01em", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+      .bg-glass { background-color: rgba(255, 255, 255, 0.04); backdrop-filter: blur(16px); }
+      .border-glass { border: 1px solid rgba(255, 255, 255, 0.08); }
+      .bg-glass-hover:hover { background-color: rgba(255, 255, 255, 0.08); }
+      .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    </style>
+</head>
+<body class="bg-bg-deep text-on-surface font-body selection:bg-primary/30 min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-glass backdrop-blur-md border-b border-glass shadow-sm">
+<div class="flex justify-between items-center h-16 px-lg max-w-max-width mx-auto">
+<div class="flex items-center gap-md">
+<span class="font-h2 text-h2 font-bold text-primary tracking-tight">THUNA | തുണ</span>
+</div>
+<nav class="hidden md:flex items-center gap-xl">
+<a class="font-body text-body text-on-surface-variant hover:text-primary transition-colors" href="#">Public Archive</a>
+<a class="font-body text-body text-on-surface-variant hover:text-primary transition-colors" href="#">Emergency</a>
+<a class="font-body text-body text-primary border-b-2 border-primary pb-1" href="#">Services</a>
+<a class="font-body text-body text-on-surface-variant hover:text-primary transition-colors" href="#">About</a>
+</nav>
+<div class="flex items-center gap-md">
+<button class="p-sm text-on-surface-variant hover:bg-bg-glass-hover transition-all duration-300 ease-in-out active:scale-95 rounded-full">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="p-sm text-on-surface-variant hover:bg-bg-glass-hover transition-all duration-300 ease-in-out active:scale-95 rounded-full">
+<span class="material-symbols-outlined">translate</span>
+</button>
+<div class="h-8 w-8 rounded-full overflow-hidden border border-glass">
+<img alt="User" data-alt="A professional headshot of a senior police inspector with a dignified expression, wearing a navy blue uniform. The lighting is crisp and cinematic with a cool blue ambient glow, set against a blurred institutional background that suggests a modern high-tech command center." src="https://lh3.googleusercontent.com/aida-public/AB6AXuADOQZyWpOUr6N4PfOrXmFbuYrFHIKDxezeEgwM9pF70KoboAGr3whC-llGcZ3hVIytalzGWONSkmz8R_e1HEl25Hb3KVeNBoIBtlmAV79lMP2wQj0xEWsPKs9I0YzvLxwA0Vd-nFc00y3Kr0bUT7Ikrexh0aG8_Zi0SRa9WmqnzAmcMvwFYJbuSK2bYWggy6nVZIMqAQ3vnw0LvJzE9fFRHl18uIoM2eRavsPPAM1vuJUCaWugqnnV9mdF85VBTQhr1i6WOxtI_WI"/>
+</div>
+</div>
+</div>
+</header>
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-0 h-full w-[260px] z-40 bg-bg-deep/80 backdrop-blur-xl border-r border-glass shadow-xl hidden md:flex flex-col py-lg">
+<div class="px-lg mb-xl pt-16">
+<h2 class="font-h3 text-h3 font-bold text-primary">THUNA Portal</h2>
+<p class="text-text-muted text-small">Institutional Command</p>
+</div>
+<nav class="flex-1 px-sm space-y-xs">
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-bg-glass-hover hover:text-on-surface transition-all duration-200" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-body text-body">Dashboard</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-bg-glass-hover hover:text-on-surface transition-all duration-200" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="font-body text-body">Public Archive</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg bg-accent-primary-glow text-primary border-l-4 border-primary transition-all duration-200" href="#">
+<span class="material-symbols-outlined">track_changes</span>
+<span class="font-body text-body">Case Tracker</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-bg-glass-hover hover:text-on-surface transition-all duration-200" href="#">
+<span class="material-symbols-outlined">g_translate</span>
+<span class="font-body text-body">Bilingual Support</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-bg-glass-hover hover:text-on-surface transition-all duration-200" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-body text-body">Profile</span>
+</a>
+</nav>
+<div class="px-lg mt-auto space-y-md">
+<button class="w-full py-sm px-md bg-status-critical/10 text-status-critical border border-status-critical/20 rounded-lg font-bold flex items-center justify-center gap-sm hover:bg-status-critical/20 transition-all">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">emergency</span>
+                Emergency SOS
+            </button>
+<div class="pt-md border-t border-glass space-y-xs">
+<a class="flex items-center gap-md px-md py-sm text-on-surface-variant hover:text-on-surface" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-small">Settings</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm text-on-surface-variant hover:text-on-surface" href="#">
+<span class="material-symbols-outlined">logout</span>
+<span class="text-small">Logout</span>
+</a>
+</div>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="flex-1 md:ml-[260px] pt-24 pb-xl px-lg">
+<div class="max-w-max-width mx-auto">
+<!-- Breadcrumbs -->
+<nav class="mb-lg flex items-center gap-xs text-text-muted">
+<a class="hover:text-primary flex items-center gap-xs" href="#">
+<span class="material-symbols-outlined text-[18px]">arrow_back</span>
+<span class="text-small">Back to Tracker</span>
+</a>
+<span class="text-small">/</span>
+<span class="text-small text-on-surface">Case Detail</span>
+</nav>
+<!-- Case Header -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-lg mb-xl">
+<div class="space-y-sm">
+<div class="flex items-center gap-md">
+<span class="px-md py-xs bg-status-review/10 text-status-review border border-status-review/20 rounded-full text-small font-bold">Investigation Active</span>
+<code class="font-mono text-primary bg-primary/10 px-sm py-xs rounded">FIR #2024/KL-TVM/882</code>
+</div>
+<h1 class="font-display text-display text-primary leading-tight">Unauthorized Network Breach</h1>
+<h2 class="font-h2 text-h2 text-on-surface-variant">അനധികൃത നെറ്റ്‌വർക്ക് ലംഘനം</h2>
+</div>
+<div class="flex items-center gap-md">
+<button class="px-lg py-sm bg-bg-glass border border-glass rounded-xl flex items-center gap-sm text-on-surface hover:bg-bg-glass-hover transition-all">
+<span class="material-symbols-outlined">print</span>
+                        Print
+                    </button>
+<button class="px-lg py-sm bg-primary text-on-primary-container font-bold rounded-xl flex items-center gap-sm shadow-lg shadow-primary/20 hover:scale-[1.02] active:scale-95 transition-all">
+<span class="material-symbols-outlined">download</span>
+                        Export PDF
+                    </button>
+</div>
+</div>
+<!-- Bento Layout Content -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-lg">
+<!-- Left Column: Case Overview & Officer -->
+<div class="lg:col-span-2 space-y-lg">
+<!-- Overview Card -->
+<div class="bg-glass border-glass rounded-xl p-xl">
+<div class="flex items-center justify-between mb-lg">
+<h3 class="font-h3 text-h3 text-primary flex items-center gap-sm">
+<span class="material-symbols-outlined">description</span>
+                                Case Overview
+                            </h3>
+<span class="text-small text-text-muted">Updated: 2h ago</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-xl">
+<div class="space-y-md">
+<div>
+<p class="text-small text-text-muted mb-xs uppercase tracking-wider">Date of Incident</p>
+<p class="font-mono text-on-surface">March 14, 2024 | 22:15 IST</p>
+</div>
+<div>
+<p class="text-small text-text-muted mb-xs uppercase tracking-wider">Jurisdiction</p>
+<p class="font-body text-on-surface">Cyber Cell, Thiruvananthapuram</p>
+</div>
+</div>
+<div class="space-y-md">
+<div>
+<p class="text-small text-text-muted mb-xs uppercase tracking-wider">Case Category</p>
+<p class="font-body text-on-surface">IT Act Sec 66D - Cyber Fraud</p>
+</div>
+<div>
+<p class="text-small text-text-muted mb-xs uppercase tracking-wider">Station Code</p>
+<p class="font-mono text-on-surface">TVM-CC-09</p>
+</div>
+</div>
+</div>
+<div class="mt-xl pt-xl border-t border-glass">
+<p class="text-small text-text-muted mb-sm uppercase tracking-wider">Initial Summary</p>
+<p class="text-body leading-relaxed text-on-surface-variant">
+                                Suspected unauthorized access to municipal database servers detected at Thiruvananthapuram Central. Digital forensic analysis indicates IP origin from multiple proxy endpoints. Evidence collection from server logs initiated.
+                            </p>
+</div>
+</div>
+<!-- Officer Info Card -->
+<div class="bg-glass border-glass rounded-xl p-xl">
+<div class="flex items-center gap-xl">
+<div class="h-20 w-20 rounded-2xl overflow-hidden ring-4 ring-primary/10">
+<img alt="Officer" data-alt="A detailed portrait of a senior investigative officer in a police department. The officer is wearing a khaki uniform with visible shoulder insignia and medals. He has a focused and determined expression. The background is a clean, slightly out-of-focus office with maps and computer screens, lit by cool fluorescent light that emphasizes professional authority." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtM5qWVHgpyx3tSlpEGpo_eYxrUyMbpaMVRZQLRA9xHYLiWmtE30vw14yjNnqSNqskWt_d9-Mk6UT3ofPGYHyeAE17oHJ-rW0OGT6cqHNAeQSUtMTeTjmft2NIDdZt6eieyd54hYiB2fctmPEpQ9vr_C_RTGPjduY4FvlOv9c8vhxCeYDl9eFbsxptbv3quAX4-riiSpd7djTWDqeZbFyImAOJ6Ku2cY6Hyw_g3hOj8HZ5vWuU6_N9I3mo1H1INea-K98d63jdrTs"/>
+</div>
+<div class="flex-1">
+<p class="text-small text-primary font-bold uppercase tracking-widest mb-xs">Assigned Officer</p>
+<h4 class="font-h2 text-h2 text-on-surface">Inspector Rajesh Kumar G.</h4>
+<p class="text-on-surface-variant">Special Investigation Wing (Cyber)</p>
+<div class="mt-md flex gap-md">
+<button class="text-small flex items-center gap-xs px-md py-xs bg-bg-glass-hover rounded-full border border-glass hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[16px]">call</span>
+                                        Contact
+                                    </button>
+<button class="text-small flex items-center gap-xs px-md py-xs bg-bg-glass-hover rounded-full border border-glass hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[16px]">mail</span>
+                                        Message
+                                    </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Timeline & Materials -->
+<div class="space-y-lg">
+<!-- Investigation Timeline -->
+<div class="bg-glass border-glass rounded-xl p-xl">
+<h3 class="font-h3 text-h3 text-primary mb-xl flex items-center gap-sm">
+<span class="material-symbols-outlined">history</span>
+                            Timeline
+                        </h3>
+<div class="relative space-y-xl before:content-[''] before:absolute before:left-[11px] before:top-2 before:bottom-2 before:w-[2px] before:bg-glass">
+<!-- Event 1 -->
+<div class="relative pl-xl">
+<div class="absolute left-0 top-1 w-[24px] h-[24px] bg-bg-deep border-4 border-status-active rounded-full z-10"></div>
+<p class="text-small font-mono text-status-active">Mar 16, 2024</p>
+<h5 class="text-body font-bold mt-xs">Forensic Report Uploaded</h5>
+<p class="text-small text-text-muted mt-xs">Server log analysis completed by SIW.</p>
+</div>
+<!-- Event 2 -->
+<div class="relative pl-xl">
+<div class="absolute left-0 top-1 w-[24px] h-[24px] bg-bg-deep border-4 border-primary rounded-full z-10"></div>
+<p class="text-small font-mono text-primary">Mar 15, 2024</p>
+<h5 class="text-body font-bold mt-xs">Statement Recorded</h5>
+<p class="text-small text-text-muted mt-xs">Primary witness statement documented.</p>
+</div>
+<!-- Event 3 -->
+<div class="relative pl-xl opacity-60">
+<div class="absolute left-0 top-1 w-[24px] h-[24px] bg-bg-deep border-4 border-glass rounded-full z-10"></div>
+<p class="text-small font-mono text-text-muted">Mar 14, 2024</p>
+<h5 class="text-body font-bold mt-xs">FIR Registered</h5>
+<p class="text-small text-text-muted mt-xs">Complaint filed and FIR generated.</p>
+</div>
+</div>
+</div>
+<!-- Case Materials -->
+<div class="bg-glass border-glass rounded-xl p-xl">
+<h3 class="font-h3 text-h3 text-primary mb-xl flex items-center gap-sm">
+<span class="material-symbols-outlined">folder_open</span>
+                            Case Materials
+                        </h3>
+<div class="space-y-sm">
+<a class="flex items-center gap-md p-md bg-bg-surface/40 hover:bg-bg-glass-hover rounded-xl border border-glass transition-all group" href="#">
+<div class="h-10 w-10 flex items-center justify-center bg-error-container/20 text-error rounded-lg">
+<span class="material-symbols-outlined">picture_as_pdf</span>
+</div>
+<div class="flex-1 overflow-hidden">
+<p class="text-small font-bold truncate">FIR_Copy_Signed.pdf</p>
+<p class="text-[10px] text-text-muted uppercase">2.4 MB • PDF</p>
+</div>
+<span class="material-symbols-outlined text-text-muted group-hover:text-primary">download</span>
+</a>
+<a class="flex items-center gap-md p-md bg-bg-surface/40 hover:bg-bg-glass-hover rounded-xl border border-glass transition-all group" href="#">
+<div class="h-10 w-10 flex items-center justify-center bg-status-review/20 text-status-review rounded-lg">
+<span class="material-symbols-outlined">cloud_done</span>
+</div>
+<div class="flex-1 overflow-hidden">
+<p class="text-small font-bold truncate">Server_Logs_Dump.csv</p>
+<p class="text-[10px] text-text-muted uppercase">15.8 MB • DATA</p>
+</div>
+<span class="material-symbols-outlined text-text-muted group-hover:text-primary">download</span>
+</a>
+<a class="flex items-center gap-md p-md bg-bg-surface/40 hover:bg-bg-glass-hover rounded-xl border border-glass transition-all group" href="#">
+<div class="h-10 w-10 flex items-center justify-center bg-accent-gold-glow/20 text-secondary rounded-lg">
+<span class="material-symbols-outlined">image</span>
+</div>
+<div class="flex-1 overflow-hidden">
+<p class="text-small font-bold truncate">Evidence_Photos_01.zip</p>
+<p class="text-[10px] text-text-muted uppercase">45 MB • ZIP</p>
+</div>
+<span class="material-symbols-outlined text-text-muted group-hover:text-primary">download</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="md:ml-[260px] w-full mt-auto border-t border-glass bg-bg-deep">
+<div class="flex flex-col md:flex-row justify-between items-center py-xl px-lg max-w-max-width mx-auto gap-md">
+<div class="flex flex-col gap-xs">
+<span class="font-h3 text-h3 font-bold text-on-surface">THUNA | തുണ</span>
+<p class="font-small text-small text-text-muted">© 2024 Kerala Police Department. Government of Kerala.</p>
+</div>
+<div class="flex flex-wrap gap-lg">
+<a class="font-small text-small text-text-muted hover:text-primary transition-colors duration-200" href="#">Privacy Policy</a>
+<a class="font-small text-small text-text-muted hover:text-primary transition-colors duration-200" href="#">Terms of Service</a>
+<a class="font-small text-small text-text-muted hover:text-primary transition-colors duration-200" href="#">Cyber Safety</a>
+<a class="font-small text-small text-text-muted hover:text-primary transition-colors duration-200" href="#">Contact Us</a>
+</div>
+</div>
+</footer>
+</body></html>

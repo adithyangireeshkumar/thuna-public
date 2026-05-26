@@ -1,0 +1,356 @@
+<!DOCTYPE html><html class="dark" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>THUNA | Kerala Police Portal</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "accent-gold-glow": "rgba(245, 158, 11, 0.12)",
+                    "bg-surface": "#111827",
+                    "secondary-fixed": "#ffddb8",
+                    "bg-deep": "#0a0e1a",
+                    "on-primary-container": "#00285d",
+                    "text-inverse": "#0a0e1a",
+                    "bg-elevated": "#1e2940",
+                    "primary-fixed": "#d8e2ff",
+                    "surface-container-lowest": "#0b0e15",
+                    "on-tertiary-fixed-variant": "#723600",
+                    "tertiary-container": "#df7412",
+                    "inverse-surface": "#e1e2ec",
+                    "accent-primary-glow": "rgba(59, 130, 246, 0.15)",
+                    "on-error": "#690005",
+                    "secondary-fixed-dim": "#ffb95f",
+                    "on-surface": "#e1e2ec",
+                    "outline-variant": "#424754",
+                    "on-secondary-container": "#5b3800",
+                    "inverse-primary": "#005ac2",
+                    "text-primary": "#f0f4fc",
+                    "surface-tint": "#adc6ff",
+                    "on-secondary": "#472a00",
+                    "surface-dim": "#10131a",
+                    "text-muted": "#64748b",
+                    "primary": "#adc6ff",
+                    "surface-variant": "#32353c",
+                    "surface-bright": "#363941",
+                    "on-tertiary-fixed": "#311400",
+                    "secondary": "#ffb95f",
+                    "on-primary": "#002e6a",
+                    "on-error-container": "#ffdad6",
+                    "border-glass": "rgba(255, 255, 255, 0.08)",
+                    "surface-container-high": "#272a31",
+                    "error-container": "#93000a",
+                    "status-review": "#a78bfa",
+                    "on-secondary-fixed": "#2a1700",
+                    "outline": "#8c909f",
+                    "tertiary-fixed": "#ffdcc6",
+                    "on-tertiary-container": "#461f00",
+                    "on-primary-fixed-variant": "#004395",
+                    "border-glass-bright": "rgba(255, 255, 255, 0.14)",
+                    "on-surface-variant": "#c2c6d6",
+                    "primary-container": "#4d8eff",
+                    "tertiary": "#ffb786",
+                    "on-primary-fixed": "#001a42",
+                    "text-secondary": "#94a3b8",
+                    "bg-glass-hover": "rgba(255, 255, 255, 0.08)",
+                    "background": "#10131a",
+                    "on-tertiary": "#502400",
+                    "surface-container-highest": "#32353c",
+                    "status-critical": "#ef4444",
+                    "surface-container-low": "#191b23",
+                    "secondary-container": "#ee9800",
+                    "inverse-on-surface": "#2e3038",
+                    "primary-fixed-dim": "#adc6ff",
+                    "surface": "#10131a",
+                    "status-active": "#22c55e",
+                    "surface-container": "#1d2027",
+                    "on-background": "#e1e2ec",
+                    "bg-glass": "rgba(255, 255, 255, 0.04)",
+                    "error": "#ffb4ab",
+                    "tertiary-fixed-dim": "#ffb786",
+                    "on-secondary-fixed-variant": "#653e00"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "sidebar": "260px",
+                    "xxl": "48px",
+                    "xl": "32px",
+                    "max-width": "1280px",
+                    "md": "16px",
+                    "sm": "8px",
+                    "xs": "4px",
+                    "xxxl": "64px",
+                    "lg": "24px"
+            },
+            "fontFamily": {
+                    "h1": ["Inter"],
+                    "h1-mobile": ["Inter"],
+                    "display": ["Inter"],
+                    "h3": ["Inter"],
+                    "h2": ["Inter"],
+                    "mono": ["JetBrains Mono"],
+                    "body": ["Inter"],
+                    "small": ["Inter"]
+            },
+            "fontSize": {
+                    "h1": ["30px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "h1-mobile": ["24px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "display": ["40px", {"lineHeight": "1.1", "letterSpacing": "-0.025em", "fontWeight": "700"}],
+                    "h3": ["18px", {"lineHeight": "1.4", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "h2": ["22px", {"lineHeight": "1.3", "letterSpacing": "-0.015em", "fontWeight": "600"}],
+                    "mono": ["13px", {"lineHeight": "1.5", "letterSpacing": "0.04em", "fontWeight": "400"}],
+                    "body": ["15px", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400"}],
+                    "small": ["13px", {"lineHeight": "1.5", "letterSpacing": "0.01em", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+      .bg-glass { background: rgba(255, 255, 255, 0.04); backdrop-filter: blur(16px); }
+      .bg-glass-elevated { background: rgba(255, 255, 255, 0.07); backdrop-filter: blur(24px); }
+      .hero-gradient { background: radial-gradient(circle at top right, #00285d 0%, #0a0e1a 60%); }
+    </style>
+<style data-stitch-cursor=""></style><style data-stitch-scroll-lock=""></style><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Malayalam:wght@400;700&amp;display=swap" rel="stylesheet"></head>
+<body class="bg-bg-deep text-on-surface font-body" style="font-family: &quot;Inter&quot;, &quot;Noto Sans Malayalam&quot;, sans-serif;">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-glass backdrop-blur-md border-b border-glass shadow-sm transition-all duration-300 ease-in-out">
+<div class="flex justify-between items-center h-16 px-lg max-w-max-width mx-auto">
+<div class="font-h2 text-h2 font-bold text-primary tracking-tight">THUNA | തുണ</div>
+<div class="hidden md:flex items-center gap-xl">
+<a class="text-primary border-b-2 border-primary pb-1 font-body text-body transition-colors" href="#">Public Archive</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body text-body" href="#">Emergency</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body text-body" href="#">Services</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body text-body" href="#">About</a>
+</div>
+<div class="flex items-center gap-md">
+<button class="material-symbols-outlined text-primary hover:bg-bg-glass-hover p-sm rounded-lg transition-all active:scale-95">notifications</button>
+<button class="material-symbols-outlined text-primary hover:bg-bg-glass-hover p-sm rounded-lg transition-all active:scale-95">translate</button>
+<button class="material-symbols-outlined text-primary hover:bg-bg-glass-hover p-sm rounded-lg transition-all active:scale-95">account_circle</button>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<header class="relative pt-32 pb-xl px-lg overflow-hidden hero-gradient">
+<div class="max-w-max-width mx-auto relative z-10 flex flex-col items-center text-center">
+<h1 class="font-display text-display mb-md text-primary drop-shadow-lg">THUNA | തുണ</h1>
+<p class="text-h3 font-h3 text-on-surface-variant max-w-2xl mb-xl">Empowering Citizens through Transparent Digital Policing. Access public records, file reports, and track cases in real-time. | പൗരന്മാരെ ശാക്തീകരിക്കുന്നു...</p>
+<!-- Centered Prominent Glass Search Bar -->
+<div class="w-full max-w-3xl bg-glass-elevated border border-border-glass-bright rounded-xl p-sm flex items-center shadow-xl mb-xl group">
+<span class="material-symbols-outlined px-md text-text-muted group-focus-within:text-primary transition-colors">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-body font-body w-full text-text-primary placeholder:text-text-muted" placeholder="Search case files, public circulars, or nearby stations..." type="text">
+<button class="bg-primary hover:bg-primary-container text-on-primary font-bold px-xl py-md rounded-lg transition-all active:scale-95">Search</button>
+</div>
+<!-- Stat Pills -->
+<div class="flex flex-wrap justify-center gap-md mb-xl">
+<div class="bg-glass border border-glass px-lg py-sm rounded-full flex items-center gap-sm">
+<span class="w-2 h-2 rounded-full bg-status-active animate-pulse"></span>
+<span class="font-mono text-small">LIVE: 1,429 Officers Online</span>
+</div>
+<div class="bg-glass border border-glass px-lg py-sm rounded-full flex items-center gap-sm">
+<span class="material-symbols-outlined text-secondary text-small" style="font-variation-settings: 'FILL' 1;">security</span>
+<span class="font-mono text-small">89.2% Resolved Cases</span>
+</div>
+<div class="bg-glass border border-glass px-lg py-sm rounded-full flex items-center gap-sm">
+<span class="material-symbols-outlined text-tertiary text-small" style="font-variation-settings: 'FILL' 1;">update</span>
+<span class="font-mono text-small">Update: 2m ago</span>
+</div>
+</div>
+</div>
+<!-- Background Element -->
+<div class="absolute -bottom-1/4 -right-1/4 w-[600px] h-[600px] bg-accent-primary-glow rounded-full blur-[120px] opacity-40"></div>
+</header>
+<!-- Urgent Notice Ticker -->
+<div class="bg-surface-container-high py-sm overflow-hidden whitespace-nowrap border-y border-glass">
+<div class="inline-block animate-marquee px-lg">
+<span class="text-error font-bold mx-lg flex items-center gap-sm inline-flex">
+<span class="material-symbols-outlined text-[18px]">warning</span>
+                URGENT: New Cyber Security Protocol effective from Monday. Check guidelines in Bulletin.
+            </span>
+<span class="text-primary font-bold mx-lg flex items-center gap-sm inline-flex">
+<span class="material-symbols-outlined text-[18px]">info</span>
+                Public Archive: High Court judgments from June 2024 now accessible.
+            </span>
+<span class="text-secondary font-bold mx-lg flex items-center gap-sm inline-flex">
+<span class="material-symbols-outlined text-[18px]">campaign</span>
+                Advisory: Monsoon safety guidelines released for coastal regions.
+            </span>
+</div>
+</div>
+<main class="max-w-max-width mx-auto px-lg py-xxl flex flex-col gap-xxxl">
+<!-- Latest Bulletins & Archive Preview (Bento Layout) -->
+<section class="grid grid-cols-1 md:grid-cols-12 gap-lg">
+<!-- Latest Bulletins -->
+<div class="md:col-span-8 flex flex-col gap-lg">
+<div class="flex justify-between items-end">
+<h2 class="font-h2 text-h2 text-primary">Latest Bulletins | എണ്ണം പുതിയ അറിയിപ്പുകൾ</h2>
+<a class="text-small text-secondary hover:underline flex items-center gap-xs" href="#">View all <span class="material-symbols-outlined text-[14px]">arrow_forward</span></a>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-md">
+<!-- Bulletin Card 1 -->
+<div class="bg-glass border border-glass rounded-xl p-lg hover:bg-bg-glass-hover transition-all group flex flex-col h-full">
+<div class="flex justify-between mb-md">
+<span class="bg-status-active/10 text-status-active px-sm py-xs rounded text-small font-mono uppercase tracking-wider">Security</span>
+<span class="text-text-muted text-small font-mono">12 OCT 24</span>
+</div>
+<h3 class="font-h3 text-h3 text-text-primary mb-sm group-hover:text-primary transition-colors">Cyber-Fraud Prevention Framework v2.0</h3>
+<p class="text-body text-text-muted flex-grow">New measures introduced to combat digital payment phishing across state banking networks.</p>
+<div class="mt-xl flex items-center gap-md">
+<button class="bg-bg-glass-hover border border-glass px-md py-sm rounded-lg text-small hover:border-primary transition-colors">Download PDF</button>
+<span class="material-symbols-outlined text-text-muted group-hover:text-primary transition-all group-hover:translate-x-1">arrow_right_alt</span>
+</div>
+</div>
+<!-- Bulletin Card 2 -->
+<div class="bg-glass border border-glass rounded-xl p-lg hover:bg-bg-glass-hover transition-all group flex flex-col h-full">
+<div class="flex justify-between mb-md">
+<span class="bg-accent-gold-glow text-secondary px-sm py-xs rounded text-small font-mono uppercase tracking-wider">Advisory</span>
+<span class="text-text-muted text-small font-mono">10 OCT 24</span>
+</div>
+<h3 class="font-h3 text-h3 text-text-primary mb-sm group-hover:text-primary transition-colors">Urban Traffic Management Restructuring</h3>
+<p class="text-body text-text-muted flex-grow">Revised traffic flow patterns for Kochi Metro Phase II construction areas announced.</p>
+<div class="mt-xl flex items-center gap-md">
+<button class="bg-bg-glass-hover border border-glass px-md py-sm rounded-lg text-small hover:border-primary transition-colors">Read More</button>
+<span class="material-symbols-outlined text-text-muted group-hover:text-primary transition-all group-hover:translate-x-1">arrow_right_alt</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Public Archive Quick Access -->
+<div class="md:col-span-4 bg-glass-elevated border border-border-glass-bright rounded-xl p-lg flex flex-col gap-lg">
+<h2 class="font-h2 text-h2 text-primary">Latest Bulletins | എണ്ണം പുതിയ അറിയിപ്പുകൾ</h2>
+<div class="space-y-md">
+<!-- Case Card 1 -->
+<div class="bg-surface-container-low p-md rounded-lg border border-glass hover:border-primary transition-colors cursor-pointer group">
+<div class="flex justify-between items-start mb-xs">
+<span class="text-small font-mono text-text-muted">#KL-4492-24</span>
+<span class="material-symbols-outlined text-text-muted group-hover:text-primary">open_in_new</span>
+</div>
+<h4 class="font-bold text-text-primary">Public Incident Report: Sector 4</h4>
+<p class="text-small text-text-muted">Resolved • Oct 08</p>
+</div>
+<!-- Case Card 2 -->
+<div class="bg-surface-container-low p-md rounded-lg border border-glass hover:border-primary transition-colors cursor-pointer group">
+<div class="flex justify-between items-start mb-xs">
+<span class="text-small font-mono text-text-muted">#KL-8821-24</span>
+<span class="material-symbols-outlined text-text-muted group-hover:text-primary">open_in_new</span>
+</div>
+<h4 class="font-bold text-text-primary">Cyber Cell Disclosure: Data Audit</h4>
+<p class="text-small text-text-muted">Processing • Oct 05</p>
+</div>
+</div>
+<button class="mt-auto w-full py-md border border-primary text-primary font-bold rounded-lg hover:bg-primary/5 transition-colors">
+                    Access Full Repository
+                </button>
+</div>
+</section>
+<!-- Operations Hub Section -->
+<section class="flex flex-col gap-xl">
+<div class="flex flex-col items-center text-center max-w-2xl mx-auto">
+<h2 class="font-display text-h1 text-primary mb-sm">Operations Hub | ഓപ്പറേഷൻസ് ഹബ്</h2>
+<p class="text-body text-text-secondary text-lg">Direct channels for institutional services and administrative reporting.</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-lg">
+<div class="bg-glass border border-glass p-xl rounded-xl text-center flex flex-col items-center gap-md group hover:bg-bg-glass-hover transition-all">
+<div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-all">
+<span class="material-symbols-outlined text-3xl">verified_user</span>
+</div>
+<h3 class="font-h3 text-h3">Passport Verification</h3>
+<p class="text-small text-text-muted">Track your police clearance status in real-time with your file ID.</p>
+</div>
+<div class="bg-glass border border-glass p-xl rounded-xl text-center flex flex-col items-center gap-md group hover:bg-bg-glass-hover transition-all">
+<div class="w-16 h-16 rounded-full bg-secondary/10 flex items-center justify-center text-secondary group-hover:bg-secondary group-hover:text-on-secondary transition-all">
+<span class="material-symbols-outlined text-3xl">emergency_share</span>
+</div>
+<h3 class="font-h3 text-h3">Emergency SOS</h3>
+<p class="text-small text-text-muted">Immediate response trigger for distress situations. Geolocation enabled.</p>
+</div>
+<div class="bg-glass border border-glass p-xl rounded-xl text-center flex flex-col items-center gap-md group hover:bg-bg-glass-hover transition-all">
+<div class="w-16 h-16 rounded-full bg-tertiary/10 flex items-center justify-center text-tertiary group-hover:bg-tertiary group-hover:text-on-tertiary transition-all">
+<span class="material-symbols-outlined text-3xl">g_translate</span>
+</div>
+<h3 class="font-h3 text-h3">Bilingual Support</h3>
+<p class="text-small text-text-muted">All services available in Malayalam (മലയാളം) and English for accessibility.</p>
+</div>
+<div class="bg-glass border border-glass p-xl rounded-xl text-center flex flex-col items-center gap-md group hover:bg-bg-glass-hover transition-all">
+<div class="w-16 h-16 rounded-full bg-status-review/10 flex items-center justify-center text-status-review group-hover:bg-status-review group-hover:text-on-surface transition-all">
+<span class="material-symbols-outlined text-3xl">history_edu</span>
+</div>
+<h3 class="font-h3 text-h3">Digital FIR</h3>
+<p class="text-small text-text-muted">File non-cognizable reports and download digitally signed copies.</p>
+</div>
+</div>
+</section>
+<!-- Transparency Links -->
+<section class="bg-surface-container-low rounded-xxl p-xl border border-glass relative overflow-hidden">
+<div class="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-xl items-center">
+<div>
+<h2 class="font-h2 text-h2 text-primary mb-md">Our Commitment to Transparency | സുതാര്യതയോടുള്ള ഞങ്ങളുടെ പ്രതിബദ്ധത</h2>
+<p class="text-body text-on-surface-variant mb-lg">THUNA is built on the core values of "Civic Glass"—a philosophy where institutional authority meets radical transparency. We provide real-time dashboards on crime statistics, department budgets, and officer performance.</p>
+<div class="grid grid-cols-2 gap-md">
+<a class="flex items-center gap-sm text-primary hover:underline" href="#">
+<span class="material-symbols-outlined">analytics</span>
+                            Crime Dashboard
+                        </a>
+<a class="flex items-center gap-sm text-primary hover:underline" href="#">
+<span class="material-symbols-outlined">account_balance</span>
+                            Budget Disclosures
+                        </a>
+<a class="flex items-center gap-sm text-primary hover:underline" href="#">
+<span class="material-symbols-outlined">policy</span>
+                            State Gazettes
+                        </a>
+<a class="flex items-center gap-sm text-primary hover:underline" href="#">
+<span class="material-symbols-outlined">psychiatry</span>
+                            Ethics Committee
+                        </a>
+</div>
+</div>
+<div class="relative">
+<img alt="Transparency Visual" class="rounded-xl shadow-xxl border border-glass-bright mix-blend-screen opacity-80" data-alt="A high-definition macro shot of a security fiber optic network glowing in deep cerulean blue and electric navy. The image conveys advanced digital infrastructure and institutional security, fitting the portal's aesthetic of Civic Glass and transparency. Soft bokeh highlights and sharp geometric lines symbolize the intersection of technology and government authority in Kerala's digital policing initiative." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCeWdqFDFuUNGHn71rPkSZ9Hi9OzUl7rOI_X31_raIHCKRAUZszfiHMGn_32rWIA_UfhDG4FlLTbS29SiD7yIGzxdxtGUzIIZVnH1ocBfQkJIE6jm3s4zXpNlecFQsdDf63hjls--JpW4_VdZPE0S2ngYBuqIKGf17e5_YZtxETRkbzuj-MbpjGN29eaEx7ghi8t-oCoxvAVq3l-LRITl1Qg_aV4g3NGLOK1LuSI_b3NsGLlXBYQoFlk8NmE1GTW-3iT79wvA6yOjo">
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-low to-transparent"></div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-bg-deep border-t border-glass mt-auto">
+<div class="flex flex-col md:flex-row justify-between items-center py-xl px-lg max-w-max-width mx-auto gap-md">
+<div class="flex flex-col items-center md:items-start gap-sm">
+<div class="font-h3 text-h3 font-bold text-on-surface">THUNA | തുണ</div>
+<p class="font-small text-small text-text-muted">© 2024 Kerala Police Department. Government of Kerala.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-lg">
+<a class="font-small text-small text-text-muted hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="font-small text-small text-text-muted hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="font-small text-small text-text-muted hover:text-primary transition-colors" href="#">Cyber Safety</a>
+<a class="font-small text-small text-text-muted hover:text-primary transition-colors" href="#">Contact Us</a>
+</div>
+<div class="flex items-center gap-md">
+<div class="flex flex-col items-end">
+<span class="text-xs text-primary font-mono font-bold">മലയാളം സപ്പോർട്ട് ലഭ്യമാണ്</span>
+<span class="text-[10px] text-text-muted uppercase tracking-widest">Bilingual Institutional Command</span>
+</div>
+<div class="w-10 h-10 rounded-lg bg-glass border border-glass flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">g_translate</span>
+</div>
+</div>
+</div>
+</footer>
+<!-- FAB (Suppressed based on context, but shown for main landing utility) -->
+<button class="fixed bottom-lg right-lg w-14 h-14 bg-primary text-on-primary rounded-full shadow-xxl flex items-center justify-center z-50 hover:scale-110 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">sos</span>
+</button>
+
+
+</body></html>
